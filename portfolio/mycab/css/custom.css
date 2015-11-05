@@ -1,0 +1,353 @@
+/* no custom styles is set */
+body {
+	font-family: 'Open Sans', sans-serif;
+	}
+	/*Секция с меню*/
+	
+#top {
+	margin-bottom: 10%;
+	}
+.section-menu-2 {
+	margin-top: -7%;	
+	}
+.menu-2 {
+	list-style: none;
+	font-size: 18px;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	}
+.menu-2-item {
+	display: inline-block;
+	margin-right: 1%;
+	color: #E667AF;
+	line-height: 80px;
+	padding: 0 1%;
+	}
+.menu-2-item:hover {
+	background-color: #E667AF;
+	color: #fff;
+	cursor: pointer;
+	}
+.menu-logo {
+	width: 15%;
+	margin-top: 5px;
+	}
+/*END*/	
+
+	/*Секция стены*/
+	
+#well {
+		background-color: #303F7D;
+		padding: 3% 0;
+	}
+.well-h1 {
+	color: #fff;
+	font-weight: 300;
+	}
+.well-small {
+	font-size: 50%;	
+	}
+.well-p {
+	color: #AFAFC1;	
+	}
+.well-h4 {
+	color: #fff;	
+	}
+.well-btn-1 {
+	margin: 2% 0;
+	border-radius: 3px;
+	color: #794695;	
+	}
+.well-btn-1:hover {
+	color: #fff;
+	background-color: #794695;
+	border-color: #794695;
+	}	
+.well-btn-2 {
+	border-radius: 3px;
+	background-color: transparent;
+	color: #fff;
+	margin: 0 2%;
+	}
+.well-btn-2:hover {
+	color: #fff;
+	background-color: #794695;
+	border-color: #794695;	
+	}
+/*END*/	
+	
+	/*Заголовки*/
+	
+.header-h1 {
+	margin: 10% 0;
+	font-size: 48px;
+	font-weight: 300;	
+	}
+.header-2-h1 {
+	font-size: 48px;
+	font-weight: 300;
+	margin-top: 5%;
+	margin-bottom: 5%;	
+	}
+/*END*/	
+	
+	/*Секция №1*/
+	
+.thumbnail {
+	border: none;
+	}
+/*END*/	
+
+	/*Адрес*/
+	
+.address-name {	
+	margin-bottom: 3%;
+	}
+.address-office {
+	margin-bottom: 3%;	
+	}
+.address-phone {
+	margin-bottom: 3%;	
+	}
+.address-abbr {
+	margin-right:2%;	
+	}
+/*END*/	
+
+
+	/*Секция с Тарифами*/
+	
+.tarif {
+	width:100%;
+	border: 3px solid #f0f0f0;
+	border-top-color: #794695;
+	background-color: rgba(30, 121, 190,0.1);
+	}
+.tarif-rec {
+	width:100%;
+	border: 3px solid #f0f0f0;
+	border-color: #794695;
+	background-color: rgba(30, 121, 190,0.1);	
+	}
+.tarif-header {
+	
+	}
+.tarif-list {
+	background-color: #fff;
+	font-size: 15px;
+	color: #222222;
+	list-style:none;
+	padding-left: 0%;
+	margin-bottom: 0;
+	}
+.tarif-text {
+	margin: 0;
+	padding-left: 8%;
+	margin-top: -8%;	
+	}
+.tarif-list-ok {
+	border-bottom: 1px solid #f3f3f3;
+	padding: 5%;	
+	}
+.tarif-list-disable {
+	border-bottom: 1px solid #f3f3f3;
+	padding: 5%;	
+	}
+.tarif-h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #794695;
+	margin-top: 5%;
+	margin-bottom: 5%;	
+	}
+.tarif-footer {
+	background-color:#f7f7f7;
+	padding-top: 5%;
+	text-align:center;
+	}
+.tarif-text-footer {
+	color: #794695;
+	font-size: 24px;
+	padding-left: 5%;
+	}
+.tarif-rub {
+	display: inline-block; 
+	font-size: 24px; 
+	line-height: 7px; 
+	border-bottom: 1px solid #794695; 
+	width:0.4em;	
+	}
+.tarif-comment {
+	color: #c3c3c3;
+	font-size: 14px;
+	margin-left: 1%;
+	}
+.tarif-btn {
+	margin-left: 5%;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	border-radius: 3px;
+	background-color: #794695;
+	color: #fff;
+	border-color: #794695;	
+	}
+.tarif-btn:hover  {
+	background-color: transparent;
+	border-color: #794695;
+	color: #794695;	
+	}
+.glyphicon-remove {
+	margin-right: 5%;
+	color: #c3c3c3;	
+	}		
+.glyphicon-list-ok {
+	color:#794695;
+	margin-right: 2%;
+	}
+.tarif-text-small {
+	padding: 0 0 2% 0;
+	margin: 0;
+	color: #794695;	
+	}
+/*END*/
+
+	/*Секция подвала с кнопками*/
+
+.text-header-footer {
+	font-size: 36px;
+	font-weight: 300;
+	margin: 5%;	
+	}
+.footer-btn-1 {
+	border-radius: 3px;
+	background-color: #2C991A;
+	border-color: #2C991A;
+	color: #fff;
+	margin: 0 2%;	
+	}
+.footer-btn-1:hover {
+	background-color: transparent;
+	border-color: #2C991A;
+	color: #2C991A;
+	}
+.footer-btn-2 {
+	border-radius: 3px;
+	background-color: #794695;
+	border-color: #794695;
+	color: #fff;	
+	}
+.footer-btn-2:hover {
+	background-color: transparent;
+	border-color: #794695;
+	color: #794695;
+	}
+/*END*/
+
+	/*Подвал*/
+	
+.footer-ul {
+	list-style: none;
+	padding: 0;
+	}
+@media (min-width: 768px) {
+	.menu-2 {
+		margin: 20px 0 0 0;
+	}
+	.tarif-btn {
+		margin-left: 0%;
+		padding: 6px 12px;
+    	font-size: 14px;
+    	line-height: 1.42857143;
+	}
+	.tarif-list { 
+		font-size: 12px;
+	}
+	.tarif-text {
+    padding-left: 10%;
+    margin-top: -10%;
+	}
+}
+@media (min-width: 992px) {
+	.menu-2 {
+		margin: 20px 0 0 0;
+	}
+	.tarif-text {
+    	padding-left: 10%;
+    	margin-top: -7%;
+	}
+}
+@media (min-width: 1200px) {
+	.menu-2 {
+		margin: -7px 0 0 0;
+	}
+	.tarif-list {
+    	font-size: 15px;
+	}
+	.tarif-text {
+    	padding-left: 10%;
+    	margin-top: -5%;
+	}
+}
+@media (max-width: 768px) { 
+	.menu-2 {
+		margin: 20px 0 0 0;
+	}
+	.tarif-list { 
+		font-size: 18px;
+	}
+	.tarif-list-ok,.tarif-list-disable {
+		padding: 3%;
+	}
+	.tarif-text {
+    	padding-left: 10%;
+    	margin-top: -5%;
+	}
+}
+@media (max-width: 600px) {
+	.menu-2 {
+    margin: 30px 0 0 0;
+	}
+
+}
+@media (max-width: 530px) {
+	.tarif-list { 
+		font-size: 14px;
+	}
+	.tarif-list-ok,.tarif-list-disable {
+		padding: 3%;
+	}
+	.tarif-text {
+    	padding-left: 10%;
+    	margin-top: -5%;
+	}
+}
+@media (max-width: 370px) {
+	.well-btn-2,.footer-btn-1 {
+		margin:0;
+	}
+	.text-header-footer,.header-h1,.header-2-h1 {
+		font-size: 24px;
+	}
+	.footer-btn-1,.footer-btn-2 {
+		padding: 6px 12px;
+    	font-size: 14px;
+    	line-height: 1.42857143;
+	}
+	.tarif-list { 
+		font-size: 12px;
+	}
+	.tarif-list-ok,.tarif-list-disable {
+		padding: 3%;
+	}
+	.tarif-text {
+    	padding-left: 10%;
+    	margin-top: -6%;
+	}
+}
+@media (max-width: 370px) {
+	.footer-btn-1,.footer-btn-2 {
+    	font-size: 12px;
+	}
+}

@@ -1,0 +1,95 @@
+/* no custom styles is set */
+body {
+	font-family: 'Open Sans', sans-serif;
+	}
+
+	/* Секция стены */
+	
+.wall {
+	background-color: #67B1EA;
+	margin-top: 5%;
+	}
+.wall-h1 {
+	font-weight:300;
+	color: #fff;
+	margin: 5% 0;	
+	}
+.wall-p {
+	color: #fff;	
+	}
+.wall-row {
+	margin: 10% 0;	
+	}
+.div-img {
+	padding: 3% 0;
+	text-align: center;
+	overflow: hidden;
+	}
+.div-img>img {
+	width: 100%;	
+	}
+/*END*/
+	
+	/* Заголовки */
+	
+.custom-h1 {
+	font-weight: 300;
+	margin-top: 5%;
+	margin-bottom: 2%;	
+	}
+.custom-p {
+	font-size: 17px;	
+	}
+/*END*/	
+
+	/* Секция услуги */
+	
+.thumbnail {
+	border: none;	
+	}
+.thumbnail-h3 {
+	font-weight: 300;
+	color: #40ACFF;	
+	}
+.custom-btn-1 {
+	border-radius: 3px;
+	background-color: #67B1EA;
+	color: #fff;
+	border-color: #fff;
+	margin-bottom: 1%;	
+	}
+.custom-btn-1:hover {
+	background-color: transparent;
+	color: #40ACFF;
+	border-color: #67B1EA;
+	}
+.custom-btn-2 {
+	border-radius: 3px;
+	background-color: transparent;
+	color: #40ACFF;
+	border-color: #67B1EA;
+	margin-bottom: 1%;	
+	}
+.custom-btn-2:hover {
+	background-color: #67B1EA;
+	color: #fff;
+	border-color: #fff;	
+	}
+/*END*/
+
+	/* Секция подвала */
+	
+.footer-ul {	
+	list-style: none;
+	margin: 2% 0;
+	padding: 0;
+	}
+.footer-li {
+	margin: 1% 0;	
+	}
+.footer-link {
+	color:black;	
+	}
+.footer-link:hover {
+	color:	#40ACFF;
+	}

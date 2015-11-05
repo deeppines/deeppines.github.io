@@ -1,0 +1,341 @@
+/* ================================================================== Общие стили ================================================================== */
+html, body { 
+	height: 100%; 
+}
+main {
+	display: block;
+}
+section {
+	text-align: center;
+	margin: 7% 0;
+}
+.container {
+	border: solid 2px rgb(60,60,60);
+	border-top: none;
+    margin: auto;
+    padding: 2%;
+    width: 50%;
+    position: relative;
+}
+.container:before {
+	content:"";
+	position:absolute;
+	top:0;
+	left:0;
+	width:27%;
+	border-top:2px solid rgb(60,60,60);
+	z-index: 2;
+}
+.container:after {
+	content:"";
+	position:absolute;
+	top:0;
+	right:0;
+	width:27%;
+	border-top:2px solid rgb(60,60,60);
+	z-index: 2;
+}
+.container h2 {
+	position: relative;
+	top: -3vw;
+}
+h3 {
+	margin: 2% 0;
+}
+p {
+  	margin: 0 18% 2%;
+}
+.cr-invers {
+	color:#fff;	
+}
+.br-invers {
+	border-color:#fff;
+}
+.br-invers:before {
+	content:"";
+	position:absolute;
+	top:0;
+	left:0;
+	width:27%;
+	border-top:2px solid rgb(255,255,255);
+}
+.br-invers:after {
+	content:"";
+	position:absolute;
+	top:0;
+	right:0;
+	width:27%;
+	border-top:2px solid rgb(255,255,255);
+}
+.clearfix {
+	clear: both;
+}
+.btn {
+	font-family: "Lato-Regular";
+	font-size:1.0256em;
+	text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    color: #fff;
+    display: block;
+    border: solid 2px rgb(60,60,60);
+    background-color: rgb(60,60,60);
+   	padding: 1.8% 0;
+    width: 45%;
+    margin: auto;
+    -webkit-transition: 0.3s ease-out 0.1s;
+	   -moz-transition: 0.3s ease-out 0.1s;
+	    -ms-transition: 0.3s ease-out 0.1s;
+	     -o-transition: 0.3s ease-out 0.1s;
+	        transition: 0.3s ease-out 0.1s;
+}
+.btn:visited {
+	border: solid 2px rgb(90, 62, 62);
+    background-color: rgb(90, 62, 62);
+}
+.btn:hover {
+	background: transparent;
+	color: rgb(60,60,60);
+	-webkit-transition: 0.3s ease-out 0.1s;
+	   -moz-transition: 0.3s ease-out 0.1s;
+	    -ms-transition: 0.3s ease-out 0.1s;
+	     -o-transition: 0.3s ease-out 0.1s;
+	        transition: 0.3s ease-out 0.1s;
+}
+.btn:focus {
+	outline: none;
+	box-shadow: 0 0 10px rgba(0, 92, 251, 0.9);
+}
+.btn:active {
+	box-shadow: 0 0 10px rgba(60,60,60,0.6);
+}
+/* END */
+
+/* ================================================================== Header ================================================================== */
+.header-wrap {
+	background-image: url('../images/header.png');
+	background-position: center center;      
+	background-repeat: no-repeat;           
+	background-size: cover;      
+	background-color: rgb(255,255,255);
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	padding: 10% 0;
+}
+.header-wrap h1 {
+	color:#fff;
+	text-align: center;
+	margin-bottom: 2%;
+	margin-top: 4%;
+}
+.header-wrap p {
+	font-family: "Lato-Regular";
+	font-size:0.9615em;
+	text-transform: uppercase;
+  	line-height: 1.933;
+  	letter-spacing: 1px;
+  	text-align: center;
+	color:#fff;
+}
+.mouse {
+	margin-top: 10%;
+}
+/* END */
+
+/* ================================================================== Services ================================================================== */
+.background {
+	background-image: url('../images/services.png');
+	background-position: center center;      
+	background-repeat: no-repeat;          
+	background-size: cover;      
+	background-color: rgb(255,255,255);
+	position: relative;
+	overflow: hidden;
+	padding: 7% 0;
+}
+/* END */
+
+/* ================================================================== What we do ================================================================== */
+.icon {
+	margin: 1%;
+}
+.work {
+	margin: 5% 0;
+}
+.work>p {
+	font-size: 0.8974em;
+	line-height: 1.849;
+}
+/* END */
+/* ================================================================== Our works ================================================================== */
+.blocks * a {
+	display: block;
+	height: 100%;
+	-webkit-transition: 0.3s ease-out 0.1s;
+	   -moz-transition: 0.3s ease-out 0.1s;
+	    -ms-transition: 0.3s ease-out 0.1s;
+	     -o-transition: 0.3s ease-out 0.1s;
+	        transition: 0.3s ease-out 0.1s;
+}
+.blocks * a:hover {
+	background: rgba(0,0,0,0.5);
+	-webkit-transition: 0.3s ease-in-out 0.1s;
+	   -moz-transition: 0.3s ease-in-out 0.1s;
+	    -ms-transition: 0.3s ease-in-out 0.1s;
+	     -o-transition: 0.3s ease-in-out 0.1s;
+	        transition: 0.3s ease-in-out 0.1s;
+}
+.block-one,.block-two,.block-three,.block-four,.block-five,.block-six {
+	height: 240px;
+	border-bottom: 10px solid #fff;
+	float: left;
+	position:relative;
+	background-position: center center;      
+	background-repeat: no-repeat;          
+	background-size: cover;      
+	background-color: rgb(255,255,255);
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.blocks h2 {
+	position: absolute;
+    bottom: 0;
+    left:0;
+    margin-left: 8%;
+    margin-bottom: 6%;
+}
+.block-one,.block-three,.block-four,.block-six {
+	width: 30%;
+}
+.block-two,.block-five {
+	width: 40%;
+	border-left: 10px solid #fff;
+	border-right: 10px solid #fff;
+}
+.block-one {
+	background-image: url('../images/block-one.png');
+}
+.block-two {
+	background-image: url('../images/block-two.png');
+}
+.block-three {
+	background-image: url('../images/block-three.png');
+}
+.block-four {
+	background-image: url('../images/block-four.png');
+}
+.block-five {
+	background-image: url('../images/block-five.png');
+}
+.block-six {
+	background-image: url('../images/block-six.png');
+}
+/* END */
+/* ================================================================== Contact Us ================================================================== */
+section:last-child {
+	margin:7% 0 1% 0;
+}
+section:last-child p {
+	margin: 0 18% 3%;
+}
+/* END */
+/* ================================================================== Footer ================================================================== */
+.copyright {
+	margin: auto;
+    padding: 2% 0;
+    width: 350px;
+}
+.copyright img {
+	display: block;
+	float: left;
+    margin-right: 10%;
+}
+.copyright>p {
+	font-family: "lato-Regular";
+	font-size: 0.8974em;
+	line-height: 1.2;
+	margin: 4% 0;
+}
+/* END */
+/* ================================================================== Screen<=1500px ================================================================== */
+@media (max-width: 1500px) {
+	.container h2 {
+    	top: -3.5vw;
+	}
+}
+/* END */
+/* ================================================================== Screen<=1222px ================================================================== */
+@media (max-width: 1222px) {
+	.container h2 {
+    	font-size: 1.8em;
+	}
+}
+/* END */
+/* ================================================================== Screen<=1024px ================================================================== */
+@media (max-width: 1024px) {
+	.container h2 {
+    	font-size: 1.7em;
+	}
+	.container:before,.container:after,.br-invers:before,.br-invers:after {
+		width: 20%;
+	}
+}
+/* END */
+/* ================================================================== Screen<=768px ================================================================== */
+@media (max-width: 768px) {
+	.container h2 {
+    	font-size: 1.5em;
+	}
+	.blocks h2 {
+		font-size: 1.5em;
+	}
+	.container:before,.container:after,.br-invers:before,.br-invers:after {
+		width: 12%;
+	}
+}
+/* END */
+/* ================================================================== Screen<=480px ================================================================== */
+@media (max-width: 480px) {
+	.container {
+		width: 85%;
+	}
+	p {
+    	margin: 0 5% 2%;
+	}
+	.container h2 {
+    	font-size: 1em;
+	}
+	.blocks h2 {
+		font-size: 1em;
+	}
+	.container:before,.container:after,.br-invers:before,.br-invers:after {
+		width: 10%;
+	}
+	.block-one,.block-two,.block-three,.block-four,.block-five,.block-six {
+		width: 100%;
+		border-left: none;
+		border-right: none;
+	}
+}
+/* END */
+/* ================================================================== Screen<=350px ================================================================== */
+@media (max-width: 350px) {
+	h1 {
+		font-size:1.46em;
+	}
+	p,.btn {
+		font-size: 0.8em;
+	}
+	.copyright {
+		padding: 2% 15%;
+	}
+	.copyright img {
+		width: 8%;
+    	margin-right: 3%;
+	}
+	.copyright>p {
+		font-size: 0.7em;
+	}
+}

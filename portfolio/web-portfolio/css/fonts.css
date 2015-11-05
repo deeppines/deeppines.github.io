@@ -1,0 +1,56 @@
+@font-face {
+	font-family: "Lato-Regular";
+	src: url('../fonts/Lato-Regular.eot');
+	src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Lato-Regular.woff') format('woff'),
+		 url('../fonts/Lato-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Lato-Light";
+	src: url('../fonts/Lato-light.eot');
+	src: url('../fonts/Lato-light.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Lato-light.woff') format('woff'),
+		 url('fonts/Lato-light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Lato-Bold";
+	src: url('../fonts/Lato-Bold.eot');
+	src: url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Lato-Bold.woff') format('woff'),
+		 url('../fonts/Lato-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+h1 {
+	font-family: "lato-Bold";
+	font-size: 3.46em;
+	text-transform: uppercase;
+  	line-height: 1.2;
+  	letter-spacing: 9px;
+}
+h2 {
+	font-family: "lato-Bold";
+	font-size: 2.18em;
+	text-transform: uppercase;
+  	line-height: 1.2;
+  	letter-spacing: 5px;
+  	color: rgb(60,60,60);
+}
+h3 {
+	font-family: "lato-Bold";
+	font-size: 1.28em;
+	text-transform: uppercase;
+  	line-height: 1.2;
+  	letter-spacing: 3px;
+  	color: rgb(60,60,60);
+}
+p {
+	font-family: "lato-Light";
+	font-size: 1.0256em;
+  	color: rgb(60, 60, 60);
+  	line-height: 1.5;
+}
