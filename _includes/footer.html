@@ -1,0 +1,33 @@
+<footer role="contentinfo" class="sticky-bottom">
+    <!-- Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <nav role="navigation">
+                            <ul class="nav-panel">
+                                <li><a href="{{ site.baseurl }}/">Home</a></li>
+                                <li><a href="{{ site.baseurl }}/about.html">About</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <ul class="social">
+                            {% if site.github_username %}
+                            <li>
+                                {% include icon-github.html username=site.github_username %}
+                            </li>
+                            {% endif %} {% if site.twitter_username %}
+                            <li>
+                                {% include icon-twitter.html username=site.twitter_username %}
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Content -->
+</footer>
