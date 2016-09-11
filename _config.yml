@@ -16,7 +16,7 @@ twitter_username: fahrenheitAt
 github_username:  egorkir
 
 # Настройка постоянных ссылок
-permalink: "/:categories/:month-:day-:year/:title"
+permalink: "/:title/"
 
 # Build settings
 markdown: kramdown
