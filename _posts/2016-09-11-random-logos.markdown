@@ -64,5 +64,7 @@ categories: css
 Таким образом в наш блок можно класть картинку практически любых размеров и она корректно отмасштабируется. 
 
 ### Что получилось
+Обратите внимание на исходные размеры логотипов.
 
-<script async src="//jsfiddle.net/LucasKane/uL70jtua/1/embed/result,html,css/"></script>
+<p data-height="484" data-theme-id="dark" data-slug-hash="BLoPRA" data-default-tab="css,result" data-user="lucaskane" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/lucaskane/pen/BLoPRA/">Random Logos</a> by Lucas Kane (<a href="http://codepen.io/lucaskane">@lucaskane</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
