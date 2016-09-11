@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Медот размещения логотипов"
+title:  "Метод размещения логотипов"
 date:   2016-09-11
 categories: css
 ---
@@ -65,6 +65,11 @@ categories: css
 
 ### Что получилось
 Обратите внимание на исходные размеры логотипов.
+
+1. 440x433
+2. 2000x1000
+3. 3440x3109
+4. 2272x1704
 
 <p data-height="484" data-theme-id="dark" data-slug-hash="BLoPRA" data-default-tab="css,result" data-user="lucaskane" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/lucaskane/pen/BLoPRA/">Random Logos</a> by Lucas Kane (<a href="http://codepen.io/lucaskane">@lucaskane</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
