@@ -1,2 +1,3 @@
 User-agent: Yandex
 Allow: /
+Sitemap: {{ site.url }}/sitemap.xml
