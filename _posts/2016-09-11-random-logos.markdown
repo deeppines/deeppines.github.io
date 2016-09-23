@@ -55,9 +55,6 @@ categories: css
     left: auto;
     max-width: 100%;
     height: auto;
-    vertical-align: middle;
-    -webkit-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
 }
 {% endhighlight %}
 
