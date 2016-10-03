@@ -65,7 +65,7 @@ Launch video 2
 {% endhighlight %}
 
 После этого можно размещать основной скрипт:
-{% highlight java %}
+{% highlight js %}
 var player,
     youtube  = 'Youtube', //iframe id
     btnPlay  = '.playYoutube', // btn id or class
