@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Видео c Youtube в модальном окне."
+title:  "Видео с Youtube в модальном окне."
 date:   2016-10-03
 categories: js
 ---
