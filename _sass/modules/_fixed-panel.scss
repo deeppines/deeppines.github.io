@@ -1,125 +1,88 @@
-/*==================================/
-/---------- Fixed Panel ------------/
-/==================================*/
+//==================================
+//---------- Fixed Panel -----------
+//==================================
 
 .fixed-bottom {
-	position: fixed;
-	padding: 15px 0 0;
-	bottom: -60px;
-	left: 0;
-	width: 100%;
-	min-height: 60px;
-	height: auto;
-	background-color: #ebebeb;
-	-webkit-transition: all .4s;
-	-o-transition: all .4s;
-	transition: all .4s;
+    position: fixed;
+    padding: 15px 0 0;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    min-height: 60px;
+    height: auto;
+    background-color: $background-color-1;
+    transition: all .4s;
 
-	.btn-up {
-		position: absolute;
-		top: -50px;
-		left: 50%;
-		-webkit-transform: translate(-50%, 0%);
-		-ms-transform: translate(-50%, 0%);
-		-o-transform: translate(-50%, 0%);
-		transform: translate(-50%, 0%);
-		z-index: 5
-	}
+    .btn-up {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        z-index: 5;
+    }
 
-	.wrapper {
-		position: relative;
-		height: 100%;
-		z-index: 10;
-	}
+    .wrapper {
+        position: relative;
+        height: 100%;
+        z-index: 10;
+    }
+
+    &.active {
+        bottom: 0;
+
+        .btn-up {
+            opacity: 1;
+        }
+    }
 }
 
-.fixed-bottom.active {
-	bottom: 0;
-
-	.btn-up {
-		opacity: 1;
-	}
-}
-
-
-/*==================================/
-/------------ Button Up ------------/
-/==================================*/
+//==================================
+//------------ Button Up -----------
+//==================================
 
 .btn-up {
-	position: relative;
-	width: 150px;
-	height: 150px;
-	background-color: #ebebeb;
-	border-radius: 100%;
-	overflow: hidden;
-	text-align: center;
-	cursor: pointer;
-	opacity: .6;
-	-webkit-transition: opacity .3s;
-	-o-transition: opacity .3s;
-	transition: opacity .3s;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: $background-color-1;
+    border-radius: 100%;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    opacity: .6;
+    transition: opacity .3s;
 
-	.fa {
-		position: absolute;
-		top: 20%;
-		left: 50%;
-		-webkit-transform: translate(-50%,-50%);
-		-ms-transform: translate(-50%,-50%);
-		-o-transform: translate(-50%,-50%);
-		transform: translate(-50%,-50%);
-	}
+    .fa {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-	&:hover {
-		opacity: 1;
+    &:hover {
+        opacity: 1;
 
-		.fa {
-			-webkit-animation: arrow .4s infinite alternate;
-			-o-animation: arrow .4s infinite alternate;
-			animation: arrow .4s infinite alternate;
-			-webkit-animation-delay: .3s;
-			-o-animation-delay: .3s;
-			animation-delay: .3s;
-		}
-	}
+        .fa {
+            animation: arrow .4s infinite alternate;
+            animation-delay: .3s;
+        }
+    }
 }
 
-/*==================================/
-/------------ Button Up ------------/
-/==================================*/
+//==================================
+//------------ Button Up -----------
+//==================================
 
-@-webkit-keyframes arrow {
-	from {
-		-webkit-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
-	}
-
-	to {
-		-webkit-transform: translate(-50%, -60%);
-		transform: translate(-50%, -60%);
-	}
-}
-@-o-keyframes arrow {
-	from {
-		-o-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
-	}
-
-	to {
-		-o-transform: translate(-50%, -60%);
-		transform: translate(-50%, -60%);
-	}
-}
 @keyframes arrow {
-	from {
-		-webkit-transform: translate(-50%, -50%);
-		-o-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
-	}
+    from {
+        -webkit-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
 
-	to {
-		-webkit-transform: translate(-50%, -60%);
-		-o-transform: translate(-50%, -60%);
-		transform: translate(-50%, -60%);
-	}
+    to {
+        -webkit-transform: translate(-50%, -60%);
+        -o-transform: translate(-50%, -60%);
+        transform: translate(-50%, -60%);
+    }
 }

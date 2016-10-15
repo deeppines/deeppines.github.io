@@ -6,6 +6,6 @@
 .sticky-bottom {
     line-height: 60px;
     vertical-align: middle;
-    background: linear-gradient(to top, #efefef, #fff);
-    color: #eee;
+    background: $gradient;
+    color: $footer-color;
 }

@@ -1,41 +1,32 @@
 .article {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 
-	.header {
+    .header {
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-		a {
-			color: inherit;
-			text-decoration: none;
+        .fa {
+            font-size: 70%;
+            color: $icon-color;
+            transition: all .3s;
+        }
+    }
 
-			&:hover {
-				.fa {
-					color: inherit;
-				}
-			}
-		}
+    a:hover {
+        .fa {
+            color: inherit;
+        }
+    }
 
-		.fa {
-			font-size: 70%;
-			color: #d5d5d5;
-			transition: all .3s;
-		}
-	}
+    .footer {
+        padding: 10px 0;
+        border-top: 1px solid $border-color;
+    }
 
-	.content {
-
-	}
-
-	.footer {
-		padding: 10px 0;
-		border-top: 1px solid #ebebeb;
-	}
-
-	.read {
-
-	}
-
-	.data {
-		color: #cdcdcd;
+    .data {
+        color: $text-color-1;
         margin: 0;
-	}
+    }
 }
