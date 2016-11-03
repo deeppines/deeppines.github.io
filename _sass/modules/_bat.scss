@@ -10,6 +10,30 @@
     height: 150px;
     margin: 15px;
     overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -101px;
+        left: 0;
+        display: block;
+        background: url('../images/bat.png') no-repeat center;
+        width: 80px;
+        height: 125px;
+        transform: rotate(180deg);
+        transition: all 1s ease-in-out;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: 80px;
+        height: 1px;
+        box-shadow: 0 0 3px 1px $box-sadow-color;
+        transition: all .3s;
+    }
 }
 
 .night {
@@ -42,32 +66,8 @@
     }
 }
 
-.thebat::before {
-    content: '';
-    position: absolute;
-    top: -101px;
-    left: 0;
-    display: block;
-    background: url('../images/bat.png') no-repeat center;
-    width: 80px;
-    height: 125px;
-    transform: rotate(180deg);
-    transition: all 1s ease-in-out;
-}
-
-.thebat::after {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: 0;
-    width: 80px;
-    height: 1px;
-    box-shadow: 0 0 3px 1px $box-sadow-color;
-    transition: all .3s;
-}
-
 .thebat:hover {
-    &.night {
+    .night {
         opacity: 1;
     }
 
