@@ -10,15 +10,15 @@
     height: 150px;
     margin: 15px;
     overflow: hidden;
+}
 
-    &.night {
-        position: relative;
-        display: block;
-        opacity: 0;
-        transition: all .4s ease 1.1s;
-    }
+.night {
+    position: relative;
+    display: block;
+    opacity: 0;
+    transition: all .4s ease 1.1s;
 
-    &.night::after {
+    &::after {
         content: "I'm the night";
         position: absolute;
         display: inline-block;
@@ -29,7 +29,7 @@
         z-index: 10;
     }
 
-    &.night::before {
+    &::before {
         content: '';
         position: absolute;
         top: 5px;
