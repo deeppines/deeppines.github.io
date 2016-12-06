@@ -13,4 +13,12 @@
         font-weight: 300;
         line-height: 1.6;
     }
+
+    blockquote {
+        padding: 10px;
+        border: 1px solid $text-color-1;
+        background-color: $background-color-1;
+        border-radius: 1px;
+        font-style: italic;
+    }
 }
