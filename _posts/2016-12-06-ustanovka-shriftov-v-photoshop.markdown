@@ -30,4 +30,4 @@ C:\Program Files\Common Files\Adobe\Fonts
 </blockquote>
 
 Если данной папки нет, то ее необходимо создать. Скопировав файлы перезапускаем
-Photoshop и наслождаемся результатом.
+Photoshop и наслаждаемся результатом.
