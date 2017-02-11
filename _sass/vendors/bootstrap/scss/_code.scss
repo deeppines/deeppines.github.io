@@ -10,8 +10,8 @@ samp {
 code {
   padding: $code-padding-y $code-padding-x;
   font-size: $code-font-size;
-  color: $code-color;
-  background-color: $code-bg;
+  color: $third-color;
+  background-color: $primery-color;
   @include border-radius($border-radius);
 
   // Streamline the style when inside anchors to avoid broken underline and more
