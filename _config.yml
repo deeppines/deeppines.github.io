@@ -22,6 +22,7 @@ permalink: "/:title/"
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 sitemap: true
 sass:
     style: :compressed
