@@ -14,7 +14,7 @@ description: Записная книжка одного HTML/CSS кодера # 
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://lkblog.ru" # the base hostname & protocol for your site
-twitter_username: fahrenheitAt
+twitter_username:
 github_username:  egorkir
 
 # Настройка постоянных ссылок

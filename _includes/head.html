@@ -12,8 +12,6 @@
 	{% if page.url != '/' %}
 	{% include og.html %}
 	{% endif %}
-	<!--	Font-Awesome -->
-	<link rel="stylesheet" href="{{ "/libs/font-awesome-4.6.3/css/font-awesome.min.css" | prepend: site.baseurl }}">
 
 	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

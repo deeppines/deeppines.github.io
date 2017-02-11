@@ -1,0 +1,41 @@
+//===============================
+//
+// BASE COLOR VARIABLES
+//
+//===============================
+
+//== Colors
+//
+//## Gray colors for use across Bootstrap.
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%)   !default; // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+//== Brand colors
+//
+//## Brand colors for use on website
+
+$primery-color:         #2c3e50;
+$secondary-color:       #16a085;
+$third-color:           #ecf0f1;
+
+
+.color {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    margin-right: 10px;
+
+    &-primery {
+        background-color: $primery-color;
+    }
+
+    &-secondary {
+        background-color: $secondary-color;
+    }
+}
