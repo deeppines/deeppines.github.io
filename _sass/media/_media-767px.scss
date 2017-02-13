@@ -4,3 +4,9 @@
 @media (max-width: 767px) {
 
 }
+
+@media (max-width: 670px) {
+    .btn-scroll-top.active {
+        display: none;
+    }
+}
