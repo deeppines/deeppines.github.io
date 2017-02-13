@@ -1,13 +1,40 @@
-$(document).ready(function () {
-	$('.btn-up').click(function () {
-		$(this).parent('.fixed-bottom').toggleClass('active');
+$(document).ready(function(){
+    //====================================
+    //--------- Functions ----------------
+    //====================================
 
-		if ($(this).children('.fa').hasClass('fa-angle-up')) {
-			$(this).children('.fa').removeClass('fa-angle-up');
-			$(this).children('.fa').addClass('fa-angle-down');
-		} else {
-			$(this).children('.fa').removeClass('fa-angle-down');
-			$(this).children('.fa').addClass('fa-angle-up');
-		}
-	});
+    //====================================
+    //--------- Custom Scripts -----------
+    //====================================
+
+    function scrollToTop(btn) {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 150 && !btn.hasClass('scrolling')) {
+                btn.addClass('active');
+            } else {
+                btn.removeClass('active');
+            }
+        });
+
+        btn.click(function () {
+            btn.removeClass('active').addClass('scrolling');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800, function () {
+
+                btn.removeClass('scrolling');
+            });
+        });
+    }
+
+    scrollToTop($('#toTop'));
+
+    //====================================
+    //--------- Setting libs -------------
+    //====================================
+
+    //====================================
+    //-------- Only this site ------------
+    //====================================
+
 });

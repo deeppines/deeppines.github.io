@@ -36,3 +36,30 @@
         box-shadow: 0 0 5px 0 $secondary-color;
     }
 }
+
+.btn-scroll-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 65px;
+    height: 100%;
+    display: none;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        background: transparentize($primery-color, .8);
+    }
+
+    .fa {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $secondary-color;
+    }
+
+    &.active {
+        display: block;
+    }
+}
