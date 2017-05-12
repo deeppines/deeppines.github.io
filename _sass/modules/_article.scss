@@ -5,12 +5,16 @@
 //===============================
 
 .article {
-    padding: 15px 0;
+    padding: 5px 0;
 
     &-header {
 
         .article-data {
             padding-top: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
         }
     }
 
