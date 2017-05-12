@@ -32,7 +32,8 @@ footer {
             color: $primery-color;
 
             .fa {
-                color: transparentize($gray-light, .7);
+                color: transparentize($gray-light, .9);
+                transition: all .3s;
             }
 
             &:hover {
