@@ -12,11 +12,13 @@ Update 24/06/2017
 
 Список необходимого минимума или наиболее популярных:
 
+~~[git-control][git-control] - плагин добавляющий GUI для управления git репозиторем.~~
+Начиная с версии 1.18.0 появился нативный Git GUI, можно смело удалять git-control.
+
 * [emmet][emmet] - плагин не нуждающийся в представлении. Ускоряет написание как html так и css кода.
 * [tab-control][tab-control] - плагин управления отступами.
 * [atom-beautify][atom-beautify] - плагин для форматирования кода поддерживающий множество языков.
-~~[git-control][git-control] - плагин добавляющий GUI для управления git репозиторем.~~
-Начиная с версии 1.18.0 появился нативный Git GUI, можно смело удалять git-control.
+
 
 ## Улучшение функционала
 
@@ -36,6 +38,7 @@ Update 24/06/2017
 Пример конфигурации для Flex Tool Bar
 
 <p data-height="265" data-theme-id="0" data-slug-hash="aJrNMm" data-default-tab="js" data-user="lucaskane" data-embed-version="2" data-pen-title="Config for Flex Tool Bar" class="codepen">See the Pen <a href="https://codepen.io/lucaskane/pen/aJrNMm/">Config for Flex Tool Bar</a> by Lucas Kane (<a href="https://codepen.io/lucaskane">@lucaskane</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 ## Проверка кода
 
