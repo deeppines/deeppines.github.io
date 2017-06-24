@@ -38,7 +38,7 @@ Update 24/06/2017
 
 Пример конфигурации для Flex Tool Bar
 
-<p data-height="265" data-theme-id="0" data-slug-hash="aJrNMm" data-default-tab="js" data-user="lucaskane" data-embed-version="2" data-pen-title="Config for Flex Tool Bar" class="codepen">See the Pen <a href="https://codepen.io/lucaskane/pen/aJrNMm/">Config for Flex Tool Bar</a> by Lucas Kane (<a href="https://codepen.io/lucaskane">@lucaskane</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="480" data-theme-id="0" data-slug-hash="aJrNMm" data-default-tab="js" data-user="lucaskane" data-embed-version="2" data-pen-title="Config for Flex Tool Bar" class="codepen">See the Pen <a href="https://codepen.io/lucaskane/pen/aJrNMm/">Config for Flex Tool Bar</a> by Lucas Kane (<a href="https://codepen.io/lucaskane">@lucaskane</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 ## Проверка кода
