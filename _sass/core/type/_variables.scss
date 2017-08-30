@@ -1,0 +1,19 @@
+// scss-lint:disable all
+//===============================
+//
+// TYPOGRAPHY VARIABLES
+//
+//===============================
+
+// Fonts for site
+$font-title:  'Lobster', cursive;
+$font-header: 'Roboto', sans-serif;
+$font-text:   'Roboto', sans-serif;
+$font-code:   'Roboto Mono', monospace;
+
+// Color for links
+
+$link-color-base:     $light-red-ochre;
+$link-color-hover:    transparentize($link-color-base, .2);
+$link-color-active:   $link-color-base;
+$link-color-visited:  $link-color-base;

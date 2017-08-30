@@ -1,0 +1,31 @@
+//===============================
+//
+// NAVIGATION COMPONENT
+//
+//===============================
+
+.nav {
+    display: inline-block;
+    margin: 20px auto 0;
+    // font-family: $site-font;
+    font-weight: 300;
+    font-size: .75em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: $wight;
+
+
+    &__link {
+        color: inherit;
+        padding: 0 10px;
+
+        &:hover {
+            color: $light-red-ochre;
+        }
+
+        &_active {
+            pointer-events: none;
+            color: $light-red-ochre;
+        }
+    }
+}

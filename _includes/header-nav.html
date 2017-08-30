@@ -1,0 +1,27 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <filter id="glass-filter">
+        <feGaussianBlur stdDeviation="5"></feGaussianBlur>
+    </filter>
+</svg>
+
+<header class="header header_background header_glass txt-xs-center">
+    <div class="avatar avatar_center">
+        <img class="avatar__img" src="/images/avatar.jpg" alt="deeppines">
+    </div>
+    <h1 class="title">
+        <a class="title__link" href="{{ site.baseurl }}/">
+            <span>lk</span>blog
+        </a>
+    </h1>
+    {% if page.url == '/cv/' %}
+    <nav class="nav" role="navigation">
+        <a class="nav__link nav__link_active" href="{{ site.baseurl }}/cv">CV</a>
+        <a class="nav__link" href="{{ site.baseurl }}/projects">Portfolio</a>
+    </nav>
+    {% else %}
+    <nav class="nav" role="navigation">
+        <a class="nav__link" href="{{ site.baseurl }}/cv">CV</a>
+        <a class="nav__link nav__link_active" href="{{ site.baseurl }}/projects">Portfolio</a>
+    </nav>
+    {% endif %}
+</header>

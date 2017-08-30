@@ -1,0 +1,65 @@
+//===============================
+//
+// TABLE-SKILLS COMPONENT
+//
+//===============================
+
+.table-skills {
+    width: 100%;
+    color: $gunmetal;
+    margin-bottom: 40px;
+
+    th,
+    td {
+        border-right: 1px solid transparentize($light-red-ochre, .7);
+
+        &:last-child {
+            border-right: 0;
+            // padding-bottom: 20px;
+        }
+
+        &:first-child {
+            width: 33.333333%;
+            padding-left: 0;
+        }
+    }
+
+    th {
+        font-size: .9rem;
+        line-height: 1;
+        text-transform: uppercase;
+        padding: 20px;
+        opacity: .75;
+
+        @media (max-width: 419px) {
+            padding: 20px 5px;
+        }
+    }
+
+    td {
+        font-size: .9rem;
+        line-height: 1;
+        padding: 10px 20px;
+
+        @media (max-width: 419px) {
+            padding: 10px 5px;
+        }
+    }
+
+    tr {
+        &:last-child {
+            td {
+                padding-bottom: 25px;
+            }
+        }
+    }
+
+    tbody {
+        + thead {
+            th {
+                border-top: 1px solid transparentize($light-red-ochre, .7);
+                padding-top: 25px;
+            }
+        }
+    }
+}

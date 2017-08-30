@@ -1,0 +1,37 @@
+//=========================//
+//
+//        IMPORT
+//
+//=========================//
+
+// CORE IMPORT
+//==========================
+@import 'core/core';
+
+// VENDORS IMPORT
+//==========================
+@import 'vendors/vendors';
+
+// MODULES IMPORT
+//==========================
+@import 'components/buttons';
+// @import 'components/social';
+@import 'components/avatar';
+@import 'components/article';
+@import 'components/title';
+@import 'components/copyright';
+@import 'components/navigation';
+@import 'components/profile';
+@import 'components/about';
+@import 'components/contact';
+@import 'components/info-item';
+@import 'components/table-skills';
+@import 'components/item-project';
+
+// OTHER STYLE IMPORT
+//==========================
+@import 'common';
+
+// MEDIA IMPORT
+//==========================
+@import 'media';

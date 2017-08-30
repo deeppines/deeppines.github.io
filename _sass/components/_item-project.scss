@@ -1,0 +1,37 @@
+//===============================
+//
+// ITEM PROJECT COMPONENT
+//
+//===============================
+
+.project-item {
+    margin-bottom: 50px;
+
+    &__header {
+
+        a {
+            font-size: 65%;
+            font-weight: 400;
+            color: $light-red-ochre;
+            margin: 0 15px;
+
+            &:hover {
+                opacity: .75;
+            }
+        }
+    }
+
+    &__thumbnail {
+        margin-bottom: 20px;
+    }
+
+    &__img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__caption {
+
+    }
+}

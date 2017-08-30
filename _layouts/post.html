@@ -1,0 +1,34 @@
+---
+layout: index
+---
+
+<article class="article typeset" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="article__header">
+        <h1 itemprop="name headline">{{ page.title }}</h1>
+        <div class="article__date">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%d %B %Y" }}</time>
+            {% if page.author %}
+            • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="article__content" itemprop="articleBody">
+        {{ content }}
+    </div>
+    <div class="article__footer">
+        <div class="article__col">
+            <a href="{{ site.baseurl }}/" class="btn btn_default">Back</a>
+        </div>
+        <div class="article__col article__col_right">
+            <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+            <script src="//yastatic.net/share2/share.js"></script>
+            <div class="ya-share2" data-services="twitter,facebook,vkontakte,telegram"></div>
+        </div>
+    </div>
+</article>
+
+<div class="post-comment">
+    {% include disqus.html %}
+</div>

@@ -1,0 +1,68 @@
+//===============================
+//
+// INFO-ITEM COMPONENT
+//
+//===============================
+
+.info-item {
+    margin-bottom: 40px;
+
+    &_header {
+        line-height: 1;
+        margin-bottom: 15px;
+    }
+
+    &_name {
+        font-size: .8em;
+        text-transform: uppercase;
+        line-height: 1.2;
+        display: block;
+        color: $gunmetal;
+    }
+
+    &_sub {
+        font-size: .7em;
+        color: $gunmetal;
+        margin-right: 15px;
+        opacity: .65;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        .fa {
+            margin-right: 8px;
+        }
+
+        &-sup {
+            font-size: 80%;
+            vertical-align: super;
+        }
+
+        a {
+            color: $light-red-ochre;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &_text {
+        font-size: .8em;
+        font-weight: 300;
+        line-height: 1.5;
+
+        p {
+            margin-bottom: 20px;
+        }
+    }
+
+    &_keyproject {
+
+        span {
+            display: block;
+            font-weight: bold;
+        }
+    }
+}

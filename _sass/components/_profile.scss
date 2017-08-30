@@ -1,0 +1,42 @@
+//===============================
+//
+// PROFILE COMPONENT
+//
+//===============================
+
+.profile {
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 25px;
+
+    &-avatar {
+        width: 150px;
+        height: 150px;
+        border: 2px solid $light-red-ochre;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        &_center {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &__img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &-name {
+        margin-bottom: 10px;
+        color: $gunmetal;
+    }
+
+    &-profession {
+        font-size: .7em;
+        color: $gunmetal;
+    }
+}

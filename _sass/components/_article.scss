@@ -1,0 +1,61 @@
+//===============================
+//
+// ARTICLE COMPONENT
+//
+//===============================
+
+.article {
+    max-width: 650px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 25px;
+
+    &__header {
+
+        .h2 {
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-bottom: .3rem;
+            margin-top: 0;
+        }
+
+        a {
+            color: $light-red-ochre;
+            text-decoration: none;
+
+            &:hover {
+
+                .fa {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .fa {
+            opacity: .2;
+            transition: opacity .3s;
+        }
+    }
+
+    &__date {
+        font-size: .9rem;
+        font-weight: 300;
+        line-height: 1;
+        margin-bottom: .9rem;
+        color: $gray-light;
+    }
+
+    &__footer {
+        @include clearfix();
+        padding: 1.5rem 0;
+    }
+
+    &__col {
+        width: 50%;
+        float: left;
+
+        &_right {
+            text-align: right;
+        }
+    }
+}

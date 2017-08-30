@@ -1,0 +1,46 @@
+// scss-lint:disable all
+//====================================//
+//
+//    Mixins library ver 0.1
+//
+//===================================//
+
+
+/// Clearfix
+
+@mixin clearfix {
+    *zoom: 1;
+
+    &::before,
+    &::after {
+        display: table;
+        content: '';
+    }
+
+    &::after {
+        clear: both;
+    }
+}
+
+/// Placeholder text
+/// $color [#eee] - placeholder color
+///
+
+@mixin placeholder($color: #eee ) {
+    // Firefox
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+    }
+
+    &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+    &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+/// No list style
+
+@mixin nolist {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

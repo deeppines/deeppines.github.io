@@ -1,0 +1,20 @@
+//===============================
+//
+// COPYRIGHT COMPONENT
+//
+//===============================
+
+.copyright {
+    font-size: .85rem;
+    line-height: 1.4;
+    color: $gray-light;
+    margin-bottom: 0;
+
+    a {
+        color: $light-red-ochre;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+// scss-lint:disable all
+//===============================
+//
+// BASE COLOR VARIABLES
+//
+//===============================
+
+//== Colors
+//
+//## Gray colors for use across Bootstrap.
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%)   !default; // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+
+$wight: #fff;
+$black: #000;
+
+//== Brand colors
+//
+//## Brand colors for use on website
+
+$gunmetal:         #293241;
+$light-red-ochre:  #EE6C4D;
+$purple-navy:      #3D5A80;
+$pale-cerulian:    #98C1D9;
+$light-cyan:       #E0FBFC;
