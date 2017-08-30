@@ -28,7 +28,7 @@ sass:
     style: :compressed
 plugins:
   - jekyll-feed
-  # - jekyll-sitemap
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -50,4 +50,4 @@ author: deeppines
 email: atheus92@gmail.com
 
 github:
-    username: deeppines
+    username: github/deeppines
