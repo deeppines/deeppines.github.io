@@ -17,10 +17,6 @@
         transition: all .3s;
         text-decoration: none;
 
-        span {
-            color: $light-red-ochre;
-        }
-
         &:focus {
             color: $wight;
         }
@@ -29,6 +25,10 @@
         &:active {
             color: $light-red-ochre;
         }
+    }
+
+    span {
+        color: $light-red-ochre;
     }
 
     // Small devices (landscape phones, less than 768px)

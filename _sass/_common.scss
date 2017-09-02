@@ -10,10 +10,18 @@ svg {
     float: left;
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    height: calc(100% - 70px);
+}
+
 .wrapper {
     width: 100%;
     max-width: 1140px;
-    margin: 45px auto;
+    margin: 45px auto 25px;
     box-shadow: 0 5px 15px 1px transparentize($black, .7);
 
     // Large devices (desktops, less than 1200px)
@@ -44,7 +52,7 @@ svg {
     }
 
     &_full {
-        min-height: calc(100% - 90px);
+        min-height: calc(100% - 70px);
     }
 
 }
