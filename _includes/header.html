@@ -1,16 +1,10 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <filter id="glass-filter">
-        <feGaussianBlur stdDeviation="5"></feGaussianBlur>
-    </filter>
-</svg>
+{% include filter.html %}
 
-<header class="header header_background header_glass txt-xs-center">
+<header class="header header_background header_glass txt-xs-center" role="banner">
     <div class="avatar avatar_center">
         <img class="avatar__img" src="/images/avatar.jpg" alt="deeppines">
     </div>
-    <h1 class="title">
-        <a class="title__link" href="{{ site.baseurl }}/">
-            <span>lk</span>blog
-        </a>
-    </h1>
+    <div class="title">
+        <span>lk</span><a class="title__link" href="{{ site.baseurl }}/">blog</a>
+    </div>
 </header>
