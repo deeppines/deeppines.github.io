@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% include head.html %}
+
+<body>
+    <div class="wrapper wrapper_full">
+
+        {% include header-nav.html %}
+
+        <div class="flex-container">
+
+            <main class="main" role="main">
+                {{ content }}
+            </main>
+
+            {% include footer.html %}
+        </div>
+    </div>
+</body>
+
+</html>
