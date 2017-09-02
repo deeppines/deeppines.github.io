@@ -1,14 +1,22 @@
----
-layout: index
----
-<article class="article">
+<!DOCTYPE html>
+<html lang="ru">
 
-    <header class="article__header">
-        <h1>{{ page.title }}</h1>
-    </header>
+{% include head.html %}
 
-    <div class="article__content">
-        {{ content }}
+<body>
+    <div class="wrapper wrapper_full">
+
+        {% include header.html %}
+
+        <div class="flex-container">
+
+            <main class="main" role="main">
+                {{ content }}
+            </main>
+
+            {% include footer.html %}
+        </div>
     </div>
+</body>
 
-</article>
+</html>
