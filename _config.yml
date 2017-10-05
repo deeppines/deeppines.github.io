@@ -42,9 +42,9 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-domain: lkblog.ru
-url: "http://lkblog.ru" # the base hostname & protocol for your site, e.g. http://example.com
-title: lkblog
+domain: deeppines.github.io
+url: "https://deeppines.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+title: deeppines
 description: Записная книжка одного HTML/CSS кодера
 author: deeppines
 email: atheus92@gmail.com
