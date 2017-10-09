@@ -7,12 +7,16 @@
 .nav {
     display: inline-block;
     margin: 20px auto 0;
-    // font-family: $site-font;
     font-weight: 300;
     font-size: .75em;
     text-transform: uppercase;
     line-height: 1;
     color: $wight;
+
+    // Small devices (landscape phones, less than 768px)
+    @media (max-width: 767px) {
+        margin: 15px auto 0;
+    }
 
 
     &__link {

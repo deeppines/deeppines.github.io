@@ -9,15 +9,30 @@
 
     &__header {
 
-        a {
-            font-size: 65%;
-            font-weight: 400;
-            color: $light-red-ochre;
-            margin: 0 15px;
+    }
 
-            &:hover {
-                opacity: .75;
-            }
+    &__name,
+    &__link {
+        display: inline-block;
+    }
+
+    &__name {
+        @media (max-width: 576px) {
+            display: block;
+        }
+    }
+
+    &__link {
+        font-weight: 400;
+        color: $light-red-ochre;
+        margin: 0 15px;
+
+        @media (max-width: 576px) {
+            margin: 0 0 10px 0;
+        }
+
+        &:hover {
+            opacity: .75;
         }
     }
 
