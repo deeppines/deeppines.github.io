@@ -1,0 +1,7 @@
+---
+layout: default
+title:  "WeGame"
+link: "https://wegame.com.ua/ru"
+thumbnail: "/images/wegame.com.ua.jpg"
+date: 2016-08-01
+---

@@ -1,0 +1,7 @@
+---
+layout: default
+title: "Robotics Expo"
+link: "https://robot-ex.ru"
+thumbnail: "/images/robot-ex.jpg"
+date: 2017-09-01
+---
