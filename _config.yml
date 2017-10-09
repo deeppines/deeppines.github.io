@@ -51,3 +51,7 @@ email: atheus92@gmail.com
 
 github:
     username: deeppines
+
+collections:
+  projects:
+    output: true
