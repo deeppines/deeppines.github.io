@@ -1,5 +1,4 @@
 ---
-layout: default
 title:  "WeGame"
 link: "https://wegame.com.ua/ru"
 thumbnail: "/images/wegame.com.ua.jpg"

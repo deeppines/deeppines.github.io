@@ -1,5 +1,4 @@
 ---
-layout: default
 title: "ICO EVENT"
 link: "https://icoevent.ru"
 thumbnail: "/images/icoevent.jpg"

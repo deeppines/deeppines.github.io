@@ -1,5 +1,4 @@
 ---
-layout: default
 title: "ESPORTS conference"
 link: "https://esportconf.ru"
 thumbnail: "/images/esportconf.jpg"

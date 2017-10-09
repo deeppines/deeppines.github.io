@@ -1,5 +1,4 @@
 ---
-layout: default
 title: "ChatBot Conference"
 link: "https://chatbotconf.ru"
 thumbnail: "/images/chatbotconf.jpg"
