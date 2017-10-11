@@ -43,7 +43,7 @@ plugins:
 #   - vendor/ruby/
 
 domain: deeppines.github.io
-url: "https://deeppines.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://deeppines.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 title: deeppines
 description: Записная книжка одного HTML/CSS кодера
 author: deeppines
