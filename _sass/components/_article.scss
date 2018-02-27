@@ -25,13 +25,14 @@
 
             &:hover {
 
-                .fa {
+                .fas {
                     opacity: 1;
                 }
             }
         }
 
-        .fa {
+        .fas {
+            font-size: .875rem;
             opacity: .2;
             transition: opacity .3s;
         }
