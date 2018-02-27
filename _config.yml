@@ -14,34 +14,39 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+# Handling Reading
+exclude: [
+  'Gemfile',
+  'Gemfile.lock',
+  'README.md',
+  '.editorconfig',
+  'node_modules',
+  'vendor/bundle/',
+  'vendor/cache/',
+  'vendor/gems/',
+  'vendor/ruby/',
+]
+keep_files: ['.git', '.svn']
 encoding: utf-8
+markdown_ext: 'markdown,mkdown,mkdn,mkd,md'
 
-# Настройка постоянных ссылок
-permalink: "/:title/"
+# Plugins
+plugins: [
+  'jekyll-feed',
+  'jekyll-sitemap'
+]
 
-# Build settings
+# Conversion
 markdown: kramdown
 highlighter: rouge
+
+# Outputting
+permalink: "/:title/"
 sitemap: true
-theme:
 sass:
     style: :compressed
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
+# Other setting
 domain: deeppines.github.io
 url: "https://deeppines.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 title: deeppines
