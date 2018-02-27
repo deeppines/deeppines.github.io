@@ -5,5 +5,7 @@
     </p>
 </footer>
 
-{% include google-analytics.html %}
-{% include yandex-metrika.html %}
+{% if jekyll.environment == "production" %}
+    {% include google-analytics.html %}
+    {% include yandex-metrika.html %}
+{% endif %}
