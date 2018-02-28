@@ -2,7 +2,6 @@
 layout: post
 title:  "Генерация SSH ключа в Windows."
 date:   2016-09-26
-categories: git
 ---
 
 Небольшая памятка по генерации ssh ключа в операционной системе Windows.
@@ -17,11 +16,13 @@ $ ssh-keygen -t rsa -C "your@mail.com"
 Далее последует запрос на ввод пароля для ключа, если ненужна дополнительная защита можно просто оставить пароль пустым и жать Enter.
 
 Чтобы посмотреть публичный ключ вбиваем в консольке следующую строчку:
+
 {% highlight git %}
 $ cat ~/.ssh/id_rsa.pub
 {% endhighlight %}
 
 Ответ будет примерно таким:
+
 {% highlight git %}
 $ cat ~/.ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9Tjom/BWDSU
@@ -32,7 +33,7 @@ mZ+AW4OZPnTPI89ZPmVMLuayrD2cE86Z/il8b+gw3r3+1nKatmIkjn2so1d01QraTlMqVSsbx
 NrRFi9wrf+M7Q== schacon@agadorlaptop.local
 {% endhighlight %}
 
-Копировать в git нужно все, начиная от <code>ssh-rsa</code>
+Копировать в git нужно все, начиная от `ssh-rsa`
 
 На этом собственно все, ну почти.
 
@@ -43,13 +44,16 @@ NrRFi9wrf+M7Q== schacon@agadorlaptop.local
 ### SSH Agent
 
 Для начала нужно запустить ssh agent в который мы будем добавлять наш ключ.
+
 {% highlight git %}
 $ eval `ssh-agent`
 {% endhighlight %}
-В таком варианте запущенный ssh-agent, будет передан команде eval, которая выполнит его в текущей оболочке. 
+
+В таком варианте запущенный ssh-agent, будет передан команде eval, которая выполнит его в текущей оболочке.
 Обратите внимание, используются обратные кавычки, а не обычные!
 
-Теперь помещаем сгенерированный ключ с помощью команды: 
+Теперь помещаем сгенерированный ключ с помощью команды:
+
 {% highlight git %}
 $ ssh-add
 {% endhighlight %}
