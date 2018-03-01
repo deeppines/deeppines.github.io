@@ -3,7 +3,26 @@
     <div class="avatar avatar_center">
         <img class="avatar__img" src="/images/avatar.jpg" alt="deeppines">
     </div>
-    <div class="title">
-        <span>deep</span><a class="title__link" href="{{ site.baseurl }}/">pines</a>
-    </div>
+
+    {% if page.url == '/' %}
+        <h1 class="title">
+            <span>deep</span><a class="title__link" href="{{ site.baseurl }}/">pines</a>
+        </h1>
+    {% else %}
+        <div class="title">
+            <span>deep</span><a class="title__link" href="{{ site.baseurl }}/">pines</a>
+        </div>
+    {% endif %}
+
+    {% if page.url == '/cv/' %}
+    <nav class="nav">
+        <a class="nav__link nav__link_active" href="{{ site.baseurl }}/cv">CV</a>
+        <a class="nav__link" href="{{ site.baseurl }}/projects">Portfolio</a>
+    </nav>
+    {% elsif page.url == '/projects/' %}
+    <nav class="nav">
+        <a class="nav__link" href="{{ site.baseurl }}/cv">CV</a>
+        <a class="nav__link nav__link_active" href="{{ site.baseurl }}/projects">Portfolio</a>
+    </nav>
+    {% endif %}
 </header>
