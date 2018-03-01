@@ -29,14 +29,14 @@ categories: soft
 
 Пример конфигурации для Flex Tool Bar
 
-<p data-height="480" data-theme-id="0" data-slug-hash="aJrNMm" data-default-tab="js"
-data-user="lucaskane" data-embed-version="2"
-data-pen-title="Config for Flex Tool Bar" class="codepen">See the Pen
-<a href="https://codepen.io/lucaskane/pen/aJrNMm/">Config for Flex Tool Bar</a>
-by Lucas Kane (<a href="https://codepen.io/lucaskane">@lucaskane</a>) on
-<a href="https://codepen.io">CodePen</a>.</p>
-
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p data-height="480" data-theme-id="0" data-slug-hash="aJrNMm"
+data-default-tab="result" data-user="deeppines"
+data-embed-version="2" data-pen-title="Config for Flex Tool Bar"
+class="codepen">See the Pen <a href="https://codepen.io/deeppines/pen/aJrNMm/">
+Config for Flex Tool Bar</a> by Lucas Kane
+(<a href="https://codepen.io/deeppines">@deeppines</a>)
+on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 ## Проверка кода
 
@@ -57,6 +57,7 @@ by Lucas Kane (<a href="https://codepen.io/lucaskane">@lucaskane</a>) on
 * [firewatch-syntax][firewatch-syntax] - подсветка синтаксиса Firewatch.
 * [file-icons][file-icons] - иконки для файлов.
 
+[file-icons]: https://atom.io/packages/file-icons
 [atom-beautify]: https://atom.io/packages/atom-beautify
 [atom-bootstrap3]: https://atom.io/packages/atom-bootstrap3
 [emmet]: https://atom.io/packages/emmet
