@@ -121,9 +121,10 @@ function onPlayerReady(event) {
 закрыто окно, а при нажатии на кнопку два грузится новое видео.
 
 <p data-height="485" data-theme-id="0" data-slug-hash="KgvGpN"
-data-default-tab="html,result" data-user="lucaskane" data-embed-version="2"
-class="codepen">See the Pen <a href="http://codepen.io/lucaskane/pen/KgvGpN/">
+data-default-tab="result" data-user="deeppines" data-embed-version="2"
+data-pen-title="Youtube video on modal popup." class="codepen">
+See the Pen <a href="https://codepen.io/deeppines/pen/KgvGpN/">
 Youtube video on modal popup.</a> by Lucas Kane
-(<a href="http://codepen.io/lucaskane">@lucaskane</a>) on
-<a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+(<a href="https://codepen.io/deeppines">@deeppines</a>) on
+<a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
