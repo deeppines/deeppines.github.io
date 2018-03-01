@@ -5,16 +5,13 @@
 //===============================
 
 .article {
-    max-width: 650px;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
     margin-bottom: 25px;
 
     &__header {
 
         .h2 {
-            font-weight: 400;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: .3rem;
             margin-top: 0;
         }

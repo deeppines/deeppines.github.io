@@ -15,16 +15,14 @@ html {
 }
 
 body {
-    height: calc(100% - 70px);
-}
-
-.wrapper {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    max-width: 980px;
-    min-height: 100%;
-    margin: 45px auto 25px;
+    max-width: 960px;
+    min-height: calc(100% - 50px);
+    margin: 25px auto;
+    background: transparent;
     box-shadow: 0 5px 15px 1px transparentize($black, .7);
 
     // Large devices (desktops, less than 1200px)
@@ -118,27 +116,13 @@ body {
     }
 }
 
-.aside {
-    @include clearfix();
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     width: 100%;
-    max-width: 30%;
-    min-height: 100%;
-    margin: 0 auto;
-    padding: 45px 15px;
-
-    // Medium devices (tablets, less than 992px)
-    @media (max-width: 991px) {
-        transition: max-width .4s;
-        max-width: none;
-        height: auto;
-        min-height: 50%;
-    }
-
-}
-
-.main {
-    width: 100%;
-    max-width: 70%;
+    max-width: 680px;
     min-height: 100%;
     margin: 0 auto;
     padding: 45px 15px;
@@ -151,10 +135,11 @@ body {
     }
 }
 
-.footer {
+footer {
     width: 100%;
     padding: 15px;
     align-self: flex-end;
+    text-align: center;
 }
 
 .info {
@@ -181,16 +166,4 @@ body {
         margin-bottom: 3rem;
         color: $gunmetal;
     }
-}
-
-.post-comment {
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.page-wrap {
-    max-width: 650px;
-    margin-right: auto;
-    margin-left: auto;
 }
