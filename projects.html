@@ -3,24 +3,22 @@ layout: page-nav
 title: Portfolio
 ---
 
-<div class="page-wrap">
-    <section class="projects">
-        <h1 class="projects__header">Портфолио</h1>
+<section class="projects">
+    <h1 class="projects__header">Портфолио</h1>
 
-        {% for project in site.projects reversed %}
-        <div class="project-item">
-            <div class="project-item__header">
-                <h2 class="project-item__name">{{ project.title }}</h2>
-                <a class="project-item__link" href="{{ project.link }}" rel="nofollow" target="_blank">Visit website</a>
-            </div>
-            <div class="project-item__thumbnail">
-                <img class="project-item__img" src="{{ project.thumbnail }}" alt="{{ project.title }}">
-            </div>
-            <div class="project-item__caption">
-                {{ project.content }}
-            </div>
+    {% for project in site.projects reversed %}
+    <div class="project-item">
+        <div class="project-item__header">
+            <h2 class="project-item__name">{{ project.title }}</h2>
+            <a class="project-item__link" href="{{ project.link }}" rel="nofollow" target="_blank">Visit website</a>
         </div>
-        {% endfor %}
-    </section>
-</div>
+        <div class="project-item__thumbnail">
+            <img class="project-item__img" src="{{ project.thumbnail }}" alt="{{ project.title }}">
+        </div>
+        <div class="project-item__caption">
+            {{ project.content }}
+        </div>
+    </div>
+    {% endfor %}
+</section>
 
