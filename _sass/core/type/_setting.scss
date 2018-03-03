@@ -87,9 +87,16 @@ p {
 
 // Code setting
 
-code, kbd, samp {
+code,
+kbd,
+samp,
+var {
     font-family: $font-code;
-    font-size: .9rem;
+    font-size: 87.5%;
+}
+
+code {
+    color: $pines-green;
 }
 
 // Link setting
