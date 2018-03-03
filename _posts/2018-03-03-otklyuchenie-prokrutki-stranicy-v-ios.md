@@ -27,5 +27,7 @@ function enableScroll() {
 };
 {% endhighlight %}
 
-Вот собственно и все, что требуется. Не забудьте подключить JQuery
+Вот собственно и все, что требуется. Не забудьте подключить [JQuery][jquery]
 и вызвать функции там где вам необходимо.
+
+[jquery]:http://jquery.com/download/
