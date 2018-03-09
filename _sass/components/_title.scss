@@ -32,6 +32,10 @@
         color: $light-red-ochre;
     }
 
+    &_cv {
+        margin-bottom: 2rem;
+    }
+
     // Small devices (landscape phones, less than 768px)
     @media (max-width: 767px) {
         font-size: 2rem;
