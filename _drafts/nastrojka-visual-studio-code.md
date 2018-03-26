@@ -25,10 +25,10 @@ categories: soft
 
 ### Проверка кода
 
-- ESLint
-- Sass Lint
-- puglint
-- markdownlint
+- ESLint - проверка JavaScript
+- Sass Lint - проверка Sass стилей
+- puglint - проверка Pug синтаксиса
+- markdownlint - проверка Markdown синтаксиса
 
 ### Темы и украшательства
 
