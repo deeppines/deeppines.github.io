@@ -7,6 +7,10 @@
 .info-item {
     margin-bottom: 40px;
 
+    &:last-child {
+        margin-bottom: 0;
+    }
+
     &_header {
         line-height: 1;
         margin-bottom: 15px;

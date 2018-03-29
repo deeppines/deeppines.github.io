@@ -9,7 +9,15 @@
             </span>
             <span class="info-item_sub">
                 <i class="far fa-calendar" aria-hidden="true"></i>Jan 2016 — until now
-                <sup class="info-item_sub-sup">2 years 1 month</sup>
+                <sup class="info-item_sub-sup">
+                    {% capture start_year %}   {{"Jan, 2016" | date: "%Y"}} {% endcapture %}
+                    {% capture finish_year %}  {{"now" | date: "%Y"}}  {% endcapture %}
+                    {% capture work_month %}   {{"now" | date: "%m"}}  {% endcapture %}
+
+                    {% capture work_year %}  {{ finish_year | minus: start_year }} {% endcapture %}
+
+                    {{work_year}} years {{work_month | remove_first: "0"}} months
+                </sup>
             </span>
         </div>
         <div class="info-item_text">
@@ -38,7 +46,7 @@
             </span>
             <span class="info-item_sub">
                 <i class="far fa-calendar" aria-hidden="true"></i>Jul 2014 — May 2015
-                <sup class="info-item_sub-sup">11 Months</sup>
+                <sup class="info-item_sub-sup">11 month</sup>
             </span>
         </div>
         <div class="info-item_text">
