@@ -5,7 +5,7 @@
 //===============================
 
 .nav {
-    display: inline-block;
+    display: block;
     margin: 20px auto 0;
     font-weight: 300;
     font-size: .75em;
@@ -20,8 +20,13 @@
 
 
     &__link {
+        display: inline-block;
         color: inherit;
-        padding: 0 10px;
+        padding: 3px 10px;
+        border-radius: 2px;
+        background-color: transparentize($color: #000000, $amount: .7);
+        text-decoration: none;
+        text-shadow: 0 0 1px transparentize($color: #000000, $amount: .5);
 
         &:hover {
             color: $light-red-ochre;
