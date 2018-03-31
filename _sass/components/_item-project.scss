@@ -7,10 +7,6 @@
 .project-item {
     margin-bottom: 50px;
 
-    &__header {
-
-    }
-
     &__name,
     &__link {
         display: inline-block;
@@ -44,9 +40,5 @@
         display: block;
         max-width: 100%;
         height: auto;
-    }
-
-    &__caption {
-
     }
 }
