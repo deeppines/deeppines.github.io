@@ -17,19 +17,19 @@ categories: soft
 ### Основные
 
 - [Beautify][beautify] - плагин для форматирования кода.
-- [EditorConfig for VS Code][editorConfig]
-- [HTML CSS Support][htmlcsssupport]
+- [EditorConfig for VS Code][editorConfig] плагин для чтения установок редактора из файла `.editorconfig`.
+- [HTML CSS Support][htmlcsssupport] плагин добавляющий поддержку автодополнения CSS классов в HTML файлах и не только.
 - [Settings Sync][settingssync] - полезный плагин для хранения и синхронизации настроек VSC на разных ПК.
-- [Atom Keymap][atom-keymap] - плагин для портирования горячих клавишь из Atom.
+- [Atom Keymap][atom-keymap] - плагин для портирования горячих клавиш из Atom.
 
 ### Проверка кода
 
 Набор линтеров для front-end разработки.
 
-- [ESLint][eslint] - проверка JavaScript
-- [Sass Lint][sass-lint] - проверка Sass стилей
-- [puglint][puglint] - проверка Pug синтаксиса
-- [markdownlint][markdownlint] - проверка Markdown синтаксиса
+- [ESLint][eslint] - проверка JavaScript.
+- [Sass Lint][sass-lint] - проверка Sass стилей.
+- [puglint][puglint] - проверка Pug синтаксиса.
+- [markdownlint][markdownlint] - проверка Markdown синтаксиса.
 
 ### Темы и украшательства
 
