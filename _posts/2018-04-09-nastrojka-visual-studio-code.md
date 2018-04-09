@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Настройка Visual Studio Code"
+date:   2018-04-09
 categories: soft
 ---
 
