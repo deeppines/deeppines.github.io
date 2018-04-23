@@ -3,7 +3,7 @@ layout: post
 title:  "Набор кнопок"
 ---
 
-Небольшой набор кнопок для различных магазинов.
+Небольшой набор кнопок.
 В наборе используется библиотека [FontAwesome][font-awesome]
 
 [font-awesome]: https://fontawesome.com
