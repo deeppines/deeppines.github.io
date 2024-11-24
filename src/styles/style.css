@@ -1,0 +1,16 @@
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    display: block;
+}
