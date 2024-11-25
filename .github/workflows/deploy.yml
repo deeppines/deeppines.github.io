@@ -35,6 +35,8 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+      - name: Enable Corepack
+        run: corepack enable
       - name: Install dependencies
         run: yarn
       - name: Build
