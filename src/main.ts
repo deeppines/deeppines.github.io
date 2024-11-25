@@ -1,4 +1,4 @@
-import './styles/style.css';
+import './styles/style.scss';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <header>
