@@ -1052,8 +1052,8 @@ __metadata:
     "@eslint/js": "npm:9.15.0"
     eslint: "npm:9.15.0"
     globals: "npm:15.12.0"
-    husky: "npm:^9.1.7"
-    lint-staged: "npm:^15.2.10"
+    husky: "npm:9.1.7"
+    lint-staged: "npm:15.2.10"
     normalize.css: "npm:8.0.1"
     prettier: "npm:3.4.1"
     sass: "npm:1.81.0"
@@ -1616,7 +1616,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^9.1.7":
+"husky@npm:9.1.7":
   version: 9.1.7
   resolution: "husky@npm:9.1.7"
   bin:
@@ -1834,7 +1834,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^15.2.10":
+"lint-staged@npm:15.2.10":
   version: 15.2.10
   resolution: "lint-staged@npm:15.2.10"
   dependencies:
