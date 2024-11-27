@@ -28,6 +28,8 @@
     "normalize.css": "8.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.6.0",
+    "@commitlint/config-conventional": "19.6.0",
     "@eslint/js": "9.15.0",
     "eslint": "9.15.0",
     "globals": "15.12.0",
