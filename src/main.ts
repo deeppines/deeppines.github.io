@@ -1,7 +1,10 @@
+import footer from './components/footer/footer';
+import header from './components/header/header';
+
 import './styles/style.scss';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <header>
-    <h1>Soon...</h1>
-  </header>
+  ${header()}
+  <main></main>
+  ${footer()}
 `;
