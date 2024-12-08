@@ -1,7 +1,12 @@
+import style from './footer.module.scss';
+
 const footer = () => {
+  const since = '2020';
+  const current = new Date().getFullYear();
+
   return `
-    <footer>
-      <p>© 2024</p>
+    <footer class=${style.root}>
+      <p>©${since}-${current}</p>
     </footer>
   `;
 };
