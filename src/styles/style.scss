@@ -22,9 +22,9 @@ footer {
 }
 
 main {
-  flex-grow: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 h1,

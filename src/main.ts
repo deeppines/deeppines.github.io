@@ -5,6 +5,10 @@ import './styles/style.scss';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${header()}
-  <main></main>
+  <main>
+    <section>
+      <h2>Projects</h2>
+    </section>
+  </main>
   ${footer()}
 `;
