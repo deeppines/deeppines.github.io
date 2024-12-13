@@ -836,6 +836,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tabler/icons@npm:^3.24.0":
+  version: 3.24.0
+  resolution: "@tabler/icons@npm:3.24.0"
+  checksum: 10c0/7f8abb6175a7c233cbe38aaac3b1198b312b9d873c6276d06fa48a9616397bfeac93ba850023940678471da61868c57efed45653c6ab450608f63ff78a49d6b5
+  languageName: node
+  linkType: hard
+
 "@types/conventional-commits-parser@npm:^5.0.0":
   version: 5.0.1
   resolution: "@types/conventional-commits-parser@npm:5.0.1"
@@ -1410,6 +1417,7 @@ __metadata:
     "@commitlint/cli": "npm:19.6.0"
     "@commitlint/config-conventional": "npm:19.6.0"
     "@eslint/js": "npm:9.16.0"
+    "@tabler/icons": "npm:^3.24.0"
     eslint: "npm:9.16.0"
     globals: "npm:15.13.0"
     husky: "npm:9.1.7"
