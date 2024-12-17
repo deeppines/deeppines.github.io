@@ -1,5 +1,6 @@
 import copyright from '../copyright/copyright';
 import socials from '../socials/socials';
+
 import style from './footer.module.scss';
 
 const footer = () => {

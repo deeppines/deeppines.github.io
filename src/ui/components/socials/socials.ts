@@ -1,7 +1,7 @@
+import styles from './socials.module.scss';
+
 import iconGithub from '@tabler/icons/outline/brand-github.svg?raw';
 import iconTelegram from '@tabler/icons/outline/brand-telegram.svg?raw';
-
-import styles from './socials.module.scss';
 
 const socials = () => {
   return `
