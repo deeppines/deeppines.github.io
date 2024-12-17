@@ -1419,7 +1419,7 @@ __metadata:
     "@eslint/js": "npm:9.17.0"
     "@tabler/icons": "npm:3.26.0"
     eslint: "npm:9.17.0"
-    eslint-plugin-simple-import-sort: "npm:^12.1.1"
+    eslint-plugin-simple-import-sort: "npm:12.1.1"
     globals: "npm:15.13.0"
     husky: "npm:9.1.7"
     lint-staged: "npm:15.2.11"
@@ -1614,7 +1614,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-simple-import-sort@npm:^12.1.1":
+"eslint-plugin-simple-import-sort@npm:12.1.1":
   version: 12.1.1
   resolution: "eslint-plugin-simple-import-sort@npm:12.1.1"
   peerDependencies:
