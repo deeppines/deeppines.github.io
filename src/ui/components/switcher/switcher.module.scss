@@ -3,7 +3,7 @@
   display: block;
   width: 54px;
   height: 30px;
-  background-color: #ccc;
+  background-color: var(--color-accent);
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
@@ -14,7 +14,7 @@
   display: none;
 
   &:checked + .switcherSlider {
-    background-color: #2196f3;
+    background-color: var(--color-link);
   }
 }
 
@@ -24,7 +24,7 @@
   left: 3px;
   width: 24px;
   height: 24px;
-  background-color: #fff;
+  background-color: var(--color-background);
   border-radius: 50%;
   transition: transform 0.3s ease-in-out;
 
@@ -58,7 +58,7 @@
   transform: translateX(24px);
 
   & > span {
-    color: #fff;
+    color: var(--color-text);
   }
 
   & > span:nth-child(1) {

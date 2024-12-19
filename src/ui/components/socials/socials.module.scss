@@ -12,12 +12,16 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  color: black;
+  color: var(--color-text);
   cursor: pointer;
-  transition: color 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   text-decoration: none;
 
   &:hover {
-    color: gray;
+    opacity: 0.8;
+  }
+
+  [data-theme='dark'] & {
+    color: var(--color-link);
   }
 }
