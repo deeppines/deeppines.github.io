@@ -1,0 +1,71 @@
+.switcher {
+  position: relative;
+  display: block;
+  width: 54px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.switcherInput {
+  display: none;
+
+  &:checked + .switcherSlider {
+    background-color: #2196f3;
+  }
+}
+
+.switcherSlider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+
+  & > span {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transition:
+      opacity 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  & > span:nth-child(1) {
+    opacity: 1;
+  }
+
+  & > span:nth-child(2) {
+    opacity: 0;
+  }
+}
+
+.switcherInput:checked + .switcherSlider {
+  transform: translateX(24px);
+
+  & > span {
+    color: #fff;
+  }
+
+  & > span:nth-child(1) {
+    opacity: 0;
+  }
+
+  & > span:nth-child(2) {
+    opacity: 1;
+  }
+}

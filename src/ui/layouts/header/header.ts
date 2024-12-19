@@ -1,10 +1,12 @@
 import style from './header.module.scss';
 
+import switcher from '@/ui/components/switcher/switcher';
+
 const header = () => {
   return `
     <header class=${style.root}>
       <h1>Soon...</h1>
-      <div></div>
+      <div>${switcher()}</div>
     </header>
   `;
 };
