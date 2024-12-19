@@ -28,7 +28,7 @@ export default [
             // UI Components
             ['^@components'],
             // Assets
-            ['^@assets/'],
+            ['^@assets/', '^@tabler'],
             // Side effect imports.
             ['^\\u0000'],
             // Parent imports. Put `..` last.
