@@ -7,7 +7,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${header()}
   <main>
     <section>
-      <h2>Projects</h2>
+      
     </section>
   </main>
   ${footer()}
