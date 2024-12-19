@@ -21,32 +21,18 @@ export default [
         'warn',
         {
           groups: [
-            // Common types
-            ['^@?\\/types'],
-            // Common constants
-            ['^@constants?\\/'],
-            // Utils
-            ['^@?\\/utils'],
-            // Api
-            ['^@?\\/api'],
-            // Services
-            ['^@?\\/services'],
-            // UI Pages
-            ['^@?\\/ui\\/pages'],
             // UI Layouts
-            ['^@?\\/ui\\/layouts'],
+            ['^@layouts'],
             // UI Elements
-            ['^@?\\/ui\\/elements'],
+            ['^@elements'],
             // UI Components
-            ['^@?\\/ui\\/components'],
-            // UI Other
-            ['^@?\\/ui\\/[^ce]', '^@?\\/ui\\/e', '^@?\\/ui\\/c'],
+            ['^@components'],
+            // Assets
+            ['^@assets/'],
             // Side effect imports.
             ['^\\u0000'],
             // Parent imports. Put `..` last.
             ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-            // Utils relative imports.
-            ['^\\./utils'],
             // Components relative imports.
             ['^\\./components'],
             // Other relative imports. Put same-folder imports and `.` last.

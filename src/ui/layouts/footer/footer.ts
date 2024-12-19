@@ -1,5 +1,5 @@
-import copyright from '../../components/copyright/copyright';
-import socials from '../../components/socials/socials';
+import copyright from '@components/copyright/copyright';
+import socials from '@components/socials/socials';
 
 import style from './footer.module.scss';
 
