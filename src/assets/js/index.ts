@@ -8,6 +8,7 @@ function initTheme() {
   document.documentElement.setAttribute('data-theme', theme);
 }
 
+// @ts-expect-error This function used in HTML
 function changeTheme() {
   const theme = getTheme();
 
