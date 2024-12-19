@@ -1,7 +1,10 @@
+import style from './header.module.scss';
+
 const header = () => {
   return `
-    <header>
+    <header class=${style.root}>
       <h1>Soon...</h1>
+      <div></div>
     </header>
   `;
 };
