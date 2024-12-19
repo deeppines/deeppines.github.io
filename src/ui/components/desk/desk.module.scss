@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+
+  & > * {
+    max-width: calc(100% / 5 - 10px);
+  }
+}

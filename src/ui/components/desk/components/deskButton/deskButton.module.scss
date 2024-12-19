@@ -1,0 +1,44 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px 12px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-accent);
+  }
+
+  [data-theme='dark'] & {
+    color: var(--color-text);
+    background-color: var(--color-foreground);
+
+    &:hover {
+      background-color: var(--color-link);
+    }
+  }
+}
+
+.icon {
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.label {
+  flex-shrink: 1;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
