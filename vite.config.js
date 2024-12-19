@@ -25,6 +25,7 @@ export default defineConfig({
       },
     ],
   },
+  assetsInclude: ['**/*.ttf'],
   css: {
     preprocessorOptions: {
       scss: {
