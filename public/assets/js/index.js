@@ -1,9 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable unused-imports/no-unused-vars */
 initTheme();
 
 function getTheme(defaultTheme = 'dark') {
   return localStorage.getItem('theme') || defaultTheme;
 }
+
 function initTheme() {
   const theme = getTheme();
 
