@@ -11,6 +11,7 @@ export default [
     languageOptions: {
       globals: globals.browser,
     },
+    ignores: ['!public/**/*.js'],
   },
   {
     plugins: {

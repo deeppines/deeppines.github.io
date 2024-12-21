@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-function getTheme(defaultTheme: 'light' | 'dark' = 'dark') {
+initTheme();
+
+function getTheme(defaultTheme = 'dark') {
   return localStorage.getItem('theme') || defaultTheme;
 }
 function initTheme() {
@@ -8,7 +10,6 @@ function initTheme() {
   document.documentElement.setAttribute('data-theme', theme);
 }
 
-// @ts-expect-error This function used in HTML
 function changeTheme() {
   const theme = getTheme();
 
@@ -20,5 +21,3 @@ function changeTheme() {
     localStorage.setItem('theme', 'dark');
   }
 }
-
-initTheme();

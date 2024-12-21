@@ -26,5 +26,5 @@
       "@layouts/*": ["./src/ui/layouts/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "public/assets/js"]
 }
