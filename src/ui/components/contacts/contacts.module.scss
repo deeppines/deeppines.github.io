@@ -1,0 +1,36 @@
+.contacts {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: 576px) {
+    justify-content: center;
+  }
+}
+
+.contact {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.contactIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--color-text);
+}
+
+.contactLink {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: opacity 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
