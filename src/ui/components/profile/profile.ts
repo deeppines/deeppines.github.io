@@ -8,7 +8,7 @@ const profile = () => {
     <div class="${styles.profile}">
       <div class="${styles.header}">
         <div class="${styles.headerLeft}">
-          <div>
+          <div class="${styles.headerInfo}">
             <h1>Кирдяшкин Егор</h1>
             <p>Frontend developer</p>
           </div>
@@ -21,7 +21,7 @@ const profile = () => {
       </div>
 
       <div class="${styles.description}">
-        <p></p>
+        <p>Занимаюсь разработкой UI сайтов и не только. Верстаю и пишу логику компонентов на React и Typescript.</p>
       </div>
     </div>
   `;
