@@ -42,8 +42,9 @@ export default defineConfig({
         description: 'Frontend developer',
         image: {
           url: 'https://github.com/deeppines.png',
-          width: 150,
-          height: 150,
+          secureUrl: 'https://github.com/deeppines.png',
+          width: 200,
+          height: 200,
           alt: 'Кирдяшкин Егор',
           type: 'image/png',
         },
