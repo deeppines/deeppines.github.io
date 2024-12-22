@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.25;
+  line-height: 1.5;
 }
 
 .bold {
@@ -45,6 +45,10 @@ h6 {
 
 h1 {
   font-size: var(--text-size-4xl);
+
+  @media (max-width: 576px) {
+    font-size: var(--text-size-3xl);
+  }
 }
 
 h2 {

@@ -1,7 +1,7 @@
 .profile {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .header {
@@ -20,6 +20,12 @@
 
 .headerLeft,
 .headerRight {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.headerInfo {
   display: flex;
   flex-direction: column;
   gap: 5px;
