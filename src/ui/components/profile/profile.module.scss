@@ -7,7 +7,6 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
 
   @media (max-width: 576px) {
     flex-direction: column;
@@ -27,9 +26,13 @@
 }
 
 .headerLeft {
+  justify-content: space-between;
+
   @media (max-width: 576px) {
+    text-align: center;
     align-self: center;
     order: 1;
+    gap: 20px;
   }
 }
 
