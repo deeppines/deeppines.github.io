@@ -1420,7 +1420,7 @@ __metadata:
     "@tabler/icons": "npm:3.26.0"
     eslint: "npm:9.17.0"
     eslint-plugin-simple-import-sort: "npm:12.1.1"
-    eslint-plugin-unused-imports: "npm:^4.1.4"
+    eslint-plugin-unused-imports: "npm:4.1.4"
     globals: "npm:15.14.0"
     husky: "npm:9.1.7"
     lint-staged: "npm:15.2.11"
@@ -1624,7 +1624,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unused-imports@npm:^4.1.4":
+"eslint-plugin-unused-imports@npm:4.1.4":
   version: 4.1.4
   resolution: "eslint-plugin-unused-imports@npm:4.1.4"
   peerDependencies:
