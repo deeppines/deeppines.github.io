@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'url';
 import { defineConfig } from 'vite';
+import ogPlugin from 'vite-plugin-open-graph';
 
 export default defineConfig({
   server: {
@@ -33,4 +34,23 @@ export default defineConfig({
       },
     },
   },
+  plugins: [
+    ogPlugin({
+      basic: {
+        title: 'Кирдяшкин Егор',
+        type: 'website',
+        description: 'Frontend developer',
+        image: {
+          url: 'https://github.com/deeppines.png',
+          width: 150,
+          height: 150,
+          alt: 'Кирдяшкин Егор',
+          type: 'image/png',
+        },
+        url: 'https://deeppines.github.io',
+        locale: 'ru-RU',
+        siteName: 'deeppines.github.io',
+      },
+    }),
+  ],
 });

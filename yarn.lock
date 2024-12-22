@@ -1430,6 +1430,7 @@ __metadata:
     typescript: "npm:5.7.2"
     typescript-eslint: "npm:8.18.1"
     vite: "npm:6.0.5"
+    vite-plugin-open-graph: "npm:2.0.6"
   languageName: unknown
   linkType: soft
 
@@ -3503,6 +3504,13 @@ __metadata:
   dependencies:
     punycode: "npm:^2.1.0"
   checksum: 10c0/4ef57b45aa820d7ac6496e9208559986c665e49447cb072744c13b66925a362d96dd5a46c4530a6b8e203e5db5fe849369444440cb22ecfc26c679359e5dfa3c
+  languageName: node
+  linkType: hard
+
+"vite-plugin-open-graph@npm:2.0.6":
+  version: 2.0.6
+  resolution: "vite-plugin-open-graph@npm:2.0.6"
+  checksum: 10c0/d1cec3052437d1d6084feb30a77f8d8c44c15ea64f2d231d4fc03edf4fd6fa925fd64df85954c94b20ae23cf142c1449eb840f3fa694cb7dcb006e83a5cce94d
   languageName: node
   linkType: hard
 
