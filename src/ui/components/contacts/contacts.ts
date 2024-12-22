@@ -1,20 +1,13 @@
-import iconMail from '@tabler/icons/outline/mail.svg?raw';
+import contactsItem from './components/contactsItem/contactsItem';
+
+import { CONTACTS } from './contacts.data';
 
 import styles from './contacts.module.scss';
 
 const contacts = () => {
   return `
     <ul class="${styles.contacts}">
-      <li>
-        <div class="${styles.contact}">
-          <div class="${styles.contactIcon}">
-            ${iconMail}
-          </div>
-          <a class="${styles.contactLink}" href="mailto:egorkir41@gmail.com" title="Email">
-            Email
-          </a>
-        </div>
-      </li>
+      ${CONTACTS.map((contact) => contactsItem(contact)).join('')}
     </ul>
   `;
 };
