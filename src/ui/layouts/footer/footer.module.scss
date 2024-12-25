@@ -5,3 +5,10 @@
   align-items: center;
   padding: 10px 15px;
 }
+
+.right,
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
