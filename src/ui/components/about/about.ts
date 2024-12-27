@@ -4,7 +4,7 @@ import styles from './about.module.scss';
 
 const about = () => {
   return `
-    <button type="button" class="${styles.root}">
+    <button type="button" class="${styles.root}" title="About" onclick="showAbout()">
       <div class="${styles.icon}">${iconHelp}</div>
     </button>
   `;
