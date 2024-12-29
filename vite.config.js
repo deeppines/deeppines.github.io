@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'url';
 import { defineConfig } from 'vite';
+import { compression } from 'vite-plugin-compression2';
 import ogPlugin from 'vite-plugin-open-graph';
 
 export default defineConfig({
@@ -35,6 +36,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    compression(),
     ogPlugin({
       basic: {
         title: 'Кирдяшкин Егор',
