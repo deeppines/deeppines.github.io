@@ -11,6 +11,7 @@
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.3s ease-in-out;
+  z-index: 100;
 
   [data-backdrop='true'] & {
     opacity: 1;
