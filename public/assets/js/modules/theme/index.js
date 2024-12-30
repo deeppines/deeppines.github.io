@@ -29,8 +29,6 @@ class Theme {
   }
 
   setListeners() {
-    console.log(this.elements.toggles);
-
     this.elements.toggles.forEach((toggle) => {
       toggle.addEventListener('change', () => this.toggle());
     });
