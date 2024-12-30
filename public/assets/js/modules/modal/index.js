@@ -25,6 +25,7 @@ class Modal {
 
   init() {
     this.setListeners();
+    this.clickOutsideListener();
   }
 
   setListeners() {
@@ -53,6 +54,12 @@ class Modal {
     Modal.toggleBackdrop();
 
     if (this.modal) this.modal.classList.remove(open);
+  }
+
+  clickOutsideListener() {
+    document.addEventListener('click', (e) => {
+      if (e.target === this.modal) this.close();
+    });
   }
 
   static toggleBackdrop() {
