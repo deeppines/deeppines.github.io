@@ -8,11 +8,13 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    ignores: ['public/**/*.js'],
+  },
+  {
     files: ['**/*.{js,mjs,cjs,ts}'],
     languageOptions: {
       globals: globals.browser,
     },
-    ignores: ['!public/**/*.js'],
   },
   {
     plugins: {

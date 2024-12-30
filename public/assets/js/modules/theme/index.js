@@ -1,4 +1,3 @@
-/* eslint-disable unused-imports/no-unused-vars */
 class Theme {
   /**
    * @param {string} toggleClass - The class name used to select theme toggle elements.
