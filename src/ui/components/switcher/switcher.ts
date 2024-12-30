@@ -8,7 +8,7 @@ const switcher = () => {
 
   return `
     <label class="${styles.switcher}">
-      <input class="${styles.switcherInput}" type="checkbox" title="theme" onclick="changeTheme()" ${theme === 'dark' ? 'checked="checked"' : ''}/>
+      <input class="${styles.switcherInput} js-theme-toggle" type="checkbox" title="theme" ${theme === 'dark' ? 'checked="checked"' : ''}/>
       <span class="${styles.switcherSlider}">
         <span>${iconMoon}</span>
         <span>${IconSun}</span>
