@@ -1,5 +1,9 @@
 :root,
 :root[data-theme='light'] {
+  --z-index-base: 0;
+  --z-index-backdrop: 100;
+  --z-index-modal: 120;
+
   --text-size-xs: 0.69rem;
   --text-size-sm: 0.83rem;
   --text-size-md: 1rem;
