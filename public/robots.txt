@@ -1,0 +1,4 @@
+Sitemap: https://deeppines.github.io/sitemap.xml
+Crawl-delay: 10
+User-agent: *
+Allow: https://deeppines.github.io/
