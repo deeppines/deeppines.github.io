@@ -1,24 +1,27 @@
+import IconPhotoScan from '@tabler/icons/outline/photo-scan.svg?raw';
+
 import styles from './project.module.scss';
 
 export interface ProjectProps {
   title: string;
   description: string;
   image?: string;
-  links?: string;
+  link?: string;
+  badge?: string;
 }
 
-const project = ({ title, description, image, links }: ProjectProps) => {
+const project = ({ title, description, image, link, badge }: ProjectProps) => {
   return `
-    <div class="${styles.root}">
+    <${link ? `a href="${link}" target="_blank"` : 'div'} class="${styles.root}">
       <div class="${styles.image}">
-        ${image ? `<img src="${image}" size="50" width="50" height="50" alt="${title}" />` : ''}
+        ${image ? `<img src="${image}" size="50" width="50" height="50" alt="${title}" />` : `${IconPhotoScan}`}
       </div>
       <div class="${styles.description}">
         <h5>${title}</h5>
         <p>${description}</p>
-        ${links ? `<div>${links}</div>` : ''}
+        ${badge ? `<div class="${styles.badge}"><img src="${badge}" alt="${title}" /></div>` : ''}
       </div>
-    </div>
+    </${link ? 'a' : 'div'}>
   `;
 };
 
