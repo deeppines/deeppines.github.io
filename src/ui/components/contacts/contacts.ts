@@ -1,13 +1,13 @@
 import contactsItem from './components/contactsItem/contactsItem';
 
-import { CONTACTS } from './contacts.data';
-
 import styles from './contacts.module.scss';
+
+import { MAIN } from '@/main.data';
 
 const contacts = () => {
   return `
     <ul class="${styles.contacts}">
-      ${CONTACTS.map((contact) => contactsItem(contact)).join('')}
+      ${MAIN.contacts.map((contact) => contactsItem(contact)).join('')}
     </ul>
   `;
 };

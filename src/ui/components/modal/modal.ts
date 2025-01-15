@@ -2,7 +2,7 @@ import iconX from '@tabler/icons/outline/x.svg?raw';
 
 import styles from './modal.module.scss';
 
-interface ModalProps {
+export interface ModalProps {
   id: string;
   title: string;
   content?: string;

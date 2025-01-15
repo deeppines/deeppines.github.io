@@ -4,7 +4,6 @@ import header from '@layouts/header/header';
 import backdrop from '@components/backdrop/backdrop';
 import modal from '@components/modal/modal';
 import profile from '@components/profile/profile';
-import { PROFILE } from '@components/profile/profile.data';
 import projects from '@components/projects/projects';
 
 import { MAIN } from './main.data';
@@ -15,10 +14,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${header()}
   <main>
     <section>
-      ${profile(PROFILE)}
+      ${profile(MAIN.profile)}
     </section>
     <section>
-      ${projects()}
+      ${projects(MAIN.projects)}
     </section>
   </main>
   ${footer()}
