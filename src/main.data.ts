@@ -39,7 +39,7 @@ export const MAIN: MainPageProps = {
       name: 'Kirdiashkin Egor',
       who: 'Frontend developer',
       description:
-        '<p>I am engaged in the development of UI websites and everything else. I design and write the logic of components on React and Typescript.</p>',
+        '<p>I specialize in developing website user interfaces and more. I handle layout design and write component logic using React and TypeScript.</p>',
     },
   },
   projects: [
