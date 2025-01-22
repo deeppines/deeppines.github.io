@@ -2,6 +2,7 @@ import iconGithub from '@tabler/icons/outline/brand-github.svg?raw';
 import iconBrandLinkedin from '@tabler/icons/outline/brand-linkedin.svg?raw';
 import iconMail from '@tabler/icons/outline/mail.svg?raw';
 
+import { WithLang } from './types/common';
 import { ContactsItemProps } from './ui/components/contacts/components/contactsItem/contactsItem';
 import { ModalProps } from './ui/components/modal/modal';
 import { ProfileProps } from './ui/components/profile/profile';
@@ -10,11 +11,11 @@ import { SocialsItemProps } from './ui/components/socials/components/socialsItem
 
 interface MainPageProps {
   contacts: ContactsItemProps[];
-  profile: ProfileProps;
-  projects: ProjectProps[];
+  profile: WithLang<ProfileProps>;
+  projects: WithLang<ProjectProps>[];
   socials: SocialsItemProps[];
   modals: {
-    about: ModalProps;
+    about: WithLang<ModalProps>;
   };
 }
 
@@ -28,18 +29,37 @@ export const MAIN: MainPageProps = {
     },
   ],
   profile: {
-    name: 'Кирдяшкин Егор',
-    who: 'Frontend developer',
-    description:
-      '<p>Занимаюсь разработкой UI сайтов и не только. Верстаю и пишу логику компонентов на React и Typescript.</p>',
+    ru: {
+      name: 'Кирдяшкин Егор',
+      who: 'Frontend developer',
+      description:
+        '<p>Занимаюсь разработкой UI сайтов и не только. Верстаю и пишу логику компонентов на React и Typescript.</p>',
+    },
+    en: {
+      name: 'Kirdiashkin Egor',
+      who: 'Frontend developer',
+      description:
+        '<p>I am engaged in the development of UI websites and everything else. I design and write the logic of components on React and Typescript.</p>',
+    },
   },
   projects: [
     {
-      title: 'Pines',
-      description: 'Темная тема для VS Code',
-      image: '/assets/img/projects/pines.png',
-      badge: 'https://vsmarketplacebadges.dev/version-short/deeppines.pines-visual-studio-code.svg',
-      link: 'https://marketplace.visualstudio.com/items?itemName=deeppines.pines-visual-studio-code',
+      ru: {
+        title: 'Pines',
+        description: 'Темная тема для VS Code',
+        image: '/assets/img/projects/pines.png',
+        badge:
+          'https://vsmarketplacebadges.dev/version-short/deeppines.pines-visual-studio-code.svg',
+        link: 'https://marketplace.visualstudio.com/items?itemName=deeppines.pines-visual-studio-code',
+      },
+      en: {
+        title: 'Pines',
+        description: 'Dark theme for VS Code',
+        image: '/assets/img/projects/pines.png',
+        badge:
+          'https://vsmarketplacebadges.dev/version-short/deeppines.pines-visual-studio-code.svg',
+        link: 'https://marketplace.visualstudio.com/items?itemName=deeppines.pines-visual-studio-code',
+      },
     },
   ],
   socials: [
@@ -56,10 +76,18 @@ export const MAIN: MainPageProps = {
   ],
   modals: {
     about: {
-      id: 'modal-about',
-      title: 'О странице',
-      content:
-        '<p>Что использовал:</p><ul><li>Vite</li><li>Typescript</li><li>CSS modules</li></ul>',
+      ru: {
+        id: 'modal-about',
+        title: 'О странице',
+        content:
+          '<p>Что использовал:</p><ul><li>Vite</li><li>Typescript</li><li>CSS modules</li></ul>',
+      },
+      en: {
+        id: 'modal-about',
+        title: 'About page',
+        content:
+          '<p>What was used:</p><ul><li>Vite</li><li>Typescript</li><li>CSS modules</li></ul>',
+      },
     },
   },
 };

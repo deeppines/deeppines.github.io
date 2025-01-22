@@ -6,15 +6,18 @@ import modal from '@components/modal/modal';
 import profile from '@components/profile/profile';
 import projects from '@components/projects/projects';
 
+import { getLang } from './ui/utils/getLang';
 import { MAIN } from './main.data';
 
 import '@assets/styles/style.scss';
+
+const currentLang = getLang();
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${header()}
   <main>
     <section>
-      ${profile(MAIN.profile)}
+      ${profile(currentLang === 'en' ? MAIN.profile.en : MAIN.profile.ru)}
     </section>
     <section>
       ${projects(MAIN.projects)}
@@ -22,6 +25,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </main>
   ${footer()}
 
-  ${modal(MAIN.modals.about)}
+  ${modal(currentLang === 'en' ? MAIN.modals.about.en : MAIN.modals.about.ru)}
   ${backdrop()}
 `;
