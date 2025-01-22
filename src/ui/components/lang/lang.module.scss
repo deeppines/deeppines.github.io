@@ -1,3 +1,22 @@
+@use '@assets/styles/utils' as *;
+
 .root {
   @include resetButton;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: left;
+  height: 30px;
+  padding: 0px 12px;
+  border-radius: 4px;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  outline: none;
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &select::-ms-expand {
+    display: none;
+  }
 }

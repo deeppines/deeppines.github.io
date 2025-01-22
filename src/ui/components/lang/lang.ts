@@ -2,9 +2,10 @@ import styles from './lang.module.scss';
 
 const lang = () => {
   return `
-    <button type="button" class="${styles.root} js-modal-open" title="Language">
-      <div class="${styles.icon}"></div>
-    </button>
+    <select class="${styles.root}" title="Language">
+      <option title="Russian" value="ru" selected>RU</option>
+      <option title="English" value="en">EN</option>
+    </select>
   `;
 };
 
