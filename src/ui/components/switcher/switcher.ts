@@ -7,8 +7,9 @@ const switcher = () => {
   const theme = document.documentElement.getAttribute('data-theme');
 
   return `
-    <label class="${styles.switcher}">
-      <input class="${styles.switcherInput} js-theme-toggle" type="checkbox" title="theme" ${theme === 'dark' ? 'checked="checked"' : ''}/>
+    <label class="${styles.switcher}" title="Toggle theme">
+      <input class="${styles.switcherInput} js-theme-toggle"
+        type="checkbox" ${theme === 'dark' ? 'checked="checked"' : ''}/>
       <span class="${styles.switcherSlider}">
         <span>${iconMoon}</span>
         <span>${IconSun}</span>
