@@ -1,5 +1,6 @@
 import iconGithub from '@tabler/icons/outline/brand-github.svg?raw';
 import iconBrandLinkedin from '@tabler/icons/outline/brand-linkedin.svg?raw';
+import IconFileTypePdf from '@tabler/icons/outline/file-type-pdf.svg?raw';
 import iconMail from '@tabler/icons/outline/mail.svg?raw';
 
 import { WithLang } from './types/common';
@@ -10,7 +11,7 @@ import { ProjectProps } from './ui/components/projects/components/project/projec
 import { SocialsItemProps } from './ui/components/socials/components/socialsItem/socialsItem';
 
 interface MainPageProps {
-  contacts: ContactsItemProps[];
+  contacts: WithLang<ContactsItemProps>[];
   profile: WithLang<ProfileProps>;
   projects: WithLang<ProjectProps>[];
   socials: SocialsItemProps[];
@@ -22,10 +23,34 @@ interface MainPageProps {
 export const MAIN: MainPageProps = {
   contacts: [
     {
-      icon: iconMail,
-      text: 'Email',
-      title: 'Email',
-      url: 'mailto:egorkir41@gmailcom',
+      ru: {
+        icon: iconMail,
+        text: 'Email',
+        title: 'Email',
+        url: 'mailto:egorkir41@gmailcom',
+      },
+      en: {
+        icon: iconMail,
+        text: 'Email',
+        title: 'Email',
+        url: 'mailto:egorkir41@gmailcom',
+      },
+    },
+    {
+      ru: {
+        icon: IconFileTypePdf,
+        text: 'Резюме',
+        title: 'CV',
+        url: '/assets/docs/cv.pdf',
+        target: '_blank',
+      },
+      en: {
+        icon: IconFileTypePdf,
+        text: 'Resume',
+        title: 'CV',
+        url: '/assets/docs/cv.pdf',
+        target: '_blank',
+      },
     },
   ],
   profile: {
