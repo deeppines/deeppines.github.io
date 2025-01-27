@@ -41,7 +41,7 @@ export const MAIN: MainPageProps = {
         icon: IconFileTypePdf,
         text: 'Резюме',
         title: 'CV',
-        url: '/assets/docs/cv.pdf',
+        url: '/assets/docs/cv_2025.pdf',
         target: '_blank',
       },
       en: {
