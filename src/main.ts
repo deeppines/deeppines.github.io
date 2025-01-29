@@ -7,11 +7,19 @@ import profile from '@components/profile/profile';
 import projects from '@components/projects/projects';
 
 import { getLang } from './ui/utils/getLang';
+import { setTitle } from './ui/utils/setTitle';
 import { MAIN } from './main.data';
 
 import '@assets/styles/style.scss';
 
 const currentLang = getLang();
+
+const title =
+  currentLang === 'en'
+    ? `${MAIN.profile.en.name} - ${MAIN.profile.en.who}`
+    : `${MAIN.profile.ru.name} - ${MAIN.profile.ru.who}`;
+
+setTitle(title);
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${header()}
