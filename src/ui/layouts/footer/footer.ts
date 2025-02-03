@@ -1,8 +1,9 @@
-import about from '@components/about/about';
 import copyright from '@components/copyright/copyright';
 import socials from '@components/socials/socials';
 
 import style from './footer.module.scss';
+
+import aboutButton from '@/ui/components/aboutButton/aboutButton';
 
 const footer = () => {
   return `
@@ -12,7 +13,7 @@ const footer = () => {
       </div>
       <div class="${style.right}">
         ${copyright()}
-        ${about()}
+        ${aboutButton()}
       </div>
     </footer>
   `;
