@@ -1,9 +1,14 @@
 import styles from './avatar.module.scss';
 
-const avatar = () => {
+const avatar = (src?: string) => {
   return `
     <div class="${styles.root}">
-      <img src="https://github.com/deeppines.png" size="108" width="108" height="108" alt />
+      <img
+        src="${src}"
+        width="108"
+        height="108"
+        alt="Avatar"
+      />
     </div>
   `;
 };

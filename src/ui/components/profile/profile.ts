@@ -7,9 +7,10 @@ export interface ProfileProps {
   name: string;
   who: string;
   description: string;
+  imgSrc?: string;
 }
 
-const profile = ({ name, who, description }: ProfileProps) => {
+const profile = ({ name, who, description, imgSrc }: ProfileProps) => {
   return `
     <div class="${styles.profile}">
       <div class="${styles.header}">
@@ -22,7 +23,7 @@ const profile = ({ name, who, description }: ProfileProps) => {
           ${contacts()}
         </div>
         <div class="${styles.headerRight}">
-          ${avatar()}
+          ${avatar(imgSrc)}
         </div>
       </div>
 

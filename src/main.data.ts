@@ -59,12 +59,14 @@ export const MAIN: MainPageProps = {
       who: 'Frontend developer',
       description:
         '<p>Занимаюсь разработкой UI сайтов и не только. Верстаю и пишу логику компонентов на React и Typescript.</p>',
+      imgSrc: 'https://github.com/deeppines.png',
     },
     en: {
       name: 'Kirdiashkin Egor',
       who: 'Frontend developer',
       description:
         '<p>I specialize in developing website user interfaces and more. I handle layout design and write component logic using React and TypeScript.</p>',
+      imgSrc: 'https://github.com/deeppines.png',
     },
   },
   projects: [
