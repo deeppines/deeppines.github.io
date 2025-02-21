@@ -4,6 +4,7 @@ const funblock = () => `
   <div class="${styles.root}">
     <span class="${styles.text}">Some fun text</span>
     <span class="${styles.text}">Some fun text</span>
+    <span class="${styles.text}">Some fun text</span>
   </div>
 `;
 
