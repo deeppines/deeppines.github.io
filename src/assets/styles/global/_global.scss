@@ -15,6 +15,7 @@ footer {
   max-width: 670px;
   margin: 0 auto;
   padding: 0 15px;
+  z-index: var(--z-index-base);
 }
 
 main {
