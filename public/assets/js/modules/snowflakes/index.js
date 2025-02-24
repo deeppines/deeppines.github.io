@@ -1,6 +1,14 @@
 class Snowflakes {
-  constructor() {
+  constructor(options) {
+    this.options = options;
     this.snowflakeSymbols = ['❅', '❆', '❉', '❋']; // Символы снежинок
+    this.snowflakesCounter = 0;
+    this.maxSnowflakes = this.options?.maxSnowflakes || 100;
+    this.snowflakes = []; // Массив для хранения снежинок
+    this.animationFrameId = null; // ID текущего кадра анимации
+    this.delay = options?.delay || 100; // Задержка между созданием снежинок (в миллисекундах)
+    this.lastSnowflakeTime = 0; // Время создания последней снежинки
+    this.isRunning = false; // Флаг для проверки, работает ли анимация
 
     this.classes = {
       root: 'snowflakesContainer',
@@ -13,9 +21,7 @@ class Snowflakes {
   init() {
     this.setSnowflakesContainer();
 
-    setInterval(() => {
-      this.createSnowflake();
-    }, 100);
+    this.start();
   }
 
   setSnowflakesContainer() {
@@ -43,11 +49,51 @@ class Snowflakes {
 
     if (snowflakesContainer) {
       snowflakesContainer.appendChild(snowflake);
+      this.snowflakes.push(snowflake);
     }
 
     // Удаление снежинки после завершения анимации
     setTimeout(() => {
       snowflake.remove();
+      this.snowflakes = this.snowflakes.filter((s) => s !== snowflake);
     }, 11000); // Время жизни снежинки
+  }
+
+  animate(currentTime) {
+    if (!this.lastSnowflakeTime) {
+      this.lastSnowflakeTime = currentTime; // Инициализация времени
+    }
+
+    // Проверяем, прошла ли задержка с момента создания последней снежинки
+    if (
+      currentTime - this.lastSnowflakeTime >= this.delay &&
+      this.snowflakes.length < this.maxSnowflakes
+    ) {
+      this.createSnowflake();
+      this.lastSnowflakeTime = currentTime; // Обновляем время создания последней снежинки
+    }
+
+    // Запуск следующего кадра анимации
+    this.animationFrameId = requestAnimationFrame((time) => this.animate(time));
+  }
+
+  start() {
+    if (!this.isRunning) {
+      this.isRunning = true;
+      this.lastSnowflakeTime = 0; // Сброс времени
+      requestAnimationFrame((time) => this.animate(time));
+    }
+  }
+
+  stop() {
+    if (this.isRunning && this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+      this.isRunning = false;
+    }
+  }
+
+  clear() {
+    this.snowflakes.forEach((snowflake) => snowflake.remove());
+    this.snowflakes = [];
   }
 }
