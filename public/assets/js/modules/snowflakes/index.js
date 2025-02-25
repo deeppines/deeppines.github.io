@@ -15,7 +15,9 @@ class Snowflakes {
       snowflake: 'snowflake',
     };
 
-    this.init();
+    if (this.isWinter()) {
+      this.init();
+    }
   }
 
   init() {
@@ -95,5 +97,12 @@ class Snowflakes {
   clear() {
     this.snowflakes.forEach((snowflake) => snowflake.remove());
     this.snowflakes = [];
+  }
+
+  isWinter() {
+    const now = new Date();
+    const month = now.getMonth(); // 0-11
+
+    return month >= 10 || month <= 2;
   }
 }
