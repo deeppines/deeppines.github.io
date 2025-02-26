@@ -42,12 +42,7 @@ class Snowflakes {
     snowflake.classList.add('snowflake');
     snowflake.textContent = snowflakeSymbol;
 
-    // Начальная позиция снежинки
-    snowflake.style.left = Math.random() * 100 + 'vw';
-    snowflake.style.animationDuration = Math.random() * 3 + 10 + 's'; // Скорость падения
-    snowflake.style.opacity = `${Math.random()};`; // Прозрачность
-    snowflake.style.width = snowflake.style.height = Math.random() * 10 + 5 + 'px'; // Размер
-    snowflake.style.setProperty('--wind', String((Math.random() - 0.5) * 2)); // Ветер (случайное смещение по горизонтали)
+    this.animateSettings(snowflake);
 
     if (snowflakesContainer) {
       snowflakesContainer.appendChild(snowflake);
@@ -97,6 +92,15 @@ class Snowflakes {
   clear() {
     this.snowflakes.forEach((snowflake) => snowflake.remove());
     this.snowflakes = [];
+  }
+
+  animateSettings(snowflake) {
+    // Начальная позиция снежинки
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    snowflake.style.animationDuration = Math.random() * 3 + 10 + 's'; // Скорость падения
+    snowflake.style.opacity = `${Math.random()};`; // Прозрачность
+    snowflake.style.width = snowflake.style.height = Math.random() * 10 + 5 + 'px'; // Размер
+    snowflake.style.setProperty('--wind', String((Math.random() - 0.5) * 2)); // Ветер (случайное смещение по горизонтали)
   }
 
   isWinter() {
