@@ -94,12 +94,12 @@ class Snowflakes {
     this.snowflakes = [];
   }
 
-  animateSettings(snowflake) {
+  animateSettings(snowflake, position = 100, speed = 10, size = 5) {
     // Начальная позиция снежинки
-    snowflake.style.left = Math.random() * 100 + 'vw';
-    snowflake.style.animationDuration = Math.random() * 3 + 10 + 's'; // Скорость падения
+    snowflake.style.left = Math.random() * position + 'vw';
+    snowflake.style.animationDuration = Math.random() * 3 + speed + 's'; // Скорость падения
     snowflake.style.opacity = `${Math.random()};`; // Прозрачность
-    snowflake.style.width = snowflake.style.height = Math.random() * 10 + 5 + 'px'; // Размер
+    snowflake.style.width = snowflake.style.height = Math.random() * 10 + size + 'px'; // Размер
     snowflake.style.setProperty('--wind', String((Math.random() - 0.5) * 2)); // Ветер (случайное смещение по горизонтали)
   }
 
