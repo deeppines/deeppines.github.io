@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "analyze": "tsc && vite build --mode analyze",
     "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint --fix \"./src/**/*.ts*\"",
@@ -39,6 +40,7 @@
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
     "prettier": "3.5.2",
+    "rollup-plugin-visualizer": "5.14.0",
     "sass": "1.85.1",
     "typescript": "5.8.2",
     "typescript-eslint": "8.25.0",

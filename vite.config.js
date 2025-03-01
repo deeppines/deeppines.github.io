@@ -1,9 +1,10 @@
+import { visualizer } from 'rollup-plugin-visualizer';
 import { fileURLToPath, URL } from 'url';
 import { defineConfig } from 'vite';
 import { compression } from 'vite-plugin-compression2';
 import ogPlugin from 'vite-plugin-open-graph';
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   server: {
     port: 3000,
   },
@@ -48,5 +49,10 @@ export default defineConfig({
         siteName: 'deeppines.github.io',
       },
     }),
+    mode === 'analyze' &&
+      visualizer({
+        open: true,
+        filename: 'analyze.html',
+      }),
   ],
-});
+}));

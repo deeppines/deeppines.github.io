@@ -244,3 +244,5 @@ $RECYCLE.BIN/
 /dist/
 /_site/
 /.sass-cache/
+
+analyze.html
