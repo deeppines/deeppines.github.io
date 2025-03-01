@@ -3,5 +3,5 @@ document.addEventListener('DOMContentLoaded', () => {
   new Theme();
   new Lang();
   new Modal('modal-about', 'js-modal-open');
-  new Snowflakes();
+  new Snowflakes({ toggleClass: 'js-snowflakes-toggle' });
 });

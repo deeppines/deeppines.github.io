@@ -9,10 +9,15 @@ class Snowflakes {
     this.delay = options?.delay || 100; // Задержка между созданием снежинок (в миллисекундах)
     this.lastSnowflakeTime = 0; // Время создания последней снежинки
     this.isRunning = false; // Флаг для проверки, работает ли анимация
+    this.toggleClass = options.toggleClass;
 
     this.classes = {
       root: 'snowflakesContainer',
       snowflake: 'snowflake',
+    };
+
+    this.elements = {
+      toggles: document.querySelectorAll(`.${this.toggleClass}`),
     };
 
     if (this.isWinter()) {
@@ -22,8 +27,22 @@ class Snowflakes {
 
   init() {
     this.setSnowflakesContainer();
-
+    this.setListeners();
     this.start();
+  }
+
+  setListeners() {
+    this.elements.toggles.forEach((toggle) => {
+      toggle.addEventListener('change', () => this.toggle());
+    });
+  }
+
+  toggle() {
+    if (this.isRunning) {
+      this.stop();
+    } else {
+      this.start();
+    }
   }
 
   setSnowflakesContainer() {
