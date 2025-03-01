@@ -8,13 +8,18 @@ import style from './footer.module.scss';
 
 import aboutButton from '@/ui/components/aboutButton/aboutButton';
 import switcher from '@/ui/components/switcher/switcher';
+import { isWinter } from '@/ui/utils/isWinter';
 
 const footer = () => {
   return `
     <footer class=${style.root}>
       <div class="${style.left}">
         ${socials()}
-        ${switcher(IconSnowflakeOff, IconSnowflake, 'js-snowflakes-toggle', 'Toggle snowflakes')}
+        ${
+          isWinter()
+            ? switcher(IconSnowflakeOff, IconSnowflake, 'js-snowflakes-toggle', 'Toggle snowflakes')
+            : ''
+        }
       </div>
       <div class="${style.right}">
         ${copyright()}
