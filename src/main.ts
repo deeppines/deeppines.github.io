@@ -34,5 +34,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${footer()}
 
   ${modal(currentLang === 'en' ? MAIN.modals.about.en : MAIN.modals.about.ru)}
+  ${modal(currentLang === 'en' ? MAIN.modals.me.en : MAIN.modals.me.ru)}
   ${backdrop()}
 `;

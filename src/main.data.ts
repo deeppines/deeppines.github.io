@@ -17,6 +17,7 @@ interface MainPageProps {
   socials: SocialsItemProps[];
   modals: {
     about: WithLang<ModalProps>;
+    me: WithLang<ModalProps>;
   };
 }
 
@@ -114,6 +115,18 @@ export const MAIN: MainPageProps = {
         title: 'About page',
         content:
           '<p>What was used:</p><ul><li>Vite</li><li>Typescript</li><li>CSS modules</li></ul>',
+      },
+    },
+    me: {
+      ru: {
+        id: 'modal-me',
+        title: 'Мои соцсети',
+        content: 'test',
+      },
+      en: {
+        id: 'modal-me',
+        title: 'Socials',
+        content: 'test',
       },
     },
   },
