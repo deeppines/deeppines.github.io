@@ -12,7 +12,7 @@ class Modal {
 
     this.elements = {
       openTriggers: document.querySelectorAll(`.${openTrigger}`),
-      closeTriggers: document.querySelectorAll(`.${this.classes.closeTrigger}`),
+      closeTriggers: this.modal ? this.modal.querySelectorAll(`.${this.classes.closeTrigger}`) : [],
     };
 
     if (!this.modal) {
