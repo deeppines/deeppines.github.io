@@ -5,6 +5,7 @@ import iconMail from '@tabler/icons/outline/mail.svg?raw';
 
 import { WithLang } from './types/common';
 import { ContactsItemProps } from './ui/components/contacts/components/contactsItem/contactsItem';
+import funblock from './ui/components/funblock/funblock';
 import { ModalProps } from './ui/components/modal/modal';
 import { ProfileProps } from './ui/components/profile/profile';
 import { ProjectProps } from './ui/components/projects/components/project/project';
@@ -121,12 +122,12 @@ export const MAIN: MainPageProps = {
       ru: {
         id: 'modal-me',
         title: 'Мои соцсети',
-        content: 'test',
+        content: `${funblock()}`,
       },
       en: {
         id: 'modal-me',
         title: 'Socials',
-        content: 'test',
+        content: `${funblock()}`,
       },
     },
   },
