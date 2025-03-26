@@ -6,13 +6,13 @@ import styles from './funblock.module.scss';
 
 const funblock = () => `
   <div class="${styles.root}">
-    <a href="#" class="${styles.iconLink}" title="Lastfm">
+    <a href="https://www.last.fm/user/deeppines" target="_blank" class="${styles.iconLink}" title="Lastfm">
       ${IconBrandLastfm}
     </a>
-    <a href="#" class="${styles.iconLink}" title="MyShows">
+    <a href="https://myshows.me/deeppines" target="_blank" class="${styles.iconLink}" title="MyShows">
       ${IconDeviceTv}
     </a>
-    <a href="#" class="${styles.iconLink}" title="Steam">
+    <a href="https://steamcommunity.com/id/deeppines/" target="_blank" class="${styles.iconLink}" title="Steam">
       ${IconBrandSteam}
     </a>
   </div>
