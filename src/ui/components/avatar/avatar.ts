@@ -1,6 +1,11 @@
 import styles from './avatar.module.scss';
 
+import { getLang } from '@/ui/utils/getLang';
+
 const avatar = (src?: string) => {
+  const lang = getLang();
+  const buttonText = lang === 'en' ? 'Whaaat?' : 'Что тут?';
+
   return `
     <div class="${styles.root} js-hidden-root">
       <img
@@ -11,7 +16,7 @@ const avatar = (src?: string) => {
       />
 
       <button type="button" class="${styles.button} js-hidden-btn js-modal-me-open">
-        А тут что?
+        ${buttonText}
       </button>
     </div>
   `;

@@ -121,7 +121,7 @@ export const MAIN: MainPageProps = {
     me: {
       ru: {
         id: 'modal-me',
-        title: 'Мои соцсети',
+        title: 'Cоцсети',
         content: `${funblock()}`,
       },
       en: {
