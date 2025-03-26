@@ -1,7 +1,9 @@
 import styles from './switcher.module.scss';
 
+import { getTheme } from '@/ui/utils/getTheme';
+
 const switcher = (IconOn: string, IconOff: string, classes?: string, title?: string) => {
-  const theme = document.documentElement.getAttribute('data-theme');
+  const theme = getTheme();
 
   return `
     <label class="${styles.switcher}" title="${title}">
