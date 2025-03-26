@@ -4,14 +4,14 @@
   "description": "home page",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "analyze": "tsc && vite build --mode analyze",
     "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint --fix \"./src/**/*.ts*\"",
     "fix": "yarn lint && yarn format",
-    "check": "yarn && yarn lint && yarn build && yarn dev",
+    "check": "yarn && yarn lint && yarn build && yarn start",
     "prepare": "husky"
   },
   "lint-staged": {
