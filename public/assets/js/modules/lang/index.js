@@ -1,8 +1,9 @@
 class Lang {
-  constructor(toggleClass = 'js-lang-toggle') {
+  constructor(toggleClass = 'js-lang-toggle', defaultLang = 'ru') {
     this.toggleClass = toggleClass;
+    this.defaultLang = defaultLang;
 
-    // Attribute used to store the current theme on the HTML element
+    // Attribute used to store the current lang on the HTML element
     this.dataLang = 'data-lang';
 
     // Available langs
@@ -25,7 +26,7 @@ class Lang {
   }
 
   initDefault() {
-    const lang = Lang.get();
+    const lang = Lang.get(this.defaultLang);
 
     this.setAttributes(lang);
   }
@@ -43,7 +44,7 @@ class Lang {
   }
 
   setAttributes(lang) {
-    document.documentElement.setAttribute('lang', this.langs[lang]);
+    document.documentElement.setAttribute('lang', lang);
     document.documentElement.setAttribute(this.dataLang, lang);
   }
 
