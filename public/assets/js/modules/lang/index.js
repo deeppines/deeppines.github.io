@@ -14,15 +14,19 @@ class Lang {
 
     // Elements with the toggle class
     this.elements = {
-      toggles: document.querySelectorAll(`.${toggleClass}`),
+      toggles: document.querySelectorAll(`.${toggleClass}`) || [],
     };
 
     this.init();
   }
 
   init() {
-    this.initDefault();
-    this.setListeners();
+    try {
+      this.initDefault();
+      this.setListeners();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   initDefault() {
@@ -32,30 +36,51 @@ class Lang {
   }
 
   setListeners() {
-    this.elements.toggles.forEach((toggle) => {
-      toggle.addEventListener('change', (e) => this.toggle(e));
-    });
+    try {
+      this.elements.toggles.forEach((toggle) => {
+        toggle.addEventListener('change', (e) => this.toggle(e));
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   toggle(e) {
-    const lang = e.target.value;
+    try {
+      const lang = e.target.value;
 
-    this.set(this.langs[lang]);
+      this.set(this.langs[lang]);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   setAttributes(lang) {
-    document.documentElement.setAttribute('lang', lang);
-    document.documentElement.setAttribute(this.dataLang, lang);
+    try {
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute(this.dataLang, lang);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   set(lang) {
-    localStorage.setItem('lang', lang);
-    this.setAttributes(lang);
+    try {
+      localStorage.setItem('lang', lang);
+      this.setAttributes(lang);
 
-    window.location.reload();
+      window.location.reload();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   static get(defaultLang = 'ru') {
-    return localStorage.getItem('lang') || defaultLang;
+    try {
+      return localStorage.getItem('lang') || defaultLang;
+    } catch (error) {
+      console.error(error);
+      return defaultLang;
+    }
   }
 }
