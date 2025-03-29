@@ -2,24 +2,32 @@ class HiddenButton {
   constructor(options) {
     this.options = options;
 
-    this.classes = {
+    this.classNames = {
       root: 'js-hidden-root',
       button: 'js-hidden-btn',
     };
 
-    this.elements = {
-      root: document.querySelectorAll(`.${this.classes.root}`),
+    this.domElements = {
+      root: document.querySelectorAll(`.${this.classNames.root}`),
     };
 
-    this.init();
+    this.config = {
+      timer: this.options.timer || 3000,
+    };
+
+    if (this.domElements.root.length > 0) {
+      this.initialize();
+    } else {
+      console.warn(`No elements found with class: ${this.classNames.root}`);
+    }
   }
 
-  init() {
+  initialize() {
     this.setListeners();
   }
 
   setListeners() {
-    const { root } = this.elements;
+    const { root } = this.domElements;
 
     root.forEach((el) => {
       let timer;
@@ -35,12 +43,16 @@ class HiddenButton {
   }
 
   showMessage(el) {
-    const button = el.querySelector(`.${this.classes.button}`);
+    const button = el.querySelector(`.${this.classNames.button}`);
 
-    button.style.display = 'block';
+    if (button) {
+      button.style.display = 'block';
 
-    setTimeout(() => {
-      button.style.display = 'none';
-    }, 3000);
+      setTimeout(() => {
+        button.style.display = 'none';
+      }, this.config.timer);
+    } else {
+      console.warn(`Button element not found within root element: ${el}`);
+    }
   }
 }
