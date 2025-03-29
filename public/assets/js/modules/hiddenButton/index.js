@@ -12,7 +12,8 @@ class HiddenButton {
     };
 
     this.config = {
-      timer: this.options.timer || 3000,
+      visibleTimer: this.options.visibleTimer || 3000,
+      hoverTimer: this.options.hoverTimer || 5000,
     };
 
     if (this.domElements.root.length > 0) {
@@ -33,7 +34,7 @@ class HiddenButton {
       let timer;
 
       el.addEventListener('mouseenter', () => {
-        timer = setTimeout(() => this.showMessage(el), 5000);
+        timer = setTimeout(() => this.showMessage(el), this.config.hoverTimer);
       });
 
       el.addEventListener('mouseleave', () => {
@@ -50,7 +51,7 @@ class HiddenButton {
 
       setTimeout(() => {
         button.style.display = 'none';
-      }, this.config.timer);
+      }, this.config.visibleTimer);
     } else {
       console.warn(`Button element not found within root element: ${el}`);
     }
