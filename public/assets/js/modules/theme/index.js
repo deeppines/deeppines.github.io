@@ -19,6 +19,10 @@ class Theme {
       toggles: document.querySelectorAll(`.${toggleClass}`),
     };
 
+    if (!this.elements.toggles || !this.elements.toggles.length) {
+      throw new Error(`No elements found with class: ${toggleClass}`);
+    }
+
     this.init();
   }
 
@@ -26,8 +30,12 @@ class Theme {
    * Initializes the theme by setting the default theme and event listeners.
    */
   init() {
-    this.initDefault();
-    this.setListeners();
+    try {
+      this.initDefault();
+      this.setListeners();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   /**
@@ -44,7 +52,11 @@ class Theme {
    */
   setListeners() {
     this.elements.toggles.forEach((toggle) => {
-      toggle.addEventListener('change', () => this.toggle());
+      try {
+        toggle.addEventListener('change', () => this.toggle());
+      } catch (error) {
+        console.error(error);
+      }
     });
   }
 
@@ -52,12 +64,16 @@ class Theme {
    * Toggles the theme between light and dark.
    */
   toggle() {
-    const theme = Theme.get();
+    try {
+      const theme = Theme.get();
 
-    if (theme === 'dark') {
-      this.set(this.themes.light);
-    } else {
-      this.set(this.themes.dark);
+      if (theme === 'dark') {
+        this.set(this.themes.light);
+      } else {
+        this.set(this.themes.dark);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
@@ -67,8 +83,12 @@ class Theme {
    * @param {string} name - The name under which the theme is stored in local storage.
    */
   set(theme, name = 'theme') {
-    document.documentElement.setAttribute(this.dataTheme, theme);
-    localStorage.setItem(name, theme);
+    try {
+      document.documentElement.setAttribute(this.dataTheme, theme);
+      localStorage.setItem(name, theme);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   /**
@@ -77,6 +97,11 @@ class Theme {
    * @returns {string} - The current theme.
    */
   static get(defaultTheme = 'dark') {
-    return localStorage.getItem('theme') || defaultTheme;
+    try {
+      return localStorage.getItem('theme') || defaultTheme;
+    } catch (error) {
+      console.error(error);
+      return defaultTheme;
+    }
   }
 }
