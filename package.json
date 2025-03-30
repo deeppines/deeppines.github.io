@@ -25,7 +25,7 @@
   },
   "author": "@deeppines",
   "license": "ISC",
-  "packageManager": "yarn@4.6.0",
+  "packageManager": "yarn@4.8.1",
   "dependencies": {
     "@tabler/icons": "3.31.0",
     "normalize.css": "8.0.1"
