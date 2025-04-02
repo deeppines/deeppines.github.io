@@ -18,57 +18,75 @@ class Modal {
     if (!this.modal) {
       console.error(`Modal with id ${id} not found`);
       return;
-    } else {
-      this.init();
     }
+
+    this.init();
   }
 
   init() {
-    this.setListeners();
-    this.clickOutsideListener();
+    try {
+      this.setListeners();
+      this.clickOutsideListener();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   setListeners() {
     const { openTriggers, closeTriggers } = this.elements;
 
-    openTriggers.forEach((trigger) => {
-      trigger.addEventListener('click', () => this.open());
-    });
+    if (openTriggers && openTriggers.length) {
+      openTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => this.open());
+      });
+    }
 
-    closeTriggers.forEach((trigger) => {
-      trigger.addEventListener('click', () => this.close());
-    });
+    if (closeTriggers && closeTriggers.length) {
+      closeTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => this.close());
+      });
+    }
   }
 
   open() {
     const { open } = this.statuses;
 
-    Modal.toggleBackdrop();
+    if (this.modal) {
+      Modal.toggleBackdrop();
 
-    if (this.modal) this.modal.classList.add(open);
+      this.modal.classList.add(open);
+    }
   }
 
   close() {
     const { open } = this.statuses;
 
-    Modal.toggleBackdrop();
+    if (this.modal) {
+      Modal.toggleBackdrop();
 
-    if (this.modal) this.modal.classList.remove(open);
+      this.modal.classList.remove(open);
+    }
   }
 
   clickOutsideListener() {
-    document.addEventListener('click', (e) => {
-      if (e.target === this.modal) this.close();
-    });
+    if (document) {
+      document.addEventListener('click', (e) => {
+        if (e.target === this.modal) {
+          this.close();
+        }
+      });
+    }
   }
 
   static toggleBackdrop() {
     const body = document.querySelector('body');
 
-    if (body && body.dataset.backdrop === 'true') {
-      body.dataset.backdrop = 'false';
-    } else if (body) {
-      body.dataset.backdrop = 'true';
+    if (body && body.dataset) {
+      if (body.dataset.backdrop === 'true') {
+        body.dataset.backdrop = 'false';
+      } else {
+        body.dataset.backdrop = 'true';
+      }
     }
   }
 }
