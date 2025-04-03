@@ -1474,10 +1474,10 @@ __metadata:
     normalize.css: "npm:8.0.1"
     prettier: "npm:3.5.3"
     rollup-plugin-visualizer: "npm:5.14.0"
-    sass: "npm:1.86.1"
+    sass: "npm:1.86.2"
     typescript: "npm:5.8.2"
     typescript-eslint: "npm:8.29.0"
-    vite: "npm:6.2.4"
+    vite: "npm:6.2.5"
     vite-plugin-compression2: "npm:1.3.3"
     vite-plugin-open-graph: "npm:2.0.6"
   languageName: unknown
@@ -3290,9 +3290,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:1.86.1":
-  version: 1.86.1
-  resolution: "sass@npm:1.86.1"
+"sass@npm:1.86.2":
+  version: 1.86.2
+  resolution: "sass@npm:1.86.2"
   dependencies:
     "@parcel/watcher": "npm:^2.4.1"
     chokidar: "npm:^4.0.0"
@@ -3303,7 +3303,7 @@ __metadata:
       optional: true
   bin:
     sass: sass.js
-  checksum: 10c0/16733c7cd7ebb180d12c7aa8fdf4647de857901ab55c369f810b3654aa1c4cd61bb0274981d7792f0ccdfb29755aab17afc13c9daad69d8ffc4d761a8314c93a
+  checksum: 10c0/fe40b63a19e867f460369d495bcdc979598c0b105c9d52164a7e9cc4e12ab91c27337702a1b58575f7da8fd08256b85fd2f34cc8275eb7c57699bfc5029f54a3
   languageName: node
   linkType: hard
 
@@ -3668,9 +3668,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:6.2.4":
-  version: 6.2.4
-  resolution: "vite@npm:6.2.4"
+"vite@npm:6.2.5":
+  version: 6.2.5
+  resolution: "vite@npm:6.2.5"
   dependencies:
     esbuild: "npm:^0.25.0"
     fsevents: "npm:~2.3.3"
@@ -3716,7 +3716,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/5a011ee5cce91de023a22564a314f04bf64d0d02b420d92c3d539d10257448d60e98e52b491404656426fba4a50dc25f107282540d7388fc5303dc441280155e
+  checksum: 10c0/226bb3c1875e1982559007007580e8d083b81f5289f18e28841d622ba030599e1bd9926adccc8264879e319e9f9e4f48a38a0dc52a5dfcdf2a9cb7313bfc1816
   languageName: node
   linkType: hard
 
