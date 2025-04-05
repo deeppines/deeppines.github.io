@@ -5,7 +5,7 @@
   width: 100%;
   color: var(--color-text);
   border: 1px solid var(--color-lightgray);
-  padding: 15px 15px;
+  padding: 10px;
   border-radius: 4px;
   transition:
     border-color 0.3s ease-in-out,
@@ -45,6 +45,7 @@
 }
 
 .badge {
-  padding-top: 10px;
+  font-size: 0;
+  line-height: 1;
   margin-top: auto;
 }
