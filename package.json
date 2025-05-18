@@ -27,14 +27,14 @@
   "license": "ISC",
   "packageManager": "yarn@4.9.1",
   "dependencies": {
-    "@tabler/icons": "3.31.0",
+    "@tabler/icons": "3.33.0",
     "normalize.css": "8.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
-    "@eslint/js": "9.26.0",
-    "eslint": "9.26.0",
+    "@eslint/js": "9.27.0",
+    "eslint": "9.27.0",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-unused-imports": "4.1.4",
     "globals": "16.1.0",
@@ -42,7 +42,7 @@
     "lint-staged": "16.0.0",
     "prettier": "3.5.3",
     "rollup-plugin-visualizer": "5.14.0",
-    "sass": "1.88.0",
+    "sass": "1.89.0",
     "typescript": "5.8.3",
     "typescript-eslint": "8.32.1",
     "vite": "6.3.5",
