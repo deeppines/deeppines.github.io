@@ -12,8 +12,8 @@ class HiddenButton {
     };
 
     this.config = {
-      visibleTimer: this.options.visibleTimer || 3000,
-      hoverTimer: this.options.hoverTimer || 5000,
+      visibleTimer: this.options?.visibleTimer || 3000,
+      hoverTimer: this.options?.hoverTimer || 5000,
     };
 
     if (this.domElements.root.length > 0) {
