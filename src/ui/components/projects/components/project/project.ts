@@ -17,7 +17,7 @@ const project = ({ title, description, image, link, badge }: ProjectProps) => {
         ${image ? `<img src="${image}" size="50" width="50" height="50" alt="${title}" />` : `${IconPhotoScan}`}
       </div>
       <div class="${styles.description}">
-        <h5>${title}</h5>
+        <h3 class="h5">${title}</h3>
         <p>${description}</p>
         ${badge ? `<div class="${styles.badge}"><img src="${badge}" alt="${title}" /></div>` : ''}
       </div>
