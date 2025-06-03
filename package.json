@@ -27,7 +27,7 @@
   "license": "ISC",
   "packageManager": "yarn@4.9.1",
   "dependencies": {
-    "@tabler/icons": "3.33.0",
+    "@tabler/icons": "3.34.0",
     "normalize.css": "8.0.1"
   },
   "devDependencies": {
@@ -44,7 +44,7 @@
     "rollup-plugin-visualizer": "6.0.1",
     "sass": "1.89.1",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.33.0",
+    "typescript-eslint": "8.33.1",
     "vite": "6.3.5",
     "vite-plugin-compression2": "1.4.0",
     "vite-plugin-open-graph": "2.0.6"
