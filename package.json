@@ -33,20 +33,20 @@
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
-    "@eslint/js": "9.28.0",
-    "eslint": "9.28.0",
+    "@eslint/js": "9.29.0",
+    "eslint": "9.29.0",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-unused-imports": "4.1.4",
     "globals": "16.2.0",
     "husky": "9.1.7",
-    "lint-staged": "16.1.0",
+    "lint-staged": "16.1.2",
     "prettier": "3.5.3",
-    "rollup-plugin-visualizer": "6.0.1",
-    "sass": "1.89.1",
+    "rollup-plugin-visualizer": "6.0.3",
+    "sass": "1.89.2",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.33.1",
+    "typescript-eslint": "8.34.1",
     "vite": "6.3.5",
-    "vite-plugin-compression2": "1.4.0",
+    "vite-plugin-compression2": "2.2.0",
     "vite-plugin-open-graph": "2.0.6"
   }
 }
