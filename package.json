@@ -10,13 +10,14 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint --fix \"./src/**/*.ts*\"",
-    "fix": "yarn lint && yarn format && jest --passWithNoTests",
+    "fix": "yarn lint && yarn format",
     "check": "yarn && yarn lint && jest --passWithNoTests && yarn build && yarn start",
     "test": "jest --watch",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,json,jsx,css,scss,md,mdx,ts,tsx,yml}": "yarn run fix"
+    "*.{js,json,jsx,css,scss,md,mdx,ts,tsx,yml}": "yarn run fix",
+    "*.{test.js,test.jsx,test.ts,test.tsx}": "yarn jest --passWithNoTests"
   },
   "husky": {
     "hooks": {
