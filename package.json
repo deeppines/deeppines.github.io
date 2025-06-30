@@ -54,7 +54,7 @@
     "rollup-plugin-visualizer": "6.0.3",
     "sass": "1.89.2",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.35.0",
+    "typescript-eslint": "8.35.1",
     "vite": "7.0.0",
     "vite-plugin-compression2": "2.2.0",
     "vite-plugin-open-graph": "2.0.6"
