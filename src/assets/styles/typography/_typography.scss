@@ -27,6 +27,17 @@ p {
   font-size: var(--text-size-md);
 }
 
+blockquote {
+  margin: 0;
+  padding: 0.8rem 0.8rem 0.8rem 1.5rem;
+  border-left: 3px solid var(--color-accent);
+
+  [data-theme='dark'] & {
+    border-color: var(--color-accent);
+    background-color: var(--color-foreground);
+  }
+}
+
 h1,
 h2,
 h3,
