@@ -3,6 +3,7 @@ import styles from './button.module.scss';
 export interface ButtonProps {
   text: string;
   icon?: string;
+  tag?: HTMLElementTagNameMap[keyof HTMLElementTagNameMap];
   className?: string;
 }
 
