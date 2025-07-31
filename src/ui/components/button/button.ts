@@ -4,6 +4,9 @@ export interface ButtonProps {
   text: string;
   icon?: string;
   tag?: HTMLElementTagNameMap[keyof HTMLElementTagNameMap];
+  title?: string;
+  target?: string;
+  onClick?: () => void;
   className?: string;
 }
 
