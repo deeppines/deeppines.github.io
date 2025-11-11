@@ -2,7 +2,6 @@ import iconGithub from '@tabler/icons/outline/brand-github.svg?raw';
 import iconBrandLinkedin from '@tabler/icons/outline/brand-linkedin.svg?raw';
 import IconFileTypePdf from '@tabler/icons/outline/file-type-pdf.svg?raw';
 import iconMail from '@tabler/icons/outline/mail.svg?raw';
-import IconPhoto from '@tabler/icons/outline/photo.svg?raw';
 
 import { WithLang } from './types/common';
 import { ContactsItemProps } from './ui/components/contacts/components/contactsItem/contactsItem';
@@ -55,22 +54,22 @@ export const MAIN: MainPageProps = {
         target: '_blank',
       },
     },
-    {
-      ru: {
-        icon: IconPhoto,
-        text: 'Фото кота',
-        title: 'cat',
-        url: '',
-        target: '_blank',
-      },
-      en: {
-        icon: IconPhoto,
-        text: 'Cat photo',
-        title: 'cat',
-        url: '',
-        target: '_blank',
-      },
-    },
+    // {
+    //   ru: {
+    //     icon: IconPhoto,
+    //     text: 'Фото кота',
+    //     title: 'cat',
+    //     url: '',
+    //     target: '_blank',
+    //   },
+    //   en: {
+    //     icon: IconPhoto,
+    //     text: 'Cat photo',
+    //     title: 'cat',
+    //     url: '',
+    //     target: '_blank',
+    //   },
+    // },
   ],
   profile: {
     ru: {
