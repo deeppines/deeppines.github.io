@@ -123,9 +123,9 @@ class Snowflakes {
   }
 
   isWinter() {
-    const now = new Date();
-    const month = now.getMonth(); // 0-11
+    const winterMonths = [11, 0, 1]; // Декабрь, Январь, Февраль
+    const currentMonth = new Date().getMonth();
 
-    return month >= 10 || month < 2;
+    return winterMonths.includes(currentMonth);
   }
 }
