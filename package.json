@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "lint": "eslint --fix \"./src/**/*.ts*\"",
     "fix": "yarn lint && yarn format",
-    "check": "yarn && yarn lint && jest --passWithNoTests && yarn build && yarn start",
+    "check:ci": "eslint \"./src/**/*.ts*\" && jest --ci --passWithNoTests",
     "test": "jest --watch",
     "prepare": "husky"
   },
