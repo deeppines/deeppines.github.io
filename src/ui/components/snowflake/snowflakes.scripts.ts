@@ -1,3 +1,4 @@
+import { DOM_HOOKS } from '@/shared/domHooks';
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
 import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion';
 
@@ -24,7 +25,7 @@ class SnowflakesRuntime {
   constructor(config?: SnowflakesConfig) {
     this.maxSnowflakes = config?.maxSnowflakes ?? 100;
     this.delay = config?.delay ?? 100;
-    this.toggleClass = config?.toggleClass ?? 'js-snowflakes-toggle';
+    this.toggleClass = config?.toggleClass ?? DOM_HOOKS.snowflakesToggle;
   }
 
   init(): void {

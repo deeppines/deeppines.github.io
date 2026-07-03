@@ -1,19 +1,18 @@
+import { DATA_ATTRIBUTES, DOM_HOOKS, STORAGE_KEYS } from '@/shared/domHooks';
 import type { Lang } from '@/types/common';
 
-const LANG_STORAGE_KEY = 'lang';
-const DATA_LANG_ATTRIBUTE = 'data-lang';
 const DEFAULT_LANG: Lang = 'ru';
 
 const isLang = (value: string | null): value is Lang => value === 'ru' || value === 'en';
 
 const setDocumentLang = (lang: Lang): void => {
   document.documentElement.setAttribute('lang', lang);
-  document.documentElement.setAttribute(DATA_LANG_ATTRIBUTE, lang);
+  document.documentElement.setAttribute(DATA_ATTRIBUTES.lang, lang);
 };
 
 const getStoredLang = (): Lang => {
-  const langFromStorage = localStorage.getItem(LANG_STORAGE_KEY);
-  const langFromDocument = document.documentElement.getAttribute(DATA_LANG_ATTRIBUTE);
+  const langFromStorage = localStorage.getItem(STORAGE_KEYS.lang);
+  const langFromDocument = document.documentElement.getAttribute(DATA_ATTRIBUTES.lang);
 
   if (isLang(langFromStorage)) {
     return langFromStorage;
@@ -27,7 +26,7 @@ const getStoredLang = (): Lang => {
 };
 
 const setLang = (lang: Lang): void => {
-  localStorage.setItem(LANG_STORAGE_KEY, lang);
+  localStorage.setItem(STORAGE_KEYS.lang, lang);
   setDocumentLang(lang);
 };
 
@@ -37,7 +36,7 @@ interface InitLangOptions {
 }
 
 export const initLang = (options: InitLangOptions = {}): void => {
-  const toggleClass = options.toggleClass ?? 'js-lang-toggle';
+  const toggleClass = options.toggleClass ?? DOM_HOOKS.langToggle;
   const toggles = document.querySelectorAll<HTMLSelectElement>(`.${toggleClass}`);
   const initialLang = getStoredLang();
 

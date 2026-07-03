@@ -3,6 +3,7 @@ import iconBrandLinkedin from '@tabler/icons/outline/brand-linkedin.svg?raw';
 import IconFileTypePdf from '@tabler/icons/outline/file-type-pdf.svg?raw';
 import iconMail from '@tabler/icons/outline/mail.svg?raw';
 
+import { MODAL_IDS } from '@/shared/domHooks';
 import type { WithLang } from '@/types/common';
 import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
 import funblock from '@/ui/components/funblock/funblock';
@@ -122,13 +123,13 @@ export const MAIN: MainPageProps = {
   modals: {
     about: {
       ru: {
-        id: 'modal-about',
+        id: MODAL_IDS.about,
         title: 'О странице',
         content:
           '<p>Что использовал:</p><ul><li>Vite</li><li>Typescript</li><li>CSS modules</li></ul>',
       },
       en: {
-        id: 'modal-about',
+        id: MODAL_IDS.about,
         title: 'About page',
         content:
           '<p>What was used:</p><ul><li>Vite</li><li>Typescript</li><li>CSS modules</li></ul>',
@@ -136,12 +137,12 @@ export const MAIN: MainPageProps = {
     },
     me: {
       ru: {
-        id: 'modal-me',
+        id: MODAL_IDS.me,
         title: 'Cоцсети',
         content: `${funblock()}`,
       },
       en: {
-        id: 'modal-me',
+        id: MODAL_IDS.me,
         title: 'Socials',
         content: `${funblock()}`,
       },

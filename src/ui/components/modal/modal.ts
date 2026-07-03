@@ -2,6 +2,7 @@ import iconX from '@tabler/icons/outline/x.svg?raw';
 
 import styles from './modal.module.scss';
 
+import { DOM_HOOKS } from '@/shared/domHooks';
 import { escapeHtml, sanitizeRichHtml } from '@/ui/utils/html';
 
 export interface ModalProps {
@@ -23,7 +24,7 @@ const modal = ({ id, title, content, footer }: ModalProps) => {
       <div class="${styles.content}" role="dialog" aria-modal="true" aria-labelledby="${titleId}" tabindex="-1">
         <div class="${styles.header}">
           <h3 id="${titleId}">${safeTitle}</h3>
-          <button type="button" class="${styles.close} js-modal-close" title="Close">
+          <button type="button" class="${styles.close} ${DOM_HOOKS.modalClose}" title="Close">
             ${iconX}
           </button>
         </div>

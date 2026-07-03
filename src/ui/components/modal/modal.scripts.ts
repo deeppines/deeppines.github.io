@@ -1,16 +1,16 @@
+import { DATA_ATTRIBUTES, DOM_HOOKS, MODAL_IDS, STATE_CLASSES } from '@/shared/domHooks';
+
 interface ModalConfig {
   id: string;
   openTriggerClass: string;
 }
 
-const CLOSE_TRIGGER_CLASS = 'js-modal-close';
-const OPEN_CLASS = 'open';
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 const setBackdropState = (): void => {
-  const hasOpenedModal = document.querySelector(`.${OPEN_CLASS}`) !== null;
-  document.body.dataset.backdrop = String(hasOpenedModal);
+  const hasOpenedModal = document.querySelector(`.${STATE_CLASSES.open}`) !== null;
+  document.body.dataset[DATA_ATTRIBUTES.backdrop] = String(hasOpenedModal);
 };
 
 const initSingleModal = ({ id, openTriggerClass }: ModalConfig): void => {
@@ -21,7 +21,7 @@ const initSingleModal = ({ id, openTriggerClass }: ModalConfig): void => {
   }
 
   const openTriggers = document.querySelectorAll(`.${openTriggerClass}`);
-  const closeTriggers = modal.querySelectorAll(`.${CLOSE_TRIGGER_CLASS}`);
+  const closeTriggers = modal.querySelectorAll(`.${DOM_HOOKS.modalClose}`);
   const dialog = modal.querySelector<HTMLElement>('[role="dialog"]');
   let lastActiveElement: HTMLElement | null = null;
 
@@ -33,7 +33,7 @@ const initSingleModal = ({ id, openTriggerClass }: ModalConfig): void => {
   };
 
   const handleKeyDown = (event: KeyboardEvent): void => {
-    if (!modal.classList.contains(OPEN_CLASS)) {
+    if (!modal.classList.contains(STATE_CLASSES.open)) {
       return;
     }
 
@@ -69,7 +69,7 @@ const initSingleModal = ({ id, openTriggerClass }: ModalConfig): void => {
 
   const open = (trigger?: HTMLElement): void => {
     lastActiveElement = trigger ?? (document.activeElement as HTMLElement | null);
-    modal.classList.add(OPEN_CLASS);
+    modal.classList.add(STATE_CLASSES.open);
     modal.setAttribute('aria-hidden', 'false');
     window.addEventListener('keydown', handleKeyDown);
     setBackdropState();
@@ -80,7 +80,7 @@ const initSingleModal = ({ id, openTriggerClass }: ModalConfig): void => {
   };
 
   const close = (): void => {
-    modal.classList.remove(OPEN_CLASS);
+    modal.classList.remove(STATE_CLASSES.open);
     modal.setAttribute('aria-hidden', 'true');
     window.removeEventListener('keydown', handleKeyDown);
     setBackdropState();
@@ -103,6 +103,6 @@ const initSingleModal = ({ id, openTriggerClass }: ModalConfig): void => {
 };
 
 export const initModals = (): void => {
-  initSingleModal({ id: 'modal-about', openTriggerClass: 'js-modal-open' });
-  initSingleModal({ id: 'modal-me', openTriggerClass: 'js-modal-me-open' });
+  initSingleModal({ id: MODAL_IDS.about, openTriggerClass: DOM_HOOKS.modalOpen });
+  initSingleModal({ id: MODAL_IDS.me, openTriggerClass: DOM_HOOKS.modalMeOpen });
 };

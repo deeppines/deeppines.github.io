@@ -2,6 +2,7 @@ import '@/assets/styles/style.scss';
 
 import { initRuntime } from '@/features/runtime/initRuntime';
 import { MAIN } from '@/main.data';
+import { DATA_ATTRIBUTES } from '@/shared/domHooks';
 import type { Lang } from '@/types/common';
 import backdrop from '@/ui/components/backdrop/backdrop';
 import modal from '@/ui/components/modal/modal';
@@ -30,7 +31,7 @@ const renderApp = (lang: Lang = getLang()): void => {
   const projectItems = MAIN.projects.map((item) => (lang === 'en' ? item.en : item.ru));
 
   setTitle(title);
-  document.body.dataset.backdrop = 'false';
+  document.body.dataset[DATA_ATTRIBUTES.backdrop] = 'false';
 
   root.innerHTML = `
     ${header()}

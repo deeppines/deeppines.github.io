@@ -3,6 +3,7 @@ import IconSnowflakeOff from '@tabler/icons/outline/snowflake-off.svg?raw';
 
 import style from './footer.module.scss';
 
+import { DOM_HOOKS } from '@/shared/domHooks';
 import aboutButton from '@/ui/components/aboutButton/aboutButton';
 import copyright from '@/ui/components/copyright/copyright';
 import type { SocialsItemProps } from '@/ui/components/socials/components/socialsItem/socialsItem';
@@ -18,7 +19,12 @@ const footer = (socialItems: SocialsItemProps[]): string => {
         ${socials(socialItems)}
         ${
           isWinter() && !prefersReducedMotion()
-            ? switcher(IconSnowflakeOff, IconSnowflake, 'js-snowflakes-toggle', 'Toggle snowflakes')
+            ? switcher(
+                IconSnowflakeOff,
+                IconSnowflake,
+                DOM_HOOKS.snowflakesToggle,
+                'Toggle snowflakes'
+              )
             : ''
         }
       </div>

@@ -1,6 +1,7 @@
 import { initHiddenButton } from '../hiddenButton/hiddenButton.scripts';
 import { initTheme } from '../theme/theme.scripts';
 
+import { DOM_HOOKS } from '@/shared/domHooks';
 import type { Lang } from '@/types/common';
 import { initLang } from '@/ui/components/lang/lang.scripts';
 import { initModals } from '@/ui/components/modal/modal.scripts';
@@ -14,6 +15,6 @@ export const initRuntime = (options: InitRuntimeOptions = {}): void => {
   initTheme();
   initLang({ onChange: options.onLangChange });
   initModals();
-  initSnowflakes({ toggleClass: 'js-snowflakes-toggle' });
+  initSnowflakes({ toggleClass: DOM_HOOKS.snowflakesToggle });
   initHiddenButton();
 };

@@ -3,6 +3,7 @@ import IconSun from '@tabler/icons/outline/sun.svg?raw';
 
 import style from './header.module.scss';
 
+import { DOM_HOOKS } from '@/shared/domHooks';
 import lang from '@/ui/components/lang/lang';
 import switcher from '@/ui/components/switcher/switcher';
 
@@ -11,7 +12,7 @@ const header = () => {
     <header class=${style.root}>
       <h1></h1>
       <div class="${style.buttons}">
-        ${switcher(IconMoon, IconSun, 'js-theme-toggle', 'Toggle theme')}
+        ${switcher(IconMoon, IconSun, DOM_HOOKS.themeToggle, 'Toggle theme')}
         ${lang()}
       </div>
     </header>
