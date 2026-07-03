@@ -35,10 +35,13 @@ jobs:
         with:
           node-version: 20
           cache: 'yarn'
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Enable Corepack and activate Yarn 4
+        run: |
+          corepack enable
+          corepack prepare yarn@4.17.0 --activate
+          yarn --version
       - name: Install dependencies
-        run: yarn
+        run: yarn install --immutable
       - name: Lint and Test
         run: yarn run check:ci
       - name: Build
