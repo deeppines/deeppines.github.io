@@ -1,4 +1,4 @@
-import type { Lang } from './types';
+import type { Lang } from '@/types/common';
 
 const LANG_STORAGE_KEY = 'lang';
 const DATA_LANG_ATTRIBUTE = 'data-lang';
