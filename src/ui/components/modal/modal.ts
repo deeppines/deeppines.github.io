@@ -14,14 +14,15 @@ export interface ModalProps {
 const modal = ({ id, title, content, footer }: ModalProps) => {
   const safeId = escapeHtml(id);
   const safeTitle = escapeHtml(title);
+  const titleId = `${safeId}-title`;
   const safeContent = content ? sanitizeRichHtml(content) : '';
   const safeFooter = footer ? sanitizeRichHtml(footer) : '';
 
   return `
-    <div id="${safeId}" class="${styles.root}">
-      <div class="${styles.content}">
+    <div id="${safeId}" class="${styles.root}" aria-hidden="true">
+      <div class="${styles.content}" role="dialog" aria-modal="true" aria-labelledby="${titleId}" tabindex="-1">
         <div class="${styles.header}">
-          <h3>${safeTitle}</h3>
+          <h3 id="${titleId}">${safeTitle}</h3>
           <button type="button" class="${styles.close} js-modal-close" title="Close">
             ${iconX}
           </button>
