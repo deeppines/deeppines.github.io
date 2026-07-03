@@ -4,6 +4,7 @@ import type { Lang } from '@/types/common';
 import avatar from '@/ui/components/avatar/avatar';
 import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
 import contacts from '@/ui/components/contacts/contacts';
+import { escapeHtml, sanitizeRichHtml } from '@/ui/utils/html';
 
 export interface ProfileProps {
   name: string;
@@ -30,8 +31,8 @@ const profile = ({
       <div class="${styles.header}">
         <div class="${styles.headerLeft}">
           <div class="${styles.headerInfo}">
-            <h1>${name}</h1>
-            <p>${who}</p>
+            <h1>${escapeHtml(name)}</h1>
+            <p>${escapeHtml(who)}</p>
           </div>
 
           ${contacts(contactItems)}
@@ -42,7 +43,7 @@ const profile = ({
       </div>
 
       <div class="${styles.description}">
-        ${description}
+        ${sanitizeRichHtml(description)}
       </div>
     </div>
   `;

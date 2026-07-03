@@ -1,5 +1,7 @@
 import styles from './socialsItem.module.scss';
 
+import { escapeHtml, sanitizeUrl } from '@/ui/utils/html';
+
 export interface SocialsItemProps {
   title: string;
   url: string;
@@ -7,8 +9,10 @@ export interface SocialsItemProps {
 }
 
 const socialsItem = ({ icon, title, url }: SocialsItemProps) => {
+  const safeUrl = sanitizeUrl(url);
+
   return `
-    <a class="${styles.root}" href="${url}" target="_blank" title="${title}">
+    <a class="${styles.root}" href="${safeUrl}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(title)}">
       ${icon}
     </a>
   `;
