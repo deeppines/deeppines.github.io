@@ -3,13 +3,13 @@ import iconBrandLinkedin from '@tabler/icons/outline/brand-linkedin.svg?raw';
 import IconFileTypePdf from '@tabler/icons/outline/file-type-pdf.svg?raw';
 import iconMail from '@tabler/icons/outline/mail.svg?raw';
 
-import { WithLang } from './types/common';
-import { ContactsItemProps } from './ui/components/contacts/components/contactsItem/contactsItem';
-import funblock from './ui/components/funblock/funblock';
-import { ModalProps } from './ui/components/modal/modal';
-import { ProfileProps } from './ui/components/profile/profile';
-import { ProjectProps } from './ui/components/projects/components/project/project';
-import { SocialsItemProps } from './ui/components/socials/components/socialsItem/socialsItem';
+import type { WithLang } from '@/types/common';
+import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
+import funblock from '@/ui/components/funblock/funblock';
+import type { ModalProps } from '@/ui/components/modal/modal';
+import type { ProfileProps } from '@/ui/components/profile/profile';
+import type { ProjectProps } from '@/ui/components/projects/components/project/project';
+import type { SocialsItemProps } from '@/ui/components/socials/components/socialsItem/socialsItem';
 
 interface MainPageProps {
   contacts: WithLang<ContactsItemProps>[];

@@ -1,17 +1,15 @@
-import footer from '@layouts/footer/footer';
-import header from '@layouts/header/header';
+import '@/assets/styles/style.scss';
 
-import backdrop from '@components/backdrop/backdrop';
-import modal from '@components/modal/modal';
-import profile from '@components/profile/profile';
-import projects from '@components/projects/projects';
-
-import { initRuntime } from './features/runtime/initRuntime';
-import { getLang } from './ui/utils/getLang';
-import { setTitle } from './ui/utils/setTitle';
-import { MAIN } from './main.data';
-
-import '@assets/styles/style.scss';
+import { initRuntime } from '@/features/runtime/initRuntime';
+import { MAIN } from '@/main.data';
+import backdrop from '@/ui/components/backdrop/backdrop';
+import modal from '@/ui/components/modal/modal';
+import profile from '@/ui/components/profile/profile';
+import projects from '@/ui/components/projects/projects';
+import footer from '@/ui/layouts/footer/footer';
+import header from '@/ui/layouts/header/header';
+import { getLang } from '@/ui/utils/getLang';
+import { setTitle } from '@/ui/utils/setTitle';
 
 const currentLang = getLang();
 

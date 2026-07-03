@@ -21,10 +21,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/ui/components/*"],
-      "@layouts/*": ["./src/ui/layouts/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"],

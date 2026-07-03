@@ -1,7 +1,7 @@
-import avatar from '../avatar/avatar';
-import contacts from '../contacts/contacts';
-
 import styles from './profile.module.scss';
+
+import avatar from '@/ui/components/avatar/avatar';
+import contacts from '@/ui/components/contacts/contacts';
 
 export interface ProfileProps {
   name: string;
