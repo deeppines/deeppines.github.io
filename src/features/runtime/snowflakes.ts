@@ -13,17 +13,17 @@ const SNOWFLAKE_CLASS = 'snowflake';
 class SnowflakesRuntime {
   private readonly maxSnowflakes: number;
   private readonly delay: number;
-  private readonly toggles: NodeListOf<HTMLInputElement>;
+  private readonly toggleClass: string;
   private readonly snowflakes: HTMLElement[] = [];
   private animationFrameId: number | null = null;
   private lastSnowflakeTime = 0;
   private isRunning = false;
+  private readonly bindedToggles = new WeakSet<HTMLInputElement>();
 
   constructor(config?: SnowflakesConfig) {
     this.maxSnowflakes = config?.maxSnowflakes ?? 100;
     this.delay = config?.delay ?? 100;
-    const toggleClass = config?.toggleClass ?? 'js-snowflakes-toggle';
-    this.toggles = document.querySelectorAll<HTMLInputElement>(`.${toggleClass}`);
+    this.toggleClass = config?.toggleClass ?? 'js-snowflakes-toggle';
   }
 
   init(): void {
@@ -43,7 +43,14 @@ class SnowflakesRuntime {
   }
 
   private bindListeners(): void {
-    this.toggles.forEach((toggle) => {
+    const toggles = document.querySelectorAll<HTMLInputElement>(`.${this.toggleClass}`);
+
+    toggles.forEach((toggle) => {
+      if (this.bindedToggles.has(toggle)) {
+        return;
+      }
+
+      this.bindedToggles.add(toggle);
       toggle.addEventListener('change', () => {
         if (this.isRunning) {
           this.stop();
@@ -129,11 +136,16 @@ class SnowflakesRuntime {
   }
 }
 
+let runtime: SnowflakesRuntime | null = null;
+
 export const initSnowflakes = (config?: SnowflakesConfig): void => {
   if (!isWinter()) {
     return;
   }
 
-  const runtime = new SnowflakesRuntime(config);
+  if (!runtime) {
+    runtime = new SnowflakesRuntime(config);
+  }
+
   runtime.init();
 };

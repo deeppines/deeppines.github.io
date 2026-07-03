@@ -31,7 +31,13 @@ const setLang = (lang: Lang): void => {
   setDocumentLang(lang);
 };
 
-export const initLang = (toggleClass = 'js-lang-toggle'): void => {
+interface InitLangOptions {
+  toggleClass?: string;
+  onChange?: (lang: Lang) => void;
+}
+
+export const initLang = (options: InitLangOptions = {}): void => {
+  const toggleClass = options.toggleClass ?? 'js-lang-toggle';
   const toggles = document.querySelectorAll<HTMLSelectElement>(`.${toggleClass}`);
   const initialLang = getStoredLang();
 
@@ -46,8 +52,12 @@ export const initLang = (toggleClass = 'js-lang-toggle'): void => {
         return;
       }
 
+      if (nextLang === getStoredLang()) {
+        return;
+      }
+
       setLang(nextLang);
-      window.location.reload();
+      options.onChange?.(nextLang);
     });
   });
 };
