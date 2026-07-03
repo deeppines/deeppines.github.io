@@ -10,13 +10,19 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint --fix \"./src/**/*.ts*\"",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
     "fix": "yarn lint && yarn format",
-    "check:ci": "eslint \"./src/**/*.ts*\" && jest --ci --passWithNoTests",
+    "check:ci": "eslint \"./src/**/*.ts*\" && yarn run lint:styles && jest --ci --passWithNoTests",
     "test": "jest --watch",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,json,jsx,css,scss,md,mdx,ts,tsx,yml}": "yarn run fix",
+    "*.{ts,tsx}": "eslint --fix",
+    "*.{js,jsx,json,css,md,mdx,yml}": "prettier --write",
+    "*.scss": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
     "*.{test.js,test.jsx,test.ts,test.tsx}": "yarn jest --passWithNoTests"
   },
   "husky": {
@@ -52,9 +58,12 @@
     "husky": "9.1.7",
     "jest": "30.4.2",
     "lint-staged": "17.0.8",
+    "postcss": "8.5.16",
     "prettier": "3.9.4",
     "rollup-plugin-visualizer": "7.0.1",
     "sass": "1.101.0",
+    "stylelint": "17.14.0",
+    "stylelint-config-recommended-scss": "17.0.1",
     "typescript": "6.0.3",
     "typescript-eslint": "8.62.1",
     "vite": "8.1.3",
