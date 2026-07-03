@@ -6,6 +6,7 @@ import modal from '@components/modal/modal';
 import profile from '@components/profile/profile';
 import projects from '@components/projects/projects';
 
+import { initRuntime } from './features/runtime/initRuntime';
 import { getLang } from './ui/utils/getLang';
 import { setTitle } from './ui/utils/setTitle';
 import { MAIN } from './main.data';
@@ -37,3 +38,5 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   ${modal(currentLang === 'en' ? MAIN.modals.me.en : MAIN.modals.me.ru)}
   ${backdrop()}
 `;
+
+initRuntime();
