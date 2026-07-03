@@ -9,6 +9,7 @@ import type { SocialsItemProps } from '@/ui/components/socials/components/social
 import socials from '@/ui/components/socials/socials';
 import switcher from '@/ui/components/switcher/switcher';
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
+import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion';
 
 const footer = (socialItems: SocialsItemProps[]): string => {
   return `
@@ -16,7 +17,7 @@ const footer = (socialItems: SocialsItemProps[]): string => {
       <div class="${style.left}">
         ${socials(socialItems)}
         ${
-          isWinter()
+          isWinter() && !prefersReducedMotion()
             ? switcher(IconSnowflakeOff, IconSnowflake, 'js-snowflakes-toggle', 'Toggle snowflakes')
             : ''
         }

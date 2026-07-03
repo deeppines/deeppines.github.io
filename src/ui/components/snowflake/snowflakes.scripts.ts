@@ -1,4 +1,5 @@
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
+import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion';
 
 interface SnowflakesConfig {
   toggleClass?: string;
@@ -140,6 +141,10 @@ let runtime: SnowflakesRuntime | null = null;
 
 export const initSnowflakes = (config?: SnowflakesConfig): void => {
   if (!isWinter()) {
+    return;
+  }
+
+  if (prefersReducedMotion()) {
     return;
   }
 

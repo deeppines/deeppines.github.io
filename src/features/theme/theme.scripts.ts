@@ -2,9 +2,10 @@ import type { Theme } from '@/types/common';
 
 const THEME_STORAGE_KEY = 'theme';
 const THEME_ATTRIBUTE = 'data-theme';
-const DEFAULT_THEME: Theme = 'dark';
-
 const isTheme = (value: string | null): value is Theme => value === 'dark' || value === 'light';
+const getSystemTheme = (): Theme => {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+};
 
 const getStoredTheme = (): Theme => {
   const themeFromStorage = localStorage.getItem(THEME_STORAGE_KEY);
@@ -18,7 +19,7 @@ const getStoredTheme = (): Theme => {
     return themeFromDocument;
   }
 
-  return DEFAULT_THEME;
+  return getSystemTheme();
 };
 
 const setTheme = (theme: Theme): void => {

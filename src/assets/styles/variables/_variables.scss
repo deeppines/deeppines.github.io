@@ -1,5 +1,6 @@
 :root,
 :root[data-theme='light'] {
+  color-scheme: light;
   --z-index-base: 5;
   --z-index-backdrop: 100;
   --z-index-modal: 120;
@@ -31,6 +32,7 @@
 }
 
 :root[data-theme='dark'] {
+  color-scheme: dark;
   --color-background: var(--color-black);
   --color-foreground: var(--color-navi);
   --color-accent: var(--color-gray);
