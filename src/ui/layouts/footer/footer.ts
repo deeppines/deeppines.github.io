@@ -5,15 +5,16 @@ import style from './footer.module.scss';
 
 import aboutButton from '@/ui/components/aboutButton/aboutButton';
 import copyright from '@/ui/components/copyright/copyright';
+import type { SocialsItemProps } from '@/ui/components/socials/components/socialsItem/socialsItem';
 import socials from '@/ui/components/socials/socials';
 import switcher from '@/ui/components/switcher/switcher';
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
 
-const footer = () => {
+const footer = (socialItems: SocialsItemProps[]): string => {
   return `
     <footer class=${style.root}>
       <div class="${style.left}">
-        ${socials()}
+        ${socials(socialItems)}
         ${
           isWinter()
             ? switcher(IconSnowflakeOff, IconSnowflake, 'js-snowflakes-toggle', 'Toggle snowflakes')

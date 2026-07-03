@@ -2,16 +2,13 @@ import project, { ProjectProps } from './components/project/project';
 
 import styles from './projects.module.scss';
 
-import { WithLang } from '@/types/common';
-import { getLang } from '@/ui/utils/getLang';
+import type { Lang } from '@/types/common';
 
-const projects = (projects: WithLang<ProjectProps>[]) => {
-  const currentLang = getLang();
-
+const projects = (items: ProjectProps[], lang: Lang): string => {
   return `
-    <h2 class="${styles.title}">${currentLang === 'en' ? 'Projects' : 'Проекты'}</h2>
+    <h2 class="${styles.title}">${lang === 'en' ? 'Projects' : 'Проекты'}</h2>
     <div class="${styles.root}">
-      ${projects.map((item) => project(currentLang === 'en' ? item.en : item.ru)).join('')}
+      ${items.map((item) => project(item)).join('')}
     </div>
   `;
 };

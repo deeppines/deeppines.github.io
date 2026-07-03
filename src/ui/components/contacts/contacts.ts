@@ -1,16 +1,12 @@
+import type { ContactsItemProps } from './components/contactsItem/contactsItem';
 import contactsItem from './components/contactsItem/contactsItem';
 
 import styles from './contacts.module.scss';
 
-import { MAIN } from '@/main.data';
-import { getLang } from '@/ui/utils/getLang';
-
-const contacts = () => {
-  const currentLang = getLang();
-
+const contacts = (items: ContactsItemProps[]): string => {
   return `
     <ul class="${styles.contacts}">
-      ${MAIN.contacts.map((contact) => contactsItem(currentLang === 'en' ? contact.en : contact.ru)).join('')}
+      ${items.map((item) => contactsItem(item)).join('')}
     </ul>
   `;
 };

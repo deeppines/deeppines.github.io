@@ -1,9 +1,8 @@
 import styles from './avatar.module.scss';
 
-import { getLang } from '@/ui/utils/getLang';
+import type { Lang } from '@/types/common';
 
-const avatar = (src?: string) => {
-  const lang = getLang();
+const avatar = (lang: Lang, src?: string): string => {
   const buttonText = lang === 'en' ? 'Whaaat?' : 'Что тут?';
 
   return `

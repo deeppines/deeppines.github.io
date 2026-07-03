@@ -1,6 +1,8 @@
 import styles from './profile.module.scss';
 
+import type { Lang } from '@/types/common';
 import avatar from '@/ui/components/avatar/avatar';
+import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
 import contacts from '@/ui/components/contacts/contacts';
 
 export interface ProfileProps {
@@ -10,7 +12,19 @@ export interface ProfileProps {
   imgSrc?: string;
 }
 
-const profile = ({ name, who, description, imgSrc }: ProfileProps) => {
+interface ProfileViewProps extends ProfileProps {
+  lang: Lang;
+  contacts: ContactsItemProps[];
+}
+
+const profile = ({
+  name,
+  who,
+  description,
+  imgSrc,
+  lang,
+  contacts: contactItems,
+}: ProfileViewProps) => {
   return `
     <div class="${styles.profile}">
       <div class="${styles.header}">
@@ -20,10 +34,10 @@ const profile = ({ name, who, description, imgSrc }: ProfileProps) => {
             <p>${who}</p>
           </div>
 
-          ${contacts()}
+          ${contacts(contactItems)}
         </div>
         <div class="${styles.headerRight}">
-          ${avatar(imgSrc)}
+          ${avatar(lang, imgSrc)}
         </div>
       </div>
 

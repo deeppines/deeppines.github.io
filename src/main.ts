@@ -23,6 +23,11 @@ const renderApp = (lang: Lang = getLang()): void => {
     lang === 'en'
       ? `${MAIN.profile.en.name} - ${MAIN.profile.en.who}`
       : `${MAIN.profile.ru.name} - ${MAIN.profile.ru.who}`;
+  const profileData = lang === 'en' ? MAIN.profile.en : MAIN.profile.ru;
+  const aboutModalData = lang === 'en' ? MAIN.modals.about.en : MAIN.modals.about.ru;
+  const meModalData = lang === 'en' ? MAIN.modals.me.en : MAIN.modals.me.ru;
+  const contactItems = MAIN.contacts.map((item) => (lang === 'en' ? item.en : item.ru));
+  const projectItems = MAIN.projects.map((item) => (lang === 'en' ? item.en : item.ru));
 
   setTitle(title);
   document.body.dataset.backdrop = 'false';
@@ -31,16 +36,16 @@ const renderApp = (lang: Lang = getLang()): void => {
     ${header()}
     <main>
       <section>
-        ${profile(lang === 'en' ? MAIN.profile.en : MAIN.profile.ru)}
+        ${profile({ ...profileData, lang, contacts: contactItems })}
       </section>
       <section>
-        ${projects(MAIN.projects)}
+        ${projects(projectItems, lang)}
       </section>
     </main>
-    ${footer()}
+    ${footer(MAIN.socials)}
 
-    ${modal(lang === 'en' ? MAIN.modals.about.en : MAIN.modals.about.ru)}
-    ${modal(lang === 'en' ? MAIN.modals.me.en : MAIN.modals.me.ru)}
+    ${modal(aboutModalData)}
+    ${modal(meModalData)}
     ${backdrop()}
   `;
 
