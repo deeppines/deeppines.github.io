@@ -1,4 +1,4 @@
-import type { Theme } from './types';
+import type { Theme } from '@/types/common';
 
 const THEME_STORAGE_KEY = 'theme';
 const THEME_ATTRIBUTE = 'data-theme';

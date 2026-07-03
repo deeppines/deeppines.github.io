@@ -1,10 +1,10 @@
-import { initHiddenButton } from './hiddenButton';
-import { initLang } from './lang';
-import { initModals } from './modal';
-import { initSnowflakes } from './snowflakes';
-import { initTheme } from './theme';
+import { initHiddenButton } from '../hiddenButton/hiddenButton.scripts';
+import { initTheme } from '../theme/theme.scripts';
 
 import type { Lang } from '@/types/common';
+import { initLang } from '@/ui/components/lang/lang.scripts';
+import { initModals } from '@/ui/components/modal/modal.scripts';
+import { initSnowflakes } from '@/ui/components/snowflake/snowflakes.scripts';
 
 interface InitRuntimeOptions {
   onLangChange?: (lang: Lang) => void;
