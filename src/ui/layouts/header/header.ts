@@ -1,11 +1,12 @@
 import IconMoon from '@tabler/icons/outline/moon.svg?raw';
 import IconSun from '@tabler/icons/outline/sun.svg?raw';
 
-import style from './header.module.scss';
-
 import { DOM_HOOKS } from '@/shared/domHooks';
+
 import lang from '@/ui/components/lang/lang';
 import switcher from '@/ui/components/switcher/switcher';
+
+import style from './header.module.scss';
 
 const header = (): HTMLElement => {
   const element = document.createElement('header');

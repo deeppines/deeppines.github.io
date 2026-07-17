@@ -3,8 +3,10 @@ import iconBrandLinkedin from '@tabler/icons/outline/brand-linkedin.svg?raw';
 import IconFileTypePdf from '@tabler/icons/outline/file-type-pdf.svg?raw';
 import iconMail from '@tabler/icons/outline/mail.svg?raw';
 
-import { MODAL_IDS } from '@/shared/domHooks';
 import type { WithLang } from '@/types/common';
+
+import { MODAL_IDS } from '@/shared/domHooks';
+
 import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
 import funblock from '@/ui/components/funblock/funblock';
 import type { ModalProps } from '@/ui/components/modal/modal';

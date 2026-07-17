@@ -1,9 +1,10 @@
 import iconX from '@tabler/icons/outline/x.svg?raw';
 
-import styles from './modal.module.scss';
-
 import { DOM_HOOKS } from '@/shared/domHooks';
+
 import { escapeHtml, sanitizeRichHtml } from '@/ui/utils/html';
+
+import styles from './modal.module.scss';
 
 export interface ModalProps {
   id: string;

@@ -1,8 +1,8 @@
 import helpIcon from '@tabler/icons/outline/help.svg?raw';
 
-import styles from './aboutButton.module.scss';
-
 import { DOM_HOOKS } from '@/shared/domHooks';
+
+import styles from './aboutButton.module.scss';
 
 const appendHtml = (target: HTMLElement, html: string): void => {
   const template = document.createElement('template');

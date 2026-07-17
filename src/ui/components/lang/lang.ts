@@ -1,7 +1,8 @@
-import styles from './lang.module.scss';
-
 import { DOM_HOOKS } from '@/shared/domHooks';
+
 import { getLang } from '@/ui/utils/getLang';
+
+import styles from './lang.module.scss';
 
 const lang = (): HTMLElement => {
   const initLang = getLang();

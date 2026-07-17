@@ -1,5 +1,6 @@
-import { DATA_ATTRIBUTES, STORAGE_KEYS } from '@/shared/domHooks';
 import type { Lang } from '@/types/common';
+
+import { DATA_ATTRIBUTES, STORAGE_KEYS } from '@/shared/domHooks';
 
 const DEFAULT_LANGUAGE: Lang = 'ru';
 

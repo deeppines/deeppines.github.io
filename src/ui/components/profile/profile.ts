@@ -1,10 +1,12 @@
-import styles from './profile.module.scss';
-
 import type { Lang } from '@/types/common';
+
+import { sanitizeRichHtml } from '@/ui/utils/html';
+
 import avatar from '@/ui/components/avatar/avatar';
 import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
 import contacts from '@/ui/components/contacts/contacts';
-import { sanitizeRichHtml } from '@/ui/utils/html';
+
+import styles from './profile.module.scss';
 
 export interface ProfileProps {
   name: string;

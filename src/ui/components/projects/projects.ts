@@ -1,8 +1,8 @@
+import type { Lang } from '@/types/common';
+
 import project, { ProjectProps } from './components/project/project';
 
 import styles from './projects.module.scss';
-
-import type { Lang } from '@/types/common';
 
 const projects = (items: ProjectProps[], lang: Lang): DocumentFragment => {
   const fragment = document.createDocumentFragment();

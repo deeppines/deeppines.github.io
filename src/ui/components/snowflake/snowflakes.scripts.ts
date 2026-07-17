@@ -1,4 +1,5 @@
 import { DOM_HOOKS } from '@/shared/domHooks';
+
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
 import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion';
 

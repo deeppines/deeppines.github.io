@@ -1,6 +1,6 @@
-import styles from './contactsItem.module.scss';
-
 import { sanitizeTarget, sanitizeUrl } from '@/ui/utils/html';
+
+import styles from './contactsItem.module.scss';
 
 export interface ContactsItemProps {
   icon: string;

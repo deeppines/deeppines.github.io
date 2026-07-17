@@ -1,6 +1,6 @@
-import styles from './switcher.module.scss';
-
 import { getTheme } from '@/ui/utils/getTheme';
+
+import styles from './switcher.module.scss';
 
 const appendHtml = (target: HTMLElement, html: string): void => {
   const template = document.createElement('template');

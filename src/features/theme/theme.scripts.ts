@@ -1,5 +1,6 @@
-import { DATA_ATTRIBUTES, DOM_HOOKS, STORAGE_KEYS } from '@/shared/domHooks';
 import type { Theme } from '@/types/common';
+
+import { DATA_ATTRIBUTES, DOM_HOOKS, STORAGE_KEYS } from '@/shared/domHooks';
 
 const isTheme = (value: string | null): value is Theme => value === 'dark' || value === 'light';
 const getSystemTheme = (): Theme => {

@@ -1,8 +1,10 @@
-import styles from './avatar.module.scss';
+import type { Lang } from '@/types/common';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
-import type { Lang } from '@/types/common';
+
 import { sanitizeUrl } from '@/ui/utils/html';
+
+import styles from './avatar.module.scss';
 
 const avatar = (lang: Lang, src?: string): HTMLElement => {
   const buttonText = lang === 'en' ? 'Whaaat?' : 'Что тут?';

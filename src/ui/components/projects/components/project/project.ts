@@ -1,8 +1,8 @@
 import IconPhotoScan from '@tabler/icons/outline/photo-scan.svg?raw';
 
-import styles from './project.module.scss';
-
 import { sanitizeUrl } from '@/ui/utils/html';
+
+import styles from './project.module.scss';
 
 export interface ProjectProps {
   title: string;

@@ -1,17 +1,23 @@
-import '@/assets/styles/style.scss';
+import type { Lang } from '@/types/common';
+
+import { DATA_ATTRIBUTES } from '@/shared/domHooks';
+
+import { getLang } from '@/ui/utils/getLang';
+import { setTitle } from '@/ui/utils/setTitle';
 
 import { initRuntime } from '@/features/runtime/initRuntime';
-import { MAIN } from '@/main.data';
-import { DATA_ATTRIBUTES } from '@/shared/domHooks';
-import type { Lang } from '@/types/common';
+
+import footer from '@/ui/layouts/footer/footer';
+import header from '@/ui/layouts/header/header';
+
 import backdrop from '@/ui/components/backdrop/backdrop';
 import modal from '@/ui/components/modal/modal';
 import profile from '@/ui/components/profile/profile';
 import projects from '@/ui/components/projects/projects';
-import footer from '@/ui/layouts/footer/footer';
-import header from '@/ui/layouts/header/header';
-import { getLang } from '@/ui/utils/getLang';
-import { setTitle } from '@/ui/utils/setTitle';
+
+import '@/assets/styles/style.scss';
+
+import { MAIN } from '@/main.data';
 
 const root = document.querySelector<HTMLDivElement>('#app');
 

@@ -1,6 +1,6 @@
-import styles from './socialsItem.module.scss';
-
 import { sanitizeUrl } from '@/ui/utils/html';
+
+import styles from './socialsItem.module.scss';
 
 export interface SocialsItemProps {
   title: string;
