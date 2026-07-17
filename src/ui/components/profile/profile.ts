@@ -1,21 +1,16 @@
 import type { Lang } from '@/types/common';
+import type { ContactsItemData, ProfileData } from '@/types/content';
 
 import avatar from '@/ui/components/avatar/avatar';
-import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
 import contacts from '@/ui/components/contacts/contacts';
 
 import styles from './profile.module.scss';
 
-export interface ProfileProps {
-  name: string;
-  who: string;
-  descriptionParagraphs: string[];
-  imgSrc?: string;
-}
+export type ProfileProps = ProfileData;
 
 interface ProfileViewProps extends ProfileProps {
   lang: Lang;
-  contacts: ContactsItemProps[];
+  contacts: ContactsItemData[];
 }
 
 const profile = ({

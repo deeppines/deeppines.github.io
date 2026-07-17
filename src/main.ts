@@ -99,7 +99,7 @@ const renderApp = (lang: Lang = getLang()): void => {
   setTitle(content.title);
   document.body.dataset[DATA_ATTRIBUTES.backdrop] = 'false';
 
-  appShell.headerContainer.replaceChildren(header());
+  appShell.headerContainer.replaceChildren(header(content.title));
   appShell.profileSection.replaceChildren(
     profile({
       ...content.profileData,

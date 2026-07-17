@@ -3,6 +3,7 @@ import IconSnowflakeOff from '@tabler/icons/outline/snowflake-off.svg?raw';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
 
+import { getLang } from '@/ui/utils/getLang/getLang';
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
 import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion/prefersReducedMotion';
 
@@ -14,7 +15,10 @@ import switcher from '@/ui/components/switcher/switcher';
 
 import style from './footer.module.scss';
 
+import { UI_TEXT } from '@/ui/content/uiText';
+
 const footer = (socialItems: SocialsItemProps[]): HTMLElement => {
+  const lang = getLang();
   const element = document.createElement('footer');
   const left = document.createElement('div');
   const right = document.createElement('div');
@@ -27,7 +31,12 @@ const footer = (socialItems: SocialsItemProps[]): HTMLElement => {
 
   if (isWinter() && !prefersReducedMotion()) {
     left.append(
-      switcher(IconSnowflakeOff, IconSnowflake, DOM_HOOKS.snowflakesToggle, 'Toggle snowflakes')
+      switcher(
+        IconSnowflakeOff,
+        IconSnowflake,
+        DOM_HOOKS.snowflakesToggle,
+        UI_TEXT[lang].snowflakesToggleTitle
+      )
     );
   }
 

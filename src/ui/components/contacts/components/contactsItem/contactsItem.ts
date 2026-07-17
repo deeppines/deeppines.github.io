@@ -1,20 +1,11 @@
+import type { ContactsItemData } from '@/types/content';
+
+import { appendHtml } from '@/ui/utils/appendHtml/appendHtml';
 import { sanitizeTarget, sanitizeUrl } from '@/ui/utils/html/html';
 
 import styles from './contactsItem.module.scss';
 
-export interface ContactsItemProps {
-  icon: string;
-  text: string;
-  title: string;
-  url: string;
-  target?: string;
-}
-
-const appendHtml = (target: HTMLElement, html: string): void => {
-  const template = document.createElement('template');
-  template.innerHTML = html.trim();
-  target.append(template.content.cloneNode(true));
-};
+export type ContactsItemProps = ContactsItemData;
 
 const contactsItem = ({ icon, text, title, url, target }: ContactsItemProps): HTMLElement => {
   const safeUrl = sanitizeUrl(url);

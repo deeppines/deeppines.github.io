@@ -1,12 +1,7 @@
+import { appendHtml } from '@/ui/utils/appendHtml/appendHtml';
 import { getTheme } from '@/ui/utils/getTheme/getTheme';
 
 import styles from './switcher.module.scss';
-
-const appendHtml = (target: HTMLElement, html: string): void => {
-  const template = document.createElement('template');
-  template.innerHTML = html.trim();
-  target.append(template.content.cloneNode(true));
-};
 
 const switcher = (IconOn: string, IconOff: string, classes?: string, title?: string): HTMLElement => {
   const theme = getTheme();

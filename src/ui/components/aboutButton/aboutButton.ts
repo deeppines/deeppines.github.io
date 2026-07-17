@@ -2,21 +2,21 @@ import helpIcon from '@tabler/icons/outline/help.svg?raw';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
 
+import { appendHtml } from '@/ui/utils/appendHtml/appendHtml';
+import { getLang } from '@/ui/utils/getLang/getLang';
+
 import styles from './aboutButton.module.scss';
 
-const appendHtml = (target: HTMLElement, html: string): void => {
-  const template = document.createElement('template');
-  template.innerHTML = html.trim();
-  target.append(template.content.cloneNode(true));
-};
+import { UI_TEXT } from '@/ui/content/uiText';
 
 const aboutButton = (): HTMLElement => {
+  const lang = getLang();
   const button = document.createElement('button');
   const icon = document.createElement('div');
 
   button.type = 'button';
   button.className = `${styles.root} ${DOM_HOOKS.modalOpen}`;
-  button.title = 'About';
+  button.title = UI_TEXT[lang].aboutButtonTitle;
 
   icon.className = styles.icon;
   appendHtml(icon, helpIcon);

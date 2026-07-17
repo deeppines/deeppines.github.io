@@ -3,59 +3,66 @@ import iconBrandLinkedin from '@tabler/icons/outline/brand-linkedin.svg?raw';
 import IconFileTypePdf from '@tabler/icons/outline/file-type-pdf.svg?raw';
 import iconMail from '@tabler/icons/outline/mail.svg?raw';
 
-import type { WithLang } from '@/types/common';
+import type { MainPageData } from '@/types/content';
 
 import { MODAL_IDS } from '@/shared/domHooks';
 
-import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
-import type { ModalProps } from '@/ui/components/modal/modal';
-import type { ProfileProps } from '@/ui/components/profile/profile';
-import type { ProjectProps } from '@/ui/components/projects/components/project/project';
-import type { SocialsItemProps } from '@/ui/components/socials/components/socialsItem/socialsItem';
+const withLang = <T>(ru: T, en: T) => ({ ru, en });
 
-interface MainPageProps {
-  contacts: WithLang<ContactsItemProps>[];
-  profile: WithLang<ProfileProps>;
-  projects: WithLang<ProjectProps>[];
-  socials: SocialsItemProps[];
-  modals: {
-    about: WithLang<ModalProps>;
-    me: WithLang<ModalProps>;
-  };
-}
+const PROFILE_IMAGE_URL = 'https://github.com/deeppines.png';
+const PINES_IMAGE_URL = '/assets/img/projects/pines.png';
+const PINES_BADGE_URL =
+  'https://vsmarketplacebadges.dev/version-short/deeppines.pines-visual-studio-code.svg';
+const PINES_LINK_URL = 'https://marketplace.visualstudio.com/items?itemName=deeppines.pines-visual-studio-code';
 
-export const MAIN: MainPageProps = {
+const ABOUT_STACK_ITEMS = ['Vite', 'Typescript', 'CSS modules'];
+const ME_SOCIAL_LINKS = [
+  {
+    title: 'Lastfm',
+    url: 'https://www.last.fm/user/deeppines',
+  },
+  {
+    title: 'MyShows',
+    url: 'https://myshows.me/deeppines',
+  },
+  {
+    title: 'Steam',
+    url: 'https://steamcommunity.com/id/deeppines/',
+  },
+];
+
+export const MAIN: MainPageData = {
   contacts: [
-    {
-      ru: {
+    withLang(
+      {
         icon: iconMail,
         text: 'Email',
         title: 'Email',
-        url: 'mailto:egorkir41@gmailcom',
+        url: 'mailto:egorkir41@gmail.com',
       },
-      en: {
+      {
         icon: iconMail,
         text: 'Email',
         title: 'Email',
-        url: 'mailto:egorkir41@gmailcom',
-      },
-    },
-    {
-      ru: {
+        url: 'mailto:egorkir41@gmail.com',
+      }
+    ),
+    withLang(
+      {
         icon: IconFileTypePdf,
         text: 'Резюме',
         title: 'CV',
         url: '/assets/docs/cv_2025.pdf',
         target: '_blank',
       },
-      en: {
+      {
         icon: IconFileTypePdf,
         text: 'Resume',
         title: 'CV',
         url: '/assets/docs/cv.pdf',
         target: '_blank',
-      },
-    },
+      }
+    ),
     // {
     //   ru: {
     //     icon: IconPhoto,
@@ -73,43 +80,41 @@ export const MAIN: MainPageProps = {
     //   },
     // },
   ],
-  profile: {
-    ru: {
+  profile: withLang(
+    {
       name: 'Кирдяшкин Егор',
       who: 'Frontend developer',
       descriptionParagraphs: [
         'Занимаюсь разработкой UI сайтов и не только. Верстаю и пишу логику компонентов на React и Typescript.',
       ],
-      imgSrc: 'https://github.com/deeppines.png',
+      imgSrc: PROFILE_IMAGE_URL,
     },
-    en: {
+    {
       name: 'Kirdiashkin Egor',
       who: 'Frontend developer',
       descriptionParagraphs: [
         'I specialize in developing website user interfaces and more. I handle layout design and write component logic using React and TypeScript.',
       ],
-      imgSrc: 'https://github.com/deeppines.png',
-    },
-  },
+      imgSrc: PROFILE_IMAGE_URL,
+    }
+  ),
   projects: [
-    {
-      ru: {
+    withLang(
+      {
         title: 'Pines',
         description: 'Темная тема для VS Code',
-        image: '/assets/img/projects/pines.png',
-        badge:
-          'https://vsmarketplacebadges.dev/version-short/deeppines.pines-visual-studio-code.svg',
-        link: 'https://marketplace.visualstudio.com/items?itemName=deeppines.pines-visual-studio-code',
+        image: PINES_IMAGE_URL,
+        badge: PINES_BADGE_URL,
+        link: PINES_LINK_URL,
       },
-      en: {
+      {
         title: 'Pines',
         description: 'Dark theme for VS Code',
-        image: '/assets/img/projects/pines.png',
-        badge:
-          'https://vsmarketplacebadges.dev/version-short/deeppines.pines-visual-studio-code.svg',
-        link: 'https://marketplace.visualstudio.com/items?itemName=deeppines.pines-visual-studio-code',
-      },
-    },
+        image: PINES_IMAGE_URL,
+        badge: PINES_BADGE_URL,
+        link: PINES_LINK_URL,
+      }
+    ),
   ],
   socials: [
     {
@@ -124,77 +129,51 @@ export const MAIN: MainPageProps = {
     },
   ],
   modals: {
-    about: {
-      ru: {
+    about: withLang(
+      {
         id: MODAL_IDS.about,
         title: 'О странице',
         content: [
           {
             type: 'list',
             title: 'Что использовал:',
-            items: ['Vite', 'Typescript', 'CSS modules'],
+            items: ABOUT_STACK_ITEMS,
           },
         ],
       },
-      en: {
+      {
         id: MODAL_IDS.about,
         title: 'About page',
         content: [
           {
             type: 'list',
             title: 'What was used:',
-            items: ['Vite', 'Typescript', 'CSS modules'],
+            items: ABOUT_STACK_ITEMS,
           },
         ],
-      },
-    },
-    me: {
-      ru: {
+      }
+    ),
+    me: withLang(
+      {
         id: MODAL_IDS.me,
         title: 'Cоцсети',
         content: [
           {
             type: 'links',
-            items: [
-              {
-                title: 'Lastfm',
-                url: 'https://www.last.fm/user/deeppines',
-              },
-              {
-                title: 'MyShows',
-                url: 'https://myshows.me/deeppines',
-              },
-              {
-                title: 'Steam',
-                url: 'https://steamcommunity.com/id/deeppines/',
-              },
-            ],
+            items: ME_SOCIAL_LINKS,
           },
         ],
       },
-      en: {
+      {
         id: MODAL_IDS.me,
         title: 'Socials',
         content: [
           {
             type: 'links',
-            items: [
-              {
-                title: 'Lastfm',
-                url: 'https://www.last.fm/user/deeppines',
-              },
-              {
-                title: 'MyShows',
-                url: 'https://myshows.me/deeppines',
-              },
-              {
-                title: 'Steam',
-                url: 'https://steamcommunity.com/id/deeppines/',
-              },
-            ],
+            items: ME_SOCIAL_LINKS,
           },
         ],
-      },
-    },
+      }
+    ),
   },
 };

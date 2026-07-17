@@ -1,44 +1,18 @@
 import iconX from '@tabler/icons/outline/x.svg?raw';
 
+import type { ModalContentBlock, ModalData } from '@/types/content';
+
 import { DOM_HOOKS } from '@/shared/domHooks';
 
+import { appendHtml } from '@/ui/utils/appendHtml/appendHtml';
+import { getLang } from '@/ui/utils/getLang/getLang';
 import { sanitizeUrl } from '@/ui/utils/html/html';
 
 import styles from './modal.module.scss';
 
-interface ModalParagraphBlock {
-  type: 'paragraph';
-  text: string;
-}
+import { UI_TEXT } from '@/ui/content/uiText';
 
-interface ModalListBlock {
-  type: 'list';
-  title?: string;
-  items: string[];
-}
-
-interface ModalLinksBlock {
-  type: 'links';
-  items: {
-    title: string;
-    url: string;
-  }[];
-}
-
-export type ModalContentBlock = ModalParagraphBlock | ModalListBlock | ModalLinksBlock;
-
-export interface ModalProps {
-  id: string;
-  title: string;
-  content?: ModalContentBlock[];
-  footer?: ModalContentBlock[];
-}
-
-const appendHtml = (target: HTMLElement, html: string): void => {
-  const template = document.createElement('template');
-  template.innerHTML = html.trim();
-  target.append(template.content.cloneNode(true));
-};
+export type ModalProps = ModalData;
 
 const renderContentBlocks = (target: HTMLElement, blocks: ModalContentBlock[]): void => {
   blocks.forEach((block) => {
@@ -83,6 +57,7 @@ const renderContentBlocks = (target: HTMLElement, blocks: ModalContentBlock[]): 
 };
 
 const modal = ({ id, title, content, footer }: ModalProps): HTMLElement => {
+  const lang = getLang();
   const titleId = `${id}-title`;
   const root = document.createElement('div');
   const contentRoot = document.createElement('div');
@@ -108,7 +83,7 @@ const modal = ({ id, title, content, footer }: ModalProps): HTMLElement => {
 
   closeButton.type = 'button';
   closeButton.className = `${styles.close} ${DOM_HOOKS.modalClose}`;
-  closeButton.title = 'Close';
+  closeButton.title = UI_TEXT[lang].modalCloseTitle;
   appendHtml(closeButton, iconX);
 
   header.append(heading, closeButton);

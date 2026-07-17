@@ -4,13 +4,16 @@ import project, { ProjectProps } from './components/project/project';
 
 import styles from './projects.module.scss';
 
+import { UI_TEXT } from '@/ui/content/uiText';
+
 const projects = (items: ProjectProps[], lang: Lang): DocumentFragment => {
+  const text = UI_TEXT[lang];
   const fragment = document.createDocumentFragment();
   const title = document.createElement('h2');
   const root = document.createElement('div');
 
   title.className = styles.title;
-  title.textContent = lang === 'en' ? 'Projects' : 'Проекты';
+  title.textContent = text.projectsTitle;
 
   root.className = styles.root;
   items.forEach((item) => {

@@ -1,22 +1,13 @@
 import IconPhotoScan from '@tabler/icons/outline/photo-scan.svg?raw';
 
+import type { ProjectData } from '@/types/content';
+
+import { appendHtml } from '@/ui/utils/appendHtml/appendHtml';
 import { sanitizeUrl } from '@/ui/utils/html/html';
 
 import styles from './project.module.scss';
 
-export interface ProjectProps {
-  title: string;
-  description: string;
-  image?: string;
-  link?: string;
-  badge?: string;
-}
-
-const appendHtml = (target: HTMLElement, html: string): void => {
-  const template = document.createElement('template');
-  template.innerHTML = html.trim();
-  target.append(template.content.cloneNode(true));
-};
+export type ProjectProps = ProjectData;
 
 const project = ({ title, description, image, link, badge }: ProjectProps): HTMLElement => {
   const safeLink = link ? sanitizeUrl(link) : undefined;

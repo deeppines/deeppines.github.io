@@ -1,3 +1,5 @@
+@use '@assets/styles/utils' as *;
+
 .root {
   display: flex;
   gap: 10px;
@@ -10,4 +12,9 @@
   display: flex;
   gap: 12px;
   align-items: center;
+  margin-left: auto;
+}
+
+.hiddenHeading {
+  @include visuallyHidden;
 }
