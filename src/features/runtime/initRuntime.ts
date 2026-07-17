@@ -2,12 +2,12 @@ import type { Lang } from '@/types/common';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
 
-import { initLang } from '@/ui/components/lang/lang.scripts';
-import { initModals } from '@/ui/components/modal/modal.scripts';
-import { initSnowflakes } from '@/ui/components/snowflake/snowflakes.scripts';
+import { initHiddenButton } from '@/ui/components/avatar/avatar.scripts';
 
-import { initHiddenButton } from '../hiddenButton/hiddenButton.scripts';
-import { initTheme } from '../theme/theme.scripts';
+import { initLang } from './lang.scripts';
+import { initModals } from './modal.scripts';
+import { initSnowflakes } from './snowflakes.scripts';
+import { initTheme } from './theme.scripts';
 
 interface InitRuntimeOptions {
   onLangChange?: (lang: Lang) => void;
