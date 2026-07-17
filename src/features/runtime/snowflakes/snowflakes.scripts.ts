@@ -1,7 +1,7 @@
 import { DOM_HOOKS } from '@/shared/domHooks';
 
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
-import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion';
+import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion/prefersReducedMotion';
 
 interface SnowflakesConfig {
   toggleClass?: string;

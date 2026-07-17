@@ -2,7 +2,7 @@ import type { Lang } from '@/types/common';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
 
-import { sanitizeUrl } from '@/ui/utils/html';
+import { sanitizeUrl } from '@/ui/utils/html/html';
 
 import styles from './avatar.module.scss';
 

@@ -1,4 +1,4 @@
-import { getTheme } from '@/ui/utils/getTheme';
+import { getTheme } from '@/ui/utils/getTheme/getTheme';
 
 import styles from './switcher.module.scss';
 

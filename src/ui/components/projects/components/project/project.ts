@@ -1,6 +1,6 @@
 import IconPhotoScan from '@tabler/icons/outline/photo-scan.svg?raw';
 
-import { sanitizeUrl } from '@/ui/utils/html';
+import { sanitizeUrl } from '@/ui/utils/html/html';
 
 import styles from './project.module.scss';
 

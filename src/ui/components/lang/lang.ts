@@ -1,6 +1,6 @@
 import { DOM_HOOKS } from '@/shared/domHooks';
 
-import { getLang } from '@/ui/utils/getLang';
+import { getLang } from '@/ui/utils/getLang/getLang';
 
 import styles from './lang.module.scss';
 

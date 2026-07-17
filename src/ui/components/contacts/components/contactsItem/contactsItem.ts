@@ -1,4 +1,4 @@
-import { sanitizeTarget, sanitizeUrl } from '@/ui/utils/html';
+import { sanitizeTarget, sanitizeUrl } from '@/ui/utils/html/html';
 
 import styles from './contactsItem.module.scss';
 

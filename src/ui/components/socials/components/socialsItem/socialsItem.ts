@@ -1,4 +1,4 @@
-import { sanitizeUrl } from '@/ui/utils/html';
+import { sanitizeUrl } from '@/ui/utils/html/html';
 
 import styles from './socialsItem.module.scss';
 

@@ -2,7 +2,7 @@ import iconX from '@tabler/icons/outline/x.svg?raw';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
 
-import { sanitizeUrl } from '@/ui/utils/html';
+import { sanitizeUrl } from '@/ui/utils/html/html';
 
 import styles from './modal.module.scss';
 

@@ -4,7 +4,7 @@ import IconSnowflakeOff from '@tabler/icons/outline/snowflake-off.svg?raw';
 import { DOM_HOOKS } from '@/shared/domHooks';
 
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
-import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion';
+import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion/prefersReducedMotion';
 
 import aboutButton from '@/ui/components/aboutButton/aboutButton';
 import copyright from '@/ui/components/copyright/copyright';

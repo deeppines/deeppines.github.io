@@ -2,8 +2,8 @@ import type { Lang } from '@/types/common';
 
 import { DATA_ATTRIBUTES } from '@/shared/domHooks';
 
-import { getLang } from '@/ui/utils/getLang';
-import { setTitle } from '@/ui/utils/setTitle';
+import { getLang } from '@/ui/utils/getLang/getLang';
+import { setTitle } from '@/ui/utils/setTitle/setTitle';
 
 import { initRuntime } from '@/features/runtime/initRuntime';
 
