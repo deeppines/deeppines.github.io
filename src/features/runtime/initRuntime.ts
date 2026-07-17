@@ -4,10 +4,10 @@ import { DOM_HOOKS } from '@/shared/domHooks';
 
 import { initHiddenButton } from '@/ui/components/avatar/avatar.scripts';
 
-import { initLang } from './lang.scripts';
-import { initModals } from './modal.scripts';
-import { initSnowflakes } from './snowflakes.scripts';
-import { initTheme } from './theme.scripts';
+import { initLang } from './lang/lang.scripts';
+import { initModals } from './modal/modal.scripts';
+import { initSnowflakes } from './snowflakes/snowflakes.scripts';
+import { initTheme } from './theme/theme.scripts';
 
 interface InitRuntimeOptions {
   onLangChange?: (lang: Lang) => void;
