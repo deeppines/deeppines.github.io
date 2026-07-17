@@ -25,38 +25,92 @@ if (!root) {
   throw new Error('App root "#app" not found');
 }
 
-const renderApp = (lang: Lang = getLang()): void => {
+interface LocalizedContent {
+  lang: Lang;
+  title: string;
+  profileData: (typeof MAIN.profile)[Lang];
+  aboutModalData: (typeof MAIN.modals.about)[Lang];
+  meModalData: (typeof MAIN.modals.me)[Lang];
+  contactItems: (typeof MAIN.contacts)[number][Lang][];
+  projectItems: (typeof MAIN.projects)[number][Lang][];
+}
+
+interface AppShell {
+  headerContainer: HTMLElement;
+  profileSection: HTMLElement;
+  projectsSection: HTMLElement;
+  footerContainer: HTMLElement;
+  aboutModalContainer: HTMLElement;
+  meModalContainer: HTMLElement;
+}
+
+const getLocalizedContent = (lang: Lang): LocalizedContent => {
   const title =
     lang === 'en'
       ? `${MAIN.profile.en.name} - ${MAIN.profile.en.who}`
       : `${MAIN.profile.ru.name} - ${MAIN.profile.ru.who}`;
-  const profileData = lang === 'en' ? MAIN.profile.en : MAIN.profile.ru;
-  const aboutModalData = lang === 'en' ? MAIN.modals.about.en : MAIN.modals.about.ru;
-  const meModalData = lang === 'en' ? MAIN.modals.me.en : MAIN.modals.me.ru;
-  const contactItems = MAIN.contacts.map((item) => (lang === 'en' ? item.en : item.ru));
-  const projectItems = MAIN.projects.map((item) => (lang === 'en' ? item.en : item.ru));
+  return {
+    lang,
+    title,
+    profileData: lang === 'en' ? MAIN.profile.en : MAIN.profile.ru,
+    aboutModalData: lang === 'en' ? MAIN.modals.about.en : MAIN.modals.about.ru,
+    meModalData: lang === 'en' ? MAIN.modals.me.en : MAIN.modals.me.ru,
+    contactItems: MAIN.contacts.map((item) => (lang === 'en' ? item.en : item.ru)),
+    projectItems: MAIN.projects.map((item) => (lang === 'en' ? item.en : item.ru)),
+  };
+};
 
-  setTitle(title);
-  document.body.dataset[DATA_ATTRIBUTES.backdrop] = 'false';
-
+const createAppShell = (): AppShell => {
   const fragment = document.createDocumentFragment();
+  const headerContainer = document.createElement('div');
   const mainElement = document.createElement('main');
   const profileSection = document.createElement('section');
   const projectsSection = document.createElement('section');
-
-  fragment.append(header());
-  profileSection.append(profile({ ...profileData, lang, contacts: contactItems }));
-  projectsSection.append(projects(projectItems, lang));
+  const footerContainer = document.createElement('div');
+  const aboutModalContainer = document.createElement('div');
+  const meModalContainer = document.createElement('div');
 
   mainElement.append(profileSection, projectsSection);
-  fragment.append(mainElement);
-
-  fragment.append(footer(MAIN.socials));
-  fragment.append(modal(aboutModalData));
-  fragment.append(modal(meModalData));
-  fragment.append(backdrop());
-
+  fragment.append(
+    headerContainer,
+    mainElement,
+    footerContainer,
+    aboutModalContainer,
+    meModalContainer,
+    backdrop()
+  );
   root.replaceChildren(fragment);
+
+  return {
+    headerContainer,
+    profileSection,
+    projectsSection,
+    footerContainer,
+    aboutModalContainer,
+    meModalContainer,
+  };
+};
+
+const appShell = createAppShell();
+
+const renderApp = (lang: Lang = getLang()): void => {
+  const content = getLocalizedContent(lang);
+
+  setTitle(content.title);
+  document.body.dataset[DATA_ATTRIBUTES.backdrop] = 'false';
+
+  appShell.headerContainer.replaceChildren(header());
+  appShell.profileSection.replaceChildren(
+    profile({
+      ...content.profileData,
+      lang: content.lang,
+      contacts: content.contactItems,
+    })
+  );
+  appShell.projectsSection.replaceChildren(projects(content.projectItems, content.lang));
+  appShell.footerContainer.replaceChildren(footer(MAIN.socials));
+  appShell.aboutModalContainer.replaceChildren(modal(content.aboutModalData));
+  appShell.meModalContainer.replaceChildren(modal(content.meModalData));
 
   initRuntime({ onLangChange: renderApp });
 };
