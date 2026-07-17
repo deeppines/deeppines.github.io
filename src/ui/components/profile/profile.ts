@@ -1,7 +1,5 @@
 import type { Lang } from '@/types/common';
 
-import { sanitizeRichHtml } from '@/ui/utils/html';
-
 import avatar from '@/ui/components/avatar/avatar';
 import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
 import contacts from '@/ui/components/contacts/contacts';
@@ -11,7 +9,7 @@ import styles from './profile.module.scss';
 export interface ProfileProps {
   name: string;
   who: string;
-  description: string;
+  descriptionParagraphs: string[];
   imgSrc?: string;
 }
 
@@ -23,7 +21,7 @@ interface ProfileViewProps extends ProfileProps {
 const profile = ({
   name,
   who,
-  description,
+  descriptionParagraphs,
   imgSrc,
   lang,
   contacts: contactItems,
@@ -52,7 +50,11 @@ const profile = ({
   headerRight.append(avatar(lang, imgSrc));
   header.append(headerLeft, headerRight);
 
-  descriptionRoot.innerHTML = sanitizeRichHtml(description);
+  descriptionParagraphs.forEach((paragraph) => {
+    const paragraphElement = document.createElement('p');
+    paragraphElement.textContent = paragraph;
+    descriptionRoot.append(paragraphElement);
+  });
   root.append(header, descriptionRoot);
 
   return root;

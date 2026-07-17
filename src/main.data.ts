@@ -8,7 +8,6 @@ import type { WithLang } from '@/types/common';
 import { MODAL_IDS } from '@/shared/domHooks';
 
 import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
-import funblock from '@/ui/components/funblock/funblock';
 import type { ModalProps } from '@/ui/components/modal/modal';
 import type { ProfileProps } from '@/ui/components/profile/profile';
 import type { ProjectProps } from '@/ui/components/projects/components/project/project';
@@ -78,15 +77,17 @@ export const MAIN: MainPageProps = {
     ru: {
       name: 'Кирдяшкин Егор',
       who: 'Frontend developer',
-      description:
-        '<p>Занимаюсь разработкой UI сайтов и не только. Верстаю и пишу логику компонентов на React и Typescript.</p>',
+      descriptionParagraphs: [
+        'Занимаюсь разработкой UI сайтов и не только. Верстаю и пишу логику компонентов на React и Typescript.',
+      ],
       imgSrc: 'https://github.com/deeppines.png',
     },
     en: {
       name: 'Kirdiashkin Egor',
       who: 'Frontend developer',
-      description:
-        '<p>I specialize in developing website user interfaces and more. I handle layout design and write component logic using React and TypeScript.</p>',
+      descriptionParagraphs: [
+        'I specialize in developing website user interfaces and more. I handle layout design and write component logic using React and TypeScript.',
+      ],
       imgSrc: 'https://github.com/deeppines.png',
     },
   },
@@ -127,26 +128,72 @@ export const MAIN: MainPageProps = {
       ru: {
         id: MODAL_IDS.about,
         title: 'О странице',
-        content:
-          '<p>Что использовал:</p><ul><li>Vite</li><li>Typescript</li><li>CSS modules</li></ul>',
+        content: [
+          {
+            type: 'list',
+            title: 'Что использовал:',
+            items: ['Vite', 'Typescript', 'CSS modules'],
+          },
+        ],
       },
       en: {
         id: MODAL_IDS.about,
         title: 'About page',
-        content:
-          '<p>What was used:</p><ul><li>Vite</li><li>Typescript</li><li>CSS modules</li></ul>',
+        content: [
+          {
+            type: 'list',
+            title: 'What was used:',
+            items: ['Vite', 'Typescript', 'CSS modules'],
+          },
+        ],
       },
     },
     me: {
       ru: {
         id: MODAL_IDS.me,
         title: 'Cоцсети',
-        content: `${funblock()}`,
+        content: [
+          {
+            type: 'links',
+            items: [
+              {
+                title: 'Lastfm',
+                url: 'https://www.last.fm/user/deeppines',
+              },
+              {
+                title: 'MyShows',
+                url: 'https://myshows.me/deeppines',
+              },
+              {
+                title: 'Steam',
+                url: 'https://steamcommunity.com/id/deeppines/',
+              },
+            ],
+          },
+        ],
       },
       en: {
         id: MODAL_IDS.me,
         title: 'Socials',
-        content: `${funblock()}`,
+        content: [
+          {
+            type: 'links',
+            items: [
+              {
+                title: 'Lastfm',
+                url: 'https://www.last.fm/user/deeppines',
+              },
+              {
+                title: 'MyShows',
+                url: 'https://myshows.me/deeppines',
+              },
+              {
+                title: 'Steam',
+                url: 'https://steamcommunity.com/id/deeppines/',
+              },
+            ],
+          },
+        ],
       },
     },
   },
