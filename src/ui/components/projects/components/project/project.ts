@@ -11,8 +11,14 @@ export type ProjectProps = ProjectData;
 
 const project = ({ title, description, image, link, badge }: ProjectProps): HTMLElement => {
   const safeLink = link ? sanitizeUrl(link) : undefined;
-  const safeImage = image ? sanitizeUrl(image) : undefined;
-  const safeBadge = badge ? sanitizeUrl(badge) : undefined;
+  const safeImage = image ? sanitizeUrl(image.src) : undefined;
+  const imageWidth = image?.width ?? 50;
+  const imageHeight = image?.height ?? 50;
+  const imageAlt = image?.alt ?? title;
+  const safeBadge = badge ? sanitizeUrl(badge.src) : undefined;
+  const badgeWidth = badge?.width ?? 50;
+  const badgeHeight = badge?.height ?? 50;
+  const badgeAlt = badge?.alt ?? title;
   const root: HTMLElement = safeLink ? document.createElement('a') : document.createElement('div');
   const imageRoot = document.createElement('div');
   const descriptionRoot = document.createElement('div');
@@ -20,6 +26,7 @@ const project = ({ title, description, image, link, badge }: ProjectProps): HTML
   const paragraph = document.createElement('p');
 
   root.className = styles.root;
+
   if (safeLink) {
     const linkRoot = root as HTMLAnchorElement;
     linkRoot.href = safeLink;
@@ -28,12 +35,13 @@ const project = ({ title, description, image, link, badge }: ProjectProps): HTML
   }
 
   imageRoot.className = styles.image;
+
   if (safeImage) {
     const imageElement = document.createElement('img');
     imageElement.src = safeImage;
-    imageElement.width = 50;
-    imageElement.height = 50;
-    imageElement.alt = title;
+    imageElement.width = imageWidth;
+    imageElement.height = imageHeight;
+    imageElement.alt = imageAlt;
     imageRoot.append(imageElement);
   } else {
     appendHtml(imageRoot, IconPhotoScan);
@@ -50,7 +58,9 @@ const project = ({ title, description, image, link, badge }: ProjectProps): HTML
     const badgeImage = document.createElement('img');
     badgeRoot.className = styles.badge;
     badgeImage.src = safeBadge;
-    badgeImage.alt = title;
+    badgeImage.width = badgeWidth;
+    badgeImage.height = badgeHeight;
+    badgeImage.alt = badgeAlt;
     badgeRoot.append(badgeImage);
     descriptionRoot.append(badgeRoot);
   }

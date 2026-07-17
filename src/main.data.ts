@@ -110,15 +110,35 @@ export const MAIN: MainPageData = {
       {
         title: 'Pines',
         description: 'Темная тема для VS Code',
-        image: PINES_IMAGE_URL,
-        badge: PINES_BADGE_URL,
+        image: {
+          src: PINES_IMAGE_URL,
+          width: 50,
+          height: 50,
+          alt: 'Pines',
+        },
+        badge: {
+          src: PINES_BADGE_URL,
+          width: 140,
+          height: 20,
+          alt: 'VS Marketplace',
+        },
         link: PINES_LINK_URL,
       },
       {
         title: 'Pines',
         description: 'Dark theme for VS Code',
-        image: PINES_IMAGE_URL,
-        badge: PINES_BADGE_URL,
+        image: {
+          src: PINES_IMAGE_URL,
+          width: 50,
+          height: 50,
+          alt: 'Pines',
+        },
+        badge: {
+          src: PINES_BADGE_URL,
+          width: 140,
+          height: 20,
+          alt: 'VS Marketplace',
+        },
         link: PINES_LINK_URL,
       }
     ),

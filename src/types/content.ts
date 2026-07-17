@@ -18,9 +18,19 @@ export interface ProfileData {
 export interface ProjectData {
   title: string;
   description: string;
-  image?: string;
+  image?: {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+  };
   link?: string;
-  badge?: string;
+  badge?: {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+  };
 }
 
 export interface SocialItemData {
