@@ -7,11 +7,12 @@ import { getLang } from '@/ui/utils/getLang/getLang';
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
 import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion/prefersReducedMotion';
 
-import aboutButton from '@/ui/components/aboutButton/aboutButton';
-import copyright from '@/ui/components/copyright/copyright';
-import type { SocialsItemProps } from '@/ui/components/socials/components/socialsItem/socialsItem';
 import socials from '@/ui/components/socials/socials';
-import switcher from '@/ui/components/switcher/switcher';
+
+import aboutButton from '@/ui/elements/aboutButton/aboutButton';
+import copyright from '@/ui/elements/copyright/copyright';
+import type { SocialsItemProps } from '@/ui/elements/socialsItem/socialsItem';
+import switcher from '@/ui/elements/switcher/switcher';
 
 import style from './footer.module.scss';
 

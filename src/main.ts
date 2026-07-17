@@ -10,10 +10,11 @@ import { initRuntime } from '@/features/runtime/initRuntime';
 import footer from '@/ui/layouts/footer/footer';
 import header from '@/ui/layouts/header/header';
 
-import backdrop from '@/ui/components/backdrop/backdrop';
 import modal from '@/ui/components/modal/modal';
 import profile from '@/ui/components/profile/profile';
 import projects from '@/ui/components/projects/projects';
+
+import backdrop from '@/ui/elements/backdrop/backdrop';
 
 import '@/assets/styles/style.scss';
 

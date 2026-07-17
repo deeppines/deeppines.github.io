@@ -1,5 +1,5 @@
-import type { ContactsItemProps } from './components/contactsItem/contactsItem';
-import contactsItem from './components/contactsItem/contactsItem';
+import type { ContactsItemProps } from '@/ui/elements/contactsItem/contactsItem';
+import contactsItem from '@/ui/elements/contactsItem/contactsItem';
 
 import styles from './contacts.module.scss';
 

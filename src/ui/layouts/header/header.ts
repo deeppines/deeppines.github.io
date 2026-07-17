@@ -5,8 +5,8 @@ import { DOM_HOOKS } from '@/shared/domHooks';
 
 import { getLang } from '@/ui/utils/getLang/getLang';
 
-import lang from '@/ui/components/lang/lang';
-import switcher from '@/ui/components/switcher/switcher';
+import lang from '@/ui/elements/lang/lang';
+import switcher from '@/ui/elements/switcher/switcher';
 
 import style from './header.module.scss';
 
