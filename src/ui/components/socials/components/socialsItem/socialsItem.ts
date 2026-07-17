@@ -1,6 +1,6 @@
 import styles from './socialsItem.module.scss';
 
-import { escapeHtml, sanitizeUrl } from '@/ui/utils/html';
+import { sanitizeUrl } from '@/ui/utils/html';
 
 export interface SocialsItemProps {
   title: string;
@@ -8,14 +8,24 @@ export interface SocialsItemProps {
   icon: string;
 }
 
-const socialsItem = ({ icon, title, url }: SocialsItemProps) => {
-  const safeUrl = sanitizeUrl(url);
+const appendHtml = (target: HTMLElement, html: string): void => {
+  const template = document.createElement('template');
+  template.innerHTML = html.trim();
+  target.append(template.content.cloneNode(true));
+};
 
-  return `
-    <a class="${styles.root}" href="${safeUrl}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(title)}">
-      ${icon}
-    </a>
-  `;
+const socialsItem = ({ icon, title, url }: SocialsItemProps): HTMLElement => {
+  const safeUrl = sanitizeUrl(url);
+  const link = document.createElement('a');
+
+  link.className = styles.root;
+  link.href = safeUrl;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.title = title;
+  appendHtml(link, icon);
+
+  return link;
 };
 
 export default socialsItem;

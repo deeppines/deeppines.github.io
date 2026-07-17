@@ -33,22 +33,24 @@ const renderApp = (lang: Lang = getLang()): void => {
   setTitle(title);
   document.body.dataset[DATA_ATTRIBUTES.backdrop] = 'false';
 
-  root.innerHTML = `
-    ${header()}
-    <main>
-      <section>
-        ${profile({ ...profileData, lang, contacts: contactItems })}
-      </section>
-      <section>
-        ${projects(projectItems, lang)}
-      </section>
-    </main>
-    ${footer(MAIN.socials)}
+  const fragment = document.createDocumentFragment();
+  const mainElement = document.createElement('main');
+  const profileSection = document.createElement('section');
+  const projectsSection = document.createElement('section');
 
-    ${modal(aboutModalData)}
-    ${modal(meModalData)}
-    ${backdrop()}
-  `;
+  fragment.append(header());
+  profileSection.append(profile({ ...profileData, lang, contacts: contactItems }));
+  projectsSection.append(projects(projectItems, lang));
+
+  mainElement.append(profileSection, projectsSection);
+  fragment.append(mainElement);
+
+  fragment.append(footer(MAIN.socials));
+  fragment.append(modal(aboutModalData));
+  fragment.append(modal(meModalData));
+  fragment.append(backdrop());
+
+  root.replaceChildren(fragment);
 
   initRuntime({ onLangChange: renderApp });
 };

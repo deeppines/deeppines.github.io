@@ -12,28 +12,27 @@ import switcher from '@/ui/components/switcher/switcher';
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
 import { prefersReducedMotion } from '@/ui/utils/prefersReducedMotion';
 
-const footer = (socialItems: SocialsItemProps[]): string => {
-  return `
-    <footer class=${style.root}>
-      <div class="${style.left}">
-        ${socials(socialItems)}
-        ${
-          isWinter() && !prefersReducedMotion()
-            ? switcher(
-                IconSnowflakeOff,
-                IconSnowflake,
-                DOM_HOOKS.snowflakesToggle,
-                'Toggle snowflakes'
-              )
-            : ''
-        }
-      </div>
-      <div class="${style.right}">
-        ${copyright()}
-        ${aboutButton()}
-      </div>
-    </footer>
-  `;
+const footer = (socialItems: SocialsItemProps[]): HTMLElement => {
+  const element = document.createElement('footer');
+  const left = document.createElement('div');
+  const right = document.createElement('div');
+
+  element.className = style.root;
+  left.className = style.left;
+  right.className = style.right;
+
+  left.append(socials(socialItems));
+
+  if (isWinter() && !prefersReducedMotion()) {
+    left.append(
+      switcher(IconSnowflakeOff, IconSnowflake, DOM_HOOKS.snowflakesToggle, 'Toggle snowflakes')
+    );
+  }
+
+  right.append(copyright(), aboutButton());
+
+  element.append(left, right);
+  return element;
 };
 
 export default footer;

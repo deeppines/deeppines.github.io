@@ -4,18 +4,36 @@ import IconDeviceTv from '@tabler/icons/outline/device-tv.svg?raw';
 
 import styles from './funblock.module.scss';
 
-const funblock = () => `
-  <div class="${styles.root}">
-    <a href="https://www.last.fm/user/deeppines" target="_blank" class="${styles.iconLink}" title="Lastfm">
-      ${IconBrandLastfm}
-    </a>
-    <a href="https://myshows.me/deeppines" target="_blank" class="${styles.iconLink}" title="MyShows">
-      ${IconDeviceTv}
-    </a>
-    <a href="https://steamcommunity.com/id/deeppines/" target="_blank" class="${styles.iconLink}" title="Steam">
-      ${IconBrandSteam}
-    </a>
-  </div>
-`;
+const appendHtml = (target: HTMLElement, html: string): void => {
+  const template = document.createElement('template');
+  template.innerHTML = html.trim();
+  target.append(template.content.cloneNode(true));
+};
+
+const createIconLink = (href: string, title: string, iconSvg: string): HTMLAnchorElement => {
+  const link = document.createElement('a');
+  link.href = href;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.className = styles.iconLink;
+  link.title = title;
+  appendHtml(link, iconSvg);
+  return link;
+};
+
+const createFunblockElement = (): HTMLElement => {
+  const root = document.createElement('div');
+  root.className = styles.root;
+
+  root.append(
+    createIconLink('https://www.last.fm/user/deeppines', 'Lastfm', IconBrandLastfm),
+    createIconLink('https://myshows.me/deeppines', 'MyShows', IconDeviceTv),
+    createIconLink('https://steamcommunity.com/id/deeppines/', 'Steam', IconBrandSteam)
+  );
+
+  return root;
+};
+
+const funblock = (): string => createFunblockElement().outerHTML;
 
 export default funblock;

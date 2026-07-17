@@ -2,19 +2,38 @@ import styles from './switcher.module.scss';
 
 import { getTheme } from '@/ui/utils/getTheme';
 
-const switcher = (IconOn: string, IconOff: string, classes?: string, title?: string) => {
-  const theme = getTheme();
+const appendHtml = (target: HTMLElement, html: string): void => {
+  const template = document.createElement('template');
+  template.innerHTML = html.trim();
+  target.append(template.content.cloneNode(true));
+};
 
-  return `
-    <label class="${styles.switcher}" title="${title}">
-      <input class="${styles.switcherInput} ${classes}"
-        type="checkbox" ${theme === 'dark' ? 'checked="checked"' : ''}/>
-      <span class="${styles.switcherSlider}">
-        <span>${IconOn}</span>
-        <span>${IconOff}</span>
-      </span>
-    </label>
-  `;
+const switcher = (IconOn: string, IconOff: string, classes?: string, title?: string): HTMLElement => {
+  const theme = getTheme();
+  const label = document.createElement('label');
+  const input = document.createElement('input');
+  const slider = document.createElement('span');
+  const iconOn = document.createElement('span');
+  const iconOff = document.createElement('span');
+
+  label.className = styles.switcher;
+  if (title) {
+    label.title = title;
+  }
+
+  input.className = `${styles.switcherInput}${classes ? ` ${classes}` : ''}`;
+  input.type = 'checkbox';
+  input.checked = theme === 'dark';
+
+  slider.className = styles.switcherSlider;
+
+  appendHtml(iconOn, IconOn);
+  appendHtml(iconOff, IconOff);
+
+  slider.append(iconOn, iconOff);
+  label.append(input, slider);
+
+  return label;
 };
 
 export default switcher;

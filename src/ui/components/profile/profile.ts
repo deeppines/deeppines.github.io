@@ -4,7 +4,7 @@ import type { Lang } from '@/types/common';
 import avatar from '@/ui/components/avatar/avatar';
 import type { ContactsItemProps } from '@/ui/components/contacts/components/contactsItem/contactsItem';
 import contacts from '@/ui/components/contacts/contacts';
-import { escapeHtml, sanitizeRichHtml } from '@/ui/utils/html';
+import { sanitizeRichHtml } from '@/ui/utils/html';
 
 export interface ProfileProps {
   name: string;
@@ -25,28 +25,35 @@ const profile = ({
   imgSrc,
   lang,
   contacts: contactItems,
-}: ProfileViewProps) => {
-  return `
-    <div class="${styles.profile}">
-      <div class="${styles.header}">
-        <div class="${styles.headerLeft}">
-          <div class="${styles.headerInfo}">
-            <h1>${escapeHtml(name)}</h1>
-            <p>${escapeHtml(who)}</p>
-          </div>
+}: ProfileViewProps): HTMLElement => {
+  const root = document.createElement('div');
+  const header = document.createElement('div');
+  const headerLeft = document.createElement('div');
+  const headerRight = document.createElement('div');
+  const headerInfo = document.createElement('div');
+  const heading = document.createElement('h1');
+  const subtitle = document.createElement('p');
+  const descriptionRoot = document.createElement('div');
 
-          ${contacts(contactItems)}
-        </div>
-        <div class="${styles.headerRight}">
-          ${avatar(lang, imgSrc)}
-        </div>
-      </div>
+  root.className = styles.profile;
+  header.className = styles.header;
+  headerLeft.className = styles.headerLeft;
+  headerRight.className = styles.headerRight;
+  headerInfo.className = styles.headerInfo;
+  descriptionRoot.className = styles.description;
 
-      <div class="${styles.description}">
-        ${sanitizeRichHtml(description)}
-      </div>
-    </div>
-  `;
+  heading.textContent = name;
+  subtitle.textContent = who;
+
+  headerInfo.append(heading, subtitle);
+  headerLeft.append(headerInfo, contacts(contactItems));
+  headerRight.append(avatar(lang, imgSrc));
+  header.append(headerLeft, headerRight);
+
+  descriptionRoot.innerHTML = sanitizeRichHtml(description);
+  root.append(header, descriptionRoot);
+
+  return root;
 };
 
 export default profile;

@@ -3,22 +3,28 @@ import styles from './lang.module.scss';
 import { DOM_HOOKS } from '@/shared/domHooks';
 import { getLang } from '@/ui/utils/getLang';
 
-const lang = () => {
+const lang = (): HTMLElement => {
   const initLang = getLang();
+  const select = document.createElement('select');
+  const optionRu = document.createElement('option');
+  const optionEn = document.createElement('option');
 
-  return `
-    <select class="${styles.root} ${DOM_HOOKS.langToggle}"
-      ${initLang === 'ru' ? 'title="Язык"' : 'title="Language"'}
-      value="${initLang}"
-    >
-      <option title="Russian" value="ru" ${initLang === 'ru' ? 'selected="selected"' : ''}>
-        RU
-      </option>
-      <option title="English" value="en" ${initLang === 'en' ? 'selected="selected"' : ''}>
-        EN
-      </option>
-    </select>
-  `;
+  select.className = `${styles.root} ${DOM_HOOKS.langToggle}`;
+  select.title = initLang === 'ru' ? 'Язык' : 'Language';
+  select.value = initLang;
+
+  optionRu.title = 'Russian';
+  optionRu.value = 'ru';
+  optionRu.textContent = 'RU';
+  optionRu.selected = initLang === 'ru';
+
+  optionEn.title = 'English';
+  optionEn.value = 'en';
+  optionEn.textContent = 'EN';
+  optionEn.selected = initLang === 'en';
+
+  select.append(optionRu, optionEn);
+  return select;
 };
 
 export default lang;

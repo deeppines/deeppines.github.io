@@ -1,6 +1,6 @@
 import styles from './contactsItem.module.scss';
 
-import { escapeHtml, sanitizeTarget, sanitizeUrl } from '@/ui/utils/html';
+import { sanitizeTarget, sanitizeUrl } from '@/ui/utils/html';
 
 export interface ContactsItemProps {
   icon: string;
@@ -10,21 +10,36 @@ export interface ContactsItemProps {
   target?: string;
 }
 
-const contactsItem = ({ icon, text, title, url, target }: ContactsItemProps): string => {
+const appendHtml = (target: HTMLElement, html: string): void => {
+  const template = document.createElement('template');
+  template.innerHTML = html.trim();
+  target.append(template.content.cloneNode(true));
+};
+
+const contactsItem = ({ icon, text, title, url, target }: ContactsItemProps): HTMLElement => {
   const safeUrl = sanitizeUrl(url);
   const safeTarget = sanitizeTarget(target);
-  const safeRel = safeTarget === '_blank' ? ' rel="noopener noreferrer"' : '';
+  const root = document.createElement('li');
+  const iconContainer = document.createElement('div');
+  const link = document.createElement('a');
 
-  return `
-    <li class="${styles.root}">
-      <div class="${styles.icon}">
-        ${icon}
-      </div>
-      <a class="${styles.link}" href="${safeUrl}" title="${escapeHtml(title)}"${safeTarget ? ` target="${safeTarget}"` : ''}${safeRel}>
-        ${escapeHtml(text)}
-      </a>
-    </li>
-  `;
+  root.className = styles.root;
+  iconContainer.className = styles.icon;
+  appendHtml(iconContainer, icon);
+
+  link.className = styles.link;
+  link.href = safeUrl;
+  link.title = title;
+  link.textContent = text;
+  if (safeTarget) {
+    link.target = safeTarget;
+    if (safeTarget === '_blank') {
+      link.rel = 'noopener noreferrer';
+    }
+  }
+
+  root.append(iconContainer, link);
+  return root;
 };
 
 export default contactsItem;

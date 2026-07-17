@@ -7,16 +7,19 @@ import { DOM_HOOKS } from '@/shared/domHooks';
 import lang from '@/ui/components/lang/lang';
 import switcher from '@/ui/components/switcher/switcher';
 
-const header = () => {
-  return `
-    <header class=${style.root}>
-      <h1></h1>
-      <div class="${style.buttons}">
-        ${switcher(IconMoon, IconSun, DOM_HOOKS.themeToggle, 'Toggle theme')}
-        ${lang()}
-      </div>
-    </header>
-  `;
+const header = (): HTMLElement => {
+  const element = document.createElement('header');
+  const title = document.createElement('h1');
+  const buttons = document.createElement('div');
+
+  element.className = style.root;
+  buttons.className = style.buttons;
+
+  buttons.append(switcher(IconMoon, IconSun, DOM_HOOKS.themeToggle, 'Toggle theme'));
+  buttons.append(lang());
+
+  element.append(title, buttons);
+  return element;
 };
 
 export default header;

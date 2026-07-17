@@ -1,9 +1,13 @@
 import styles from './copyright.module.scss';
 
-const copyright = (since = '2017') => {
+const copyright = (since = '2017'): HTMLElement => {
   const current = new Date().getFullYear();
+  const paragraph = document.createElement('p');
 
-  return `<p class="${styles.copyright}">©${since}-${current}</p>`;
+  paragraph.className = styles.copyright;
+  paragraph.textContent = `©${since}-${current}`;
+
+  return paragraph;
 };
 
 export default copyright;

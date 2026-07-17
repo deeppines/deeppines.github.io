@@ -4,13 +4,21 @@ import styles from './projects.module.scss';
 
 import type { Lang } from '@/types/common';
 
-const projects = (items: ProjectProps[], lang: Lang): string => {
-  return `
-    <h2 class="${styles.title}">${lang === 'en' ? 'Projects' : 'Проекты'}</h2>
-    <div class="${styles.root}">
-      ${items.map((item) => project(item)).join('')}
-    </div>
-  `;
+const projects = (items: ProjectProps[], lang: Lang): DocumentFragment => {
+  const fragment = document.createDocumentFragment();
+  const title = document.createElement('h2');
+  const root = document.createElement('div');
+
+  title.className = styles.title;
+  title.textContent = lang === 'en' ? 'Projects' : 'Проекты';
+
+  root.className = styles.root;
+  items.forEach((item) => {
+    root.append(project(item));
+  });
+
+  fragment.append(title, root);
+  return fragment;
 };
 
 export default projects;
