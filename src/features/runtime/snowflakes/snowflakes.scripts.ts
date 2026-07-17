@@ -9,6 +9,8 @@ interface SnowflakesConfig {
   delay?: number;
 }
 
+type RuntimeCleanup = () => void;
+
 const SNOWFLAKE_SYMBOLS = ['❅', '❆', '❉', '❋'];
 const ROOT_CLASS = 'snowflakesContainer';
 const SNOWFLAKE_CLASS = 'snowflake';
@@ -18,10 +20,11 @@ class SnowflakesRuntime {
   private readonly delay: number;
   private readonly toggleClass: string;
   private readonly snowflakes: HTMLElement[] = [];
+  private readonly snowflakeTimeoutIds = new Set<number>();
   private animationFrameId: number | null = null;
   private lastSnowflakeTime = 0;
   private isRunning = false;
-  private readonly bindedToggles = new WeakSet<HTMLInputElement>();
+  private readonly toggleHandlers = new Map<HTMLInputElement, () => void>();
 
   constructor(config?: SnowflakesConfig) {
     this.maxSnowflakes = config?.maxSnowflakes ?? 100;
@@ -49,12 +52,11 @@ class SnowflakesRuntime {
     const toggles = document.querySelectorAll<HTMLInputElement>(`.${this.toggleClass}`);
 
     toggles.forEach((toggle) => {
-      if (this.bindedToggles.has(toggle)) {
+      if (this.toggleHandlers.has(toggle)) {
         return;
       }
 
-      this.bindedToggles.add(toggle);
-      toggle.addEventListener('change', () => {
+      const handleChange = (): void => {
         if (this.isRunning) {
           this.stop();
           this.clear();
@@ -62,7 +64,10 @@ class SnowflakesRuntime {
         }
 
         this.start();
-      });
+      };
+
+      this.toggleHandlers.set(toggle, handleChange);
+      toggle.addEventListener('change', handleChange);
     });
   }
 
@@ -88,14 +93,16 @@ class SnowflakesRuntime {
     container.appendChild(snowflake);
     this.snowflakes.push(snowflake);
 
-    window.setTimeout(() => {
+    const timeoutId = window.setTimeout(() => {
       snowflake.remove();
       const index = this.snowflakes.indexOf(snowflake);
 
       if (index >= 0) {
         this.snowflakes.splice(index, 1);
       }
+      this.snowflakeTimeoutIds.delete(timeoutId);
     }, 11000);
+    this.snowflakeTimeoutIds.add(timeoutId);
   }
 
   private animate = (currentTime: number): void => {
@@ -134,20 +141,33 @@ class SnowflakesRuntime {
   }
 
   private clear(): void {
+    this.snowflakeTimeoutIds.forEach((timeoutId) => {
+      window.clearTimeout(timeoutId);
+    });
+    this.snowflakeTimeoutIds.clear();
     this.snowflakes.forEach((snowflake) => snowflake.remove());
     this.snowflakes.length = 0;
+  }
+
+  destroy(): void {
+    this.stop();
+    this.clear();
+    this.toggleHandlers.forEach((handler, toggle) => {
+      toggle.removeEventListener('change', handler);
+    });
+    this.toggleHandlers.clear();
   }
 }
 
 let runtime: SnowflakesRuntime | null = null;
 
-export const initSnowflakes = (config?: SnowflakesConfig): void => {
+export const initSnowflakes = (config?: SnowflakesConfig): RuntimeCleanup => {
   if (!isWinter()) {
-    return;
+    return () => {};
   }
 
   if (prefersReducedMotion()) {
-    return;
+    return () => {};
   }
 
   if (!runtime) {
@@ -155,4 +175,7 @@ export const initSnowflakes = (config?: SnowflakesConfig): void => {
   }
 
   runtime.init();
+  return () => {
+    runtime?.destroy();
+  };
 };

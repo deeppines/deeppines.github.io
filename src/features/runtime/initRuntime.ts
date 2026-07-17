@@ -13,10 +13,25 @@ interface InitRuntimeOptions {
   onLangChange?: (lang: Lang) => void;
 }
 
-export const initRuntime = (options: InitRuntimeOptions = {}): void => {
-  initTheme();
-  initLang({ onChange: options.onLangChange });
-  initModals();
-  initSnowflakes({ toggleClass: DOM_HOOKS.snowflakesToggle });
-  initHiddenButton();
+type RuntimeCleanup = () => void;
+
+let runtimeCleanup: RuntimeCleanup | null = null;
+
+export const initRuntime = (options: InitRuntimeOptions = {}): RuntimeCleanup => {
+  runtimeCleanup?.();
+
+  const cleanups: RuntimeCleanup[] = [
+    initTheme(),
+    initLang({ onChange: options.onLangChange }),
+    initModals(),
+    initSnowflakes({ toggleClass: DOM_HOOKS.snowflakesToggle }),
+    initHiddenButton(),
+  ];
+
+  runtimeCleanup = () => {
+    cleanups.forEach((cleanup) => cleanup());
+    runtimeCleanup = null;
+  };
+
+  return runtimeCleanup;
 };

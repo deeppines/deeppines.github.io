@@ -31,4 +31,19 @@ describe('theme runtime', () => {
     expect(localStorage.getItem(STORAGE_KEYS.theme)).toBe('dark');
     expect(toggle.checked).toBe(true);
   });
+
+  test('cleanup removes change listeners', () => {
+    const toggle = document.createElement('input');
+    toggle.type = 'checkbox';
+    toggle.className = DOM_HOOKS.themeToggle;
+    document.body.append(toggle);
+
+    localStorage.setItem(STORAGE_KEYS.theme, 'light');
+    const cleanup = initTheme();
+    cleanup();
+
+    toggle.dispatchEvent(new Event('change', { bubbles: true }));
+
+    expect(document.documentElement.getAttribute(DATA_ATTRIBUTES.theme)).toBe('light');
+  });
 });

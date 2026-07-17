@@ -27,18 +27,30 @@ const setTheme = (theme: Theme): void => {
   localStorage.setItem(STORAGE_KEYS.theme, theme);
 };
 
-export const initTheme = (toggleClass = DOM_HOOKS.themeToggle): void => {
+type RuntimeCleanup = () => void;
+
+export const initTheme = (toggleClass = DOM_HOOKS.themeToggle): RuntimeCleanup => {
   const toggles = document.querySelectorAll<HTMLInputElement>(`.${toggleClass}`);
   const initialTheme = getStoredTheme();
+  const cleanupHandlers: RuntimeCleanup[] = [];
 
   setTheme(initialTheme);
 
   toggles.forEach((toggle) => {
     toggle.checked = initialTheme === 'dark';
-    toggle.addEventListener('change', () => {
+    const handleChange = (): void => {
       const nextTheme: Theme = getStoredTheme() === 'dark' ? 'light' : 'dark';
       setTheme(nextTheme);
       toggle.checked = nextTheme === 'dark';
+    };
+
+    toggle.addEventListener('change', handleChange);
+    cleanupHandlers.push(() => {
+      toggle.removeEventListener('change', handleChange);
     });
   });
+
+  return () => {
+    cleanupHandlers.forEach((cleanup) => cleanup());
+  };
 };

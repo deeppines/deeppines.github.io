@@ -5,6 +5,8 @@ interface ModalConfig {
   openTriggerClass: string;
 }
 
+type RuntimeCleanup = () => void;
+
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -13,16 +15,17 @@ const setBackdropState = (): void => {
   document.body.dataset[DATA_ATTRIBUTES.backdrop] = String(hasOpenedModal);
 };
 
-const initSingleModal = ({ id, openTriggerClass }: ModalConfig): void => {
+const initSingleModal = ({ id, openTriggerClass }: ModalConfig): RuntimeCleanup => {
   const modal = document.getElementById(id);
 
   if (!modal) {
-    return;
+    return () => {};
   }
 
   const openTriggers = document.querySelectorAll(`.${openTriggerClass}`);
   const closeTriggers = modal.querySelectorAll(`.${DOM_HOOKS.modalClose}`);
   const dialog = modal.querySelector<HTMLElement>('[role="dialog"]');
+  const modalCleanup: RuntimeCleanup[] = [];
   let lastActiveElement: HTMLElement | null = null;
 
   const getFocusableElements = (): HTMLElement[] => {
@@ -88,21 +91,48 @@ const initSingleModal = ({ id, openTriggerClass }: ModalConfig): void => {
   };
 
   openTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', () => open(trigger as HTMLElement));
+    const handleOpen = (): void => open(trigger as HTMLElement);
+    trigger.addEventListener('click', handleOpen);
+    modalCleanup.push(() => {
+      trigger.removeEventListener('click', handleOpen);
+    });
   });
 
   closeTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', close);
+    const handleClose = (): void => close();
+    trigger.addEventListener('click', handleClose);
+    modalCleanup.push(() => {
+      trigger.removeEventListener('click', handleClose);
+    });
   });
 
-  modal.addEventListener('click', (event) => {
+  const handleBackdropClick = (event: Event): void => {
     if (event.target === modal) {
       close();
     }
+  };
+
+  modal.addEventListener('click', handleBackdropClick);
+  modalCleanup.push(() => {
+    modal.removeEventListener('click', handleBackdropClick);
+    window.removeEventListener('keydown', handleKeyDown);
+    modal.classList.remove(STATE_CLASSES.open);
+    modal.setAttribute('aria-hidden', 'true');
+    setBackdropState();
   });
+
+  return () => {
+    modalCleanup.forEach((cleanup) => cleanup());
+  };
 };
 
-export const initModals = (): void => {
-  initSingleModal({ id: MODAL_IDS.about, openTriggerClass: DOM_HOOKS.modalOpen });
-  initSingleModal({ id: MODAL_IDS.me, openTriggerClass: DOM_HOOKS.modalMeOpen });
+export const initModals = (): RuntimeCleanup => {
+  const cleanups = [
+    initSingleModal({ id: MODAL_IDS.about, openTriggerClass: DOM_HOOKS.modalOpen }),
+    initSingleModal({ id: MODAL_IDS.me, openTriggerClass: DOM_HOOKS.modalMeOpen }),
+  ];
+
+  return () => {
+    cleanups.forEach((cleanup) => cleanup());
+  };
 };

@@ -36,16 +36,19 @@ interface InitLangOptions {
   onChange?: (lang: Lang) => void;
 }
 
-export const initLang = (options: InitLangOptions = {}): void => {
+type RuntimeCleanup = () => void;
+
+export const initLang = (options: InitLangOptions = {}): RuntimeCleanup => {
   const toggleClass = options.toggleClass ?? DOM_HOOKS.langToggle;
   const toggles = document.querySelectorAll<HTMLSelectElement>(`.${toggleClass}`);
   const initialLang = getStoredLang();
+  const cleanupHandlers: RuntimeCleanup[] = [];
 
   setLang(initialLang);
 
   toggles.forEach((toggle) => {
     toggle.value = initialLang;
-    toggle.addEventListener('change', (event) => {
+    const handleChange = (event: Event): void => {
       const nextLang = (event.currentTarget as HTMLSelectElement).value;
 
       if (!isLang(nextLang)) {
@@ -58,6 +61,15 @@ export const initLang = (options: InitLangOptions = {}): void => {
 
       setLang(nextLang);
       options.onChange?.(nextLang);
+    };
+
+    toggle.addEventListener('change', handleChange);
+    cleanupHandlers.push(() => {
+      toggle.removeEventListener('change', handleChange);
     });
   });
+
+  return () => {
+    cleanupHandlers.forEach((cleanup) => cleanup());
+  };
 };

@@ -42,4 +42,30 @@ describe('lang runtime', () => {
     expect(localStorage.getItem(STORAGE_KEYS.lang)).toBe('en');
     expect(onChange).toHaveBeenCalledWith('en');
   });
+
+  test('cleanup removes change listeners', () => {
+    const toggle = document.createElement('select');
+    toggle.className = DOM_HOOKS.langToggle;
+
+    const ruOption = document.createElement('option');
+    ruOption.value = 'ru';
+    ruOption.textContent = 'RU';
+
+    const enOption = document.createElement('option');
+    enOption.value = 'en';
+    enOption.textContent = 'EN';
+
+    toggle.append(ruOption, enOption);
+    document.body.append(toggle);
+
+    const onChange = jest.fn();
+    const cleanup = initLang({ onChange });
+    cleanup();
+
+    toggle.value = 'en';
+    toggle.dispatchEvent(new Event('change', { bubbles: true }));
+
+    expect(onChange).not.toHaveBeenCalled();
+    expect(localStorage.getItem(STORAGE_KEYS.lang)).toBe('ru');
+  });
 });
