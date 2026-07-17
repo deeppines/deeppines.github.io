@@ -43,6 +43,7 @@ export interface ModalListBlock {
 export interface ModalLinksBlock {
   type: 'links';
   items: {
+    icon: string;
     title: string;
     url: string;
   }[];

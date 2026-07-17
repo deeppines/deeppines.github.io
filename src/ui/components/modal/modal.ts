@@ -6,7 +6,8 @@ import { DOM_HOOKS } from '@/shared/domHooks';
 
 import { appendHtml } from '@/ui/utils/appendHtml/appendHtml';
 import { getLang } from '@/ui/utils/getLang/getLang';
-import { sanitizeUrl } from '@/ui/utils/html/html';
+
+import socials from '../socials/socials';
 
 import styles from './modal.module.scss';
 
@@ -18,40 +19,38 @@ const renderContentBlocks = (target: HTMLElement, blocks: ModalContentBlock[]): 
   blocks.forEach((block) => {
     if (block.type === 'paragraph') {
       const paragraph = document.createElement('p');
+
       paragraph.textContent = block.text;
+
       target.append(paragraph);
+
       return;
     }
 
     if (block.type === 'list') {
       if (block.title) {
         const title = document.createElement('p');
+
         title.textContent = block.title;
+
         target.append(title);
       }
 
       const list = document.createElement('ul');
+
       block.items.forEach((item) => {
         const listItem = document.createElement('li');
         listItem.textContent = item;
         list.append(listItem);
       });
+
       target.append(list);
+
       return;
     }
 
-    const linksList = document.createElement('ul');
-    block.items.forEach((item) => {
-      const listItem = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = sanitizeUrl(item.url);
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.title = item.title;
-      link.textContent = item.title;
-      listItem.append(link);
-      linksList.append(listItem);
-    });
+    const linksList = socials(block.items);
+
     target.append(linksList);
   });
 };

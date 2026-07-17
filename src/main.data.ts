@@ -1,5 +1,8 @@
 import iconGithub from '@tabler/icons/outline/brand-github.svg?raw';
+import iconLastfm from '@tabler/icons/outline/brand-lastfm.svg?raw';
 import iconBrandLinkedin from '@tabler/icons/outline/brand-linkedin.svg?raw';
+import iconSteam from '@tabler/icons/outline/brand-steam.svg?raw';
+import iconMyShows from '@tabler/icons/outline/device-tv.svg?raw';
 import IconFileTypePdf from '@tabler/icons/outline/file-type-pdf.svg?raw';
 import iconMail from '@tabler/icons/outline/mail.svg?raw';
 
@@ -13,21 +16,25 @@ const PROFILE_IMAGE_URL = 'https://github.com/deeppines.png';
 const PINES_IMAGE_URL = '/assets/img/projects/pines.png';
 const PINES_BADGE_URL =
   'https://vsmarketplacebadges.dev/version-short/deeppines.pines-visual-studio-code.svg';
-const PINES_LINK_URL = 'https://marketplace.visualstudio.com/items?itemName=deeppines.pines-visual-studio-code';
+const PINES_LINK_URL =
+  'https://marketplace.visualstudio.com/items?itemName=deeppines.pines-visual-studio-code';
 
 const ABOUT_STACK_ITEMS = ['Vite', 'Typescript', 'CSS modules'];
 const ME_SOCIAL_LINKS = [
   {
     title: 'Lastfm',
     url: 'https://www.last.fm/user/deeppines',
+    icon: iconLastfm,
   },
   {
     title: 'MyShows',
     url: 'https://myshows.me/deeppines',
+    icon: iconMyShows,
   },
   {
     title: 'Steam',
     url: 'https://steamcommunity.com/id/deeppines/',
+    icon: iconSteam,
   },
 ];
 
@@ -59,7 +66,7 @@ export const MAIN: MainPageData = {
         icon: IconFileTypePdf,
         text: 'Resume',
         title: 'CV',
-        url: '/assets/docs/cv.pdf',
+        url: '/assets/docs/cv_2025.pdf',
         target: '_blank',
       }
     ),
