@@ -3870,7 +3870,7 @@ __metadata:
     globals: "npm:17.7.0"
     husky: "npm:9.1.7"
     jest: "npm:30.4.2"
-    jest-environment-jsdom: "npm:^30.4.1"
+    jest-environment-jsdom: "npm:30.4.1"
     lint-staged: "npm:17.0.8"
     normalize.css: "npm:8.0.1"
     postcss: "npm:8.5.16"
@@ -5170,7 +5170,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-environment-jsdom@npm:^30.4.1":
+"jest-environment-jsdom@npm:30.4.1":
   version: 30.4.1
   resolution: "jest-environment-jsdom@npm:30.4.1"
   dependencies:

@@ -33,7 +33,7 @@
   },
   "author": "@deeppines",
   "license": "ISC",
-  "packageManager": "yarn@4.17.0",
+  "packageManager": "yarn@4.17.1",
   "dependencies": {
     "@tabler/icons": "3.44.0",
     "normalize.css": "8.0.1",
