@@ -2,8 +2,7 @@ import type { Lang } from '@/types/common';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
 
-import { initHiddenButton } from '@/ui/components/avatar/avatar.scripts';
-
+import { initHiddenButton } from './avatar/avatar.scripts';
 import { initLang } from './lang/lang.scripts';
 import { initModals } from './modal/modal.scripts';
 import { initSnowflakes } from './snowflakes/snowflakes.scripts';

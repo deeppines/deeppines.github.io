@@ -34,6 +34,8 @@ export const initHiddenButton = (config?: HiddenButtonConfig): RuntimeCleanup =>
     };
 
     const handleMouseLeave = (): void => {
+      const button = root.querySelector<HTMLElement>(`.${DOM_HOOKS.hiddenButton}`);
+
       if (timerId !== null) {
         window.clearTimeout(timerId);
         timerId = null;
@@ -41,6 +43,10 @@ export const initHiddenButton = (config?: HiddenButtonConfig): RuntimeCleanup =>
       if (hideTimerId !== null) {
         window.clearTimeout(hideTimerId);
         hideTimerId = null;
+      }
+
+      if (button) {
+        button.style.display = 'none';
       }
     };
 
