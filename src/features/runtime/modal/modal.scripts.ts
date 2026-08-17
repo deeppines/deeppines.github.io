@@ -24,13 +24,13 @@ const initSingleModal = ({ id, openTriggerClass }: ModalConfig): RuntimeCleanup 
 
   const openTriggers = document.querySelectorAll(`.${openTriggerClass}`);
   const closeTriggers = modal.querySelectorAll(`.${DOM_HOOKS.modalClose}`);
-  const dialog = modal.querySelector<HTMLElement>('[role="dialog"]');
+  const dialog = modal.querySelector('[role="dialog"]') as HTMLElement | null;
   const modalCleanup: RuntimeCleanup[] = [];
   let lastActiveElement: HTMLElement | null = null;
 
   const getFocusableElements = (): HTMLElement[] => {
     const root = dialog ?? modal;
-    return [...root.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)].filter(
+    return (Array.from(root.querySelectorAll(FOCUSABLE_SELECTOR)) as HTMLElement[]).filter(
       (item) => !item.hasAttribute('disabled') && item.tabIndex !== -1
     );
   };

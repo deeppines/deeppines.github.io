@@ -20,11 +20,11 @@ class SnowflakesRuntime {
   private readonly delay: number;
   private readonly toggleClass: string;
   private readonly snowflakes: HTMLElement[] = [];
-  private readonly snowflakeTimeoutIds = new Set<number>();
+  private readonly snowflakeTimeoutIds: Set<number> = new Set();
   private animationFrameId: number | null = null;
   private lastSnowflakeTime = 0;
   private isRunning = false;
-  private readonly toggleHandlers = new Map<HTMLInputElement, () => void>();
+  private readonly toggleHandlers: Map<HTMLInputElement, () => void> = new Map();
 
   constructor(config?: SnowflakesConfig) {
     this.maxSnowflakes = config?.maxSnowflakes ?? 100;
@@ -49,7 +49,7 @@ class SnowflakesRuntime {
   }
 
   private bindListeners(): void {
-    const toggles = document.querySelectorAll<HTMLInputElement>(`.${this.toggleClass}`);
+    const toggles = Array.from(document.querySelectorAll(`.${this.toggleClass}`)) as HTMLInputElement[];
 
     toggles.forEach((toggle) => {
       if (this.toggleHandlers.has(toggle)) {
@@ -72,7 +72,7 @@ class SnowflakesRuntime {
   }
 
   private createSnowflake(): void {
-    const container = document.querySelector<HTMLElement>(`.${ROOT_CLASS}`);
+    const container = document.querySelector(`.${ROOT_CLASS}`) as HTMLElement | null;
 
     if (!container) {
       return;

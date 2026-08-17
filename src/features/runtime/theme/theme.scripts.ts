@@ -30,7 +30,7 @@ const setTheme = (theme: Theme): void => {
 type RuntimeCleanup = () => void;
 
 export const initTheme = (toggleClass = DOM_HOOKS.themeToggle): RuntimeCleanup => {
-  const toggles = document.querySelectorAll<HTMLInputElement>(`.${toggleClass}`);
+  const toggles = Array.from(document.querySelectorAll(`.${toggleClass}`)) as HTMLInputElement[];
   const initialTheme = getStoredTheme();
   const cleanupHandlers: RuntimeCleanup[] = [];
 

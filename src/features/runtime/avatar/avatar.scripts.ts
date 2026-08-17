@@ -10,7 +10,7 @@ type RuntimeCleanup = () => void;
 export const initHiddenButton = (config?: HiddenButtonConfig): RuntimeCleanup => {
   const visibleTimer = config?.visibleTimer ?? 3000;
   const hoverTimer = config?.hoverTimer ?? 5000;
-  const roots = document.querySelectorAll<HTMLElement>(`.${DOM_HOOKS.hiddenRoot}`);
+  const roots = Array.from(document.querySelectorAll(`.${DOM_HOOKS.hiddenRoot}`)) as HTMLElement[];
   const cleanupHandlers: RuntimeCleanup[] = [];
 
   roots.forEach((root) => {
@@ -19,7 +19,7 @@ export const initHiddenButton = (config?: HiddenButtonConfig): RuntimeCleanup =>
 
     const handleMouseEnter = (): void => {
       timerId = window.setTimeout(() => {
-        const button = root.querySelector<HTMLElement>(`.${DOM_HOOKS.hiddenButton}`);
+        const button = root.querySelector(`.${DOM_HOOKS.hiddenButton}`) as HTMLElement | null;
 
         if (!button) {
           return;
@@ -34,7 +34,7 @@ export const initHiddenButton = (config?: HiddenButtonConfig): RuntimeCleanup =>
     };
 
     const handleMouseLeave = (): void => {
-      const button = root.querySelector<HTMLElement>(`.${DOM_HOOKS.hiddenButton}`);
+      const button = root.querySelector(`.${DOM_HOOKS.hiddenButton}`) as HTMLElement | null;
 
       if (timerId !== null) {
         window.clearTimeout(timerId);

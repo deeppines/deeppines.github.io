@@ -22,10 +22,21 @@ describe('snowflakes runtime', () => {
   const prefersReducedMotionMock = prefersReducedMotion as jest.MockedFunction<
     typeof prefersReducedMotion
   >;
-  const requestAnimationFrameMock = jest.fn<number, [FrameRequestCallback]>(() => 1);
-  const cancelAnimationFrameMock = jest.fn<void, [number]>();
-  const setTimeoutMock = jest.fn<number, [TimerHandler, number?]>(() => 1);
-  const clearTimeoutMock = jest.fn<void, [number]>();
+  const requestAnimationFrameMock = jest.fn((callback: FrameRequestCallback) => {
+    void callback;
+    return 1;
+  });
+  const cancelAnimationFrameMock = jest.fn((id: number) => {
+    void id;
+  });
+  const setTimeoutMock = jest.fn((handler: TimerHandler, timeout?: number) => {
+    void handler;
+    void timeout;
+    return 1;
+  });
+  const clearTimeoutMock = jest.fn((id: number) => {
+    void id;
+  });
 
   beforeEach(() => {
     document.body.innerHTML = '';

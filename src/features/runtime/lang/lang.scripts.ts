@@ -40,7 +40,7 @@ type RuntimeCleanup = () => void;
 
 export const initLang = (options: InitLangOptions = {}): RuntimeCleanup => {
   const toggleClass = options.toggleClass ?? DOM_HOOKS.langToggle;
-  const toggles = document.querySelectorAll<HTMLSelectElement>(`.${toggleClass}`);
+  const toggles = Array.from(document.querySelectorAll(`.${toggleClass}`)) as HTMLSelectElement[];
   const initialLang = getStoredLang();
   const cleanupHandlers: RuntimeCleanup[] = [];
 
