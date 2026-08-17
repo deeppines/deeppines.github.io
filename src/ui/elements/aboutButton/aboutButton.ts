@@ -7,7 +7,7 @@ import { getLang } from '@/ui/utils/getLang/getLang';
 
 import styles from './aboutButton.module.scss';
 
-import { UI_TEXT } from '@/ui/content/uiText';
+import { UI_TEXT } from '@/shared/uiText';
 
 const aboutButton = (): HTMLElement => {
   const lang = getLang();

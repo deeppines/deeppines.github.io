@@ -70,22 +70,6 @@ export const MAIN: MainPageData = {
         target: '_blank',
       }
     ),
-    // {
-    //   ru: {
-    //     icon: IconPhoto,
-    //     text: 'Фото кота',
-    //     title: 'cat',
-    //     url: '',
-    //     target: '_blank',
-    //   },
-    //   en: {
-    //     icon: IconPhoto,
-    //     text: 'Cat photo',
-    //     title: 'cat',
-    //     url: '',
-    //     target: '_blank',
-    //   },
-    // },
   ],
   profile: withLang(
     {

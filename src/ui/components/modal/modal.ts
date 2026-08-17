@@ -11,7 +11,7 @@ import socials from '../socials/socials';
 
 import styles from './modal.module.scss';
 
-import { UI_TEXT } from '@/ui/content/uiText';
+import { UI_TEXT } from '@/shared/uiText';
 
 export type ModalProps = ModalData;
 

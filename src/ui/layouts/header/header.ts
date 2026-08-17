@@ -10,7 +10,7 @@ import switcher from '@/ui/elements/switcher/switcher';
 
 import style from './header.module.scss';
 
-import { UI_TEXT } from '@/ui/content/uiText';
+import { UI_TEXT } from '@/shared/uiText';
 
 const header = (headingText: string): HTMLElement => {
   const currentLang = getLang();

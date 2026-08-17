@@ -16,7 +16,7 @@ import switcher from '@/ui/elements/switcher/switcher';
 
 import style from './footer.module.scss';
 
-import { UI_TEXT } from '@/ui/content/uiText';
+import { UI_TEXT } from '@/shared/uiText';
 
 const footer = (socialItems: SocialsItemProps[]): HTMLElement => {
   const lang = getLang();

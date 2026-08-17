@@ -6,7 +6,7 @@ import { sanitizeUrl } from '@/ui/utils/html/html';
 
 import styles from './avatar.module.scss';
 
-import { UI_TEXT } from '@/ui/content/uiText';
+import { UI_TEXT } from '@/shared/uiText';
 
 const avatar = (lang: Lang, src?: string): HTMLElement => {
   const text = UI_TEXT[lang];
