@@ -2,6 +2,7 @@ import IconMoon from '@tabler/icons/outline/moon.svg?raw';
 import IconSun from '@tabler/icons/outline/sun.svg?raw';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
+import { UI_TEXT } from '@/shared/uiText';
 
 import { getLang } from '@/ui/utils/getLang/getLang';
 
@@ -9,8 +10,6 @@ import lang from '@/ui/elements/lang/lang';
 import switcher from '@/ui/elements/switcher/switcher';
 
 import style from './header.module.scss';
-
-import { UI_TEXT } from '@/shared/uiText';
 
 const header = (headingText: string): HTMLElement => {
   const currentLang = getLang();

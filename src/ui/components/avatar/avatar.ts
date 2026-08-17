@@ -1,12 +1,11 @@
 import type { Lang } from '@/types/common';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
+import { UI_TEXT } from '@/shared/uiText';
 
 import { sanitizeUrl } from '@/ui/utils/html/html';
 
 import styles from './avatar.module.scss';
-
-import { UI_TEXT } from '@/shared/uiText';
 
 const avatar = (lang: Lang, src?: string): HTMLElement => {
   const text = UI_TEXT[lang];

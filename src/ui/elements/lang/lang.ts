@@ -1,10 +1,9 @@
 import { DOM_HOOKS } from '@/shared/domHooks';
+import { UI_TEXT } from '@/shared/uiText';
 
 import { getLang } from '@/ui/utils/getLang/getLang';
 
 import styles from './lang.module.scss';
-
-import { UI_TEXT } from '@/shared/uiText';
 
 const lang = (): HTMLElement => {
   const initLang = getLang();

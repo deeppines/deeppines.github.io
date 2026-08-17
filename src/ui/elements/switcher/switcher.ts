@@ -3,7 +3,12 @@ import { getTheme } from '@/ui/utils/getTheme/getTheme';
 
 import styles from './switcher.module.scss';
 
-const switcher = (IconOn: string, IconOff: string, classes?: string, title?: string): HTMLElement => {
+const switcher = (
+  IconOn: string,
+  IconOff: string,
+  classes?: string,
+  title?: string
+): HTMLElement => {
   const theme = getTheme();
   const label = document.createElement('label');
   const input = document.createElement('input');

@@ -3,6 +3,7 @@ import iconX from '@tabler/icons/outline/x.svg?raw';
 import type { ModalContentBlock, ModalData } from '@/types/content';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
+import { UI_TEXT } from '@/shared/uiText';
 
 import { appendHtml } from '@/ui/utils/appendHtml/appendHtml';
 import { getLang } from '@/ui/utils/getLang/getLang';
@@ -10,8 +11,6 @@ import { getLang } from '@/ui/utils/getLang/getLang';
 import socials from '../socials/socials';
 
 import styles from './modal.module.scss';
-
-import { UI_TEXT } from '@/shared/uiText';
 
 export type ModalProps = ModalData;
 

@@ -2,6 +2,7 @@ import IconSnowflake from '@tabler/icons/outline/snowflake.svg?raw';
 import IconSnowflakeOff from '@tabler/icons/outline/snowflake-off.svg?raw';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
+import { UI_TEXT } from '@/shared/uiText';
 
 import { getLang } from '@/ui/utils/getLang/getLang';
 import { isWinter } from '@/ui/utils/isWinter/isWinter';
@@ -15,8 +16,6 @@ import type { SocialsItemProps } from '@/ui/elements/socialsItem/socialsItem';
 import switcher from '@/ui/elements/switcher/switcher';
 
 import style from './footer.module.scss';
-
-import { UI_TEXT } from '@/shared/uiText';
 
 const footer = (socialItems: SocialsItemProps[]): HTMLElement => {
   const lang = getLang();

@@ -1,13 +1,12 @@
 import helpIcon from '@tabler/icons/outline/help.svg?raw';
 
 import { DOM_HOOKS } from '@/shared/domHooks';
+import { UI_TEXT } from '@/shared/uiText';
 
 import { appendHtml } from '@/ui/utils/appendHtml/appendHtml';
 import { getLang } from '@/ui/utils/getLang/getLang';
 
 import styles from './aboutButton.module.scss';
-
-import { UI_TEXT } from '@/shared/uiText';
 
 const aboutButton = (): HTMLElement => {
   const lang = getLang();

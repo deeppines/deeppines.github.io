@@ -1,10 +1,10 @@
 import type { Lang } from '@/types/common';
 
+import { UI_TEXT } from '@/shared/uiText';
+
 import project, { ProjectProps } from './components/project/project';
 
 import styles from './projects.module.scss';
-
-import { UI_TEXT } from '@/shared/uiText';
 
 const projects = (items: ProjectProps[], lang: Lang): DocumentFragment => {
   const text = UI_TEXT[lang];
